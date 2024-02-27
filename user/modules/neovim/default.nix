@@ -23,7 +23,7 @@ in
 # Ensure desired packages are available in the user environment.
   home.packages = with pkgs; [
     lua-language-server
-      rust-analyzer
+      rustup
       neovim
       ripgrep
       lua-language-server 
