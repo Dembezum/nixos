@@ -8,13 +8,12 @@
       ./system/region
       ./universal.nix
 # Networking
-      ./system/networking
+      ./system/modules/networking
 #  X11
-      ./system/displaylink
-      ./system/X11
+      ./system/modules/X11
 # Audio
-      ./system/bluetooth
-      ./system/pipewire
+      ./system/modules/bluetooth
+      ./system/modules/pipewire
     ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -29,7 +28,6 @@
 # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.nixtop = {
     isNormalUser = true;
-    initialPasswd = "passwd";
     description = "nixtop";
     extraGroups = [ "networkmanager" "wheel" ];
   };

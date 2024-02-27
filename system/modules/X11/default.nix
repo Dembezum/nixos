@@ -1,12 +1,9 @@
-{ config, pkgs ..}
+{ config, pkgs, ... }:
 
 {
   imports = [
     ./displaylink.nix
   ];
-
-  ];
-
 
 # Enable the X11 windowing system.
   services.xserver.enable = true;
