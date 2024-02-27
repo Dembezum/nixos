@@ -9,24 +9,23 @@
 
   outputs = { self, nixpkgs, home-manager, ... }: 
     let 
-    system = "x86_64-linux";
-  pkgs = nixpkgs.legacyPackages.${system};
-  lib = nixpkgs.lib;
-  in {
-    nixosConfigurations = {
-      nixos = lib.nixosSystem {
-        inherit system;
-        modules = [ ./configuration.nix ];
+      system = "x86_64-linux";
+      pkgs = nixpkgs.legacyPackages.${system};
+      lib = nixpkgs.lib;
+    in {
+      nixosConfigurations = {
+        nixos = lib.nixosSystem {
+          inherit system;
+          modules = [ ./configuration.nix ];
+        };
+      };
+      homeConfigurations = {
+        nixtop = home-manager.lib.homeManagerConfiguration { 
+          inherit pkgs;
+          modules = [
+            ./user/users/nixtop/default.nix
+          ];
+        };
       };
     };
-    homeConfigurations = {
-      nixtop = home-manager.lib.homeManagerConfiguration { 
-        inherit pkgs;
-        modules = [
-           ./user/users/nixtop
-        ];
-      };
-    };
-  };
 }
-
