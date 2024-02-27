@@ -1,5 +1,5 @@
 {
-  description = "A NixOS configuration flake";
+  description = "My first flake";
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
@@ -10,7 +10,6 @@
   outputs = { self, nixpkgs, home-manager, ... }: 
     let 
     system = "x86_64-linux";
-
   pkgs = nixpkgs.legacyPackages.${system};
   lib = nixpkgs.lib;
   in {
@@ -23,7 +22,9 @@
     homeConfigurations = {
       nixtop = home-manager.lib.homeManagerConfiguration { 
         inherit pkgs;
-        modules = [ ./user/users/nixtop/home.nix ];
+        modules = [
+           ./user/users/nixtop
+        ];
       };
     };
   };
