@@ -32,7 +32,6 @@
             # Global system files
             ./configuration.nix
             ./hardware-configuration.nix
-            ./system/universal.nix
             ({
              imports = [
             # System modules
