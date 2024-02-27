@@ -8,6 +8,11 @@
     };
   };
 
+    home.packages = with pkgs; [
+    lxappearance-gtk3
+  ];
+
+
   home.username = "nixtop";
   home.homeDirectory = "/home/nixtop";
 
