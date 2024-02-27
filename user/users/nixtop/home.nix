@@ -22,5 +22,22 @@
     userEmail = "dembezuuma@gmail.com";
   };
 
+    # SSH Configuration
+  programs.ssh = {
+    enable = true;
+    # Assuming you have your private keys in /home/nixtop/.ssh
+    # You can specify multiple keys by adding more entries under keys
+    keys = [
+      {
+        name = "id_rsa"; # Name of your private key file
+        path = "/home/nixtop/.ssh/id_rsa"; # Full path to your private key
+        # If your key is encrypted with a passphrase, set this to true
+        # Otherwise, you can remove this line or set it to false
+        # isEncrypted = false;
+      }
+    ];
+  };
+
+
 }
 
