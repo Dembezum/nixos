@@ -4,9 +4,9 @@
   imports =
     [ 
 # Default
-    ./hardware-configuration.nix
-      ./system/universal.nix
+      ./hardware-configuration.nix
       ./system/regional
+      ./universal.nix
 # Networking
       ./system/networking
 #  X11
