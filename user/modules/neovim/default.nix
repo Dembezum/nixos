@@ -16,6 +16,7 @@
       lua-language-server
       rustup
       neovim
+      nodejs_21
       ripgrep
       lua-language-server 
       neovim
