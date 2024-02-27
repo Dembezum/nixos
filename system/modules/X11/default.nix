@@ -13,6 +13,10 @@
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
 
+# Kde Plasma
+#services.xserver.displayManager.sddm.enable = true;
+#services.xserver.desktopManager.plasma5.enable = true;
+
 # Touchpad support
 # services.xserver.libinput.enable = true;
 # services.xserver.displayManager.sessionCommands = '' ${pkgs.xorg.xrandr}/bin/xrandr --setprovideroutputsource 2 0 '';
