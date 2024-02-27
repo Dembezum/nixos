@@ -25,9 +25,6 @@
     efivar
     parted
     gptfdisk
-    ddrescue
-    ccrypt
-    cryptsetup # needed for dm-crypt volumes
     fuse
     fuse3
     sshfs-fuse
