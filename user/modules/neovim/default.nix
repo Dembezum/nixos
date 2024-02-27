@@ -1,11 +1,6 @@
 { config, lib, pkgs, ... }:
 
 {
-# Ensure Neovim is enabled and configured according to your preferences.
-#  programs.neovim = {
-#    enable = true;
-## Add more configuration options here as needed.
-#  };
 
 # Example: Adding custom plugins
 # programs.neovim.plugins = with pkgs.vimPlugins; [
@@ -16,10 +11,9 @@
 #     '';
 #   },
 # ];
-
 # Ensure desired packages are available in the user environment.
   home.packages = with pkgs; [
-    lua-language-server
+      lua-language-server
       rustup
       neovim
       ripgrep
