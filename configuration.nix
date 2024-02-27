@@ -5,7 +5,8 @@
     [ 
     ./hardware-configuration.nix
     ./system/universal.nix
-    ./system/displaylink.nix
+    ./system/displaylink
+    ./system/X11
     ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -44,27 +45,6 @@
     LC_TIME = "da_DK.UTF-8";
   };
 
-
-# Enable the X11 windowing system.
-  services.xserver.enable = true;
-  services.xserver.videoDrivers = [ "displaylink" "modesetting" ];
-# services.xserver.displayManager.sessionCommands = '' ${pkgs.xorg.xrandr}/bin/xrandr --setprovideroutputsource 2 0 '';
-
-
-# Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
-
-# Enable sound with pipewire.
-  sound.enable = true;
-  hardware.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-  };
 
 # Touchpad support
 # services.xserver.libinput.enable = true;

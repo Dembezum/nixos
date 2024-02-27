@@ -23,6 +23,5 @@
       btop
       htop
       git
-
       ];
 }

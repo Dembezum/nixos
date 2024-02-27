@@ -1,12 +1,12 @@
 { config, lib, pkgs, ... }:
 {
   imports = [
-    ./user/modules/gnome/default.nix
-      ./user/modules/kitty/default.nix
-      ./user/modules/neovim/default.nix
-      ./user/modules/normie/default.nix
-      ./user/modules/shells/bash.nix
-      ./user/modules/tmux/default.nix
+    ./user/modules/gnome
+      ./user/modules/kitty
+      ./user/modules/neovim
+      ./user/modules/normie
+      ./user/modules/shells
+      ./user/modules/tmux
 # Add any other user module or configuration
   ];
 

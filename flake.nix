@@ -36,14 +36,14 @@
             ({
              imports = [
             # System modules
-             ./system/modules/bluetooth/
-             ./system/modules/firewall/
-             ./system/modules/fonts/
-             ./system/modules/networking/
-             ./system/modules/pipewire/
-             ./system/modules/power-mgmt/
-             ./system/modules/ssh/
-             ./system/modules/virtualization/
+             ./system/modules/bluetooth
+             ./system/modules/firewall
+             ./system/modules/fonts
+             ./system/modules/networking
+             ./system/modules/pipewire
+             ./system/modules/power-mgmt
+             ./system/modules/ssh
+             ./system/modules/virtualization
              ];
              })
             ];
