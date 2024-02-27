@@ -44,7 +44,9 @@
              ./system/modules/power-mgmt
              ./system/modules/ssh
              ./system/modules/virtualization
-             ];
+             ./system/modules/x11
+             ./system/region
+            ];
              })
             ];
           };
