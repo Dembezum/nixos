@@ -15,7 +15,6 @@
   programs.home-manager.enable = true;
   home.stateVersion = "23.11";
 
-
   programs.git = {
     enable = true;
     userName = "dembezuma";
