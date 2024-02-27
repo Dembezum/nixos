@@ -2,11 +2,11 @@
 {
   imports = [
     ./user/modules/gnome
-      ./user/modules/kitty
-      ./user/modules/neovim
+#      ./user/modules/kitty
+#      ./user/modules/neovim
       ./user/modules/normie
       ./user/modules/shells
-      ./user/modules/tmux
+#      ./user/modules/tmux
 # Add any other user module or configuration
   ];
 

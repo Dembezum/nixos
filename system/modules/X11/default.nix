@@ -8,6 +8,8 @@
 # Enable the X11 windowing system.
   services.xserver.enable = true;
   services.xserver.videoDrivers = [ "displaylink" "modesetting" ];
+  services.xserver.displayManager.gdm.enable = true;
+  services.xserver.desktopManager.gnome.enable = true;
 
 # Touchpad support
 # services.xserver.libinput.enable = true;
