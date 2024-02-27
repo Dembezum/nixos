@@ -27,7 +27,6 @@ in
       neovim
       ripgrep
       lua-language-server 
-      rust-analyzer 
       neovim
       ripgrep
       nixd 
