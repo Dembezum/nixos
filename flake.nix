@@ -16,21 +16,17 @@
       nixosConfigurations = {
         nixos = lib.nixosSystem {
           inherit system;
-          modules = [ ./system/modules ];
+          modules = [ ./configuration.nix ];
         };
       };
       homeConfigurations = {
         nixtop = home-manager.lib.homeManagerConfiguration { 
           inherit pkgs;
           modules = [
-#            ./user/modules/gnome
-#            ./user/modules/neovim
-            ./user/modules/normie
-            ./user/modules/shells/bash.nix
-		./user/users
-            # Add any other user modules or configurations here
+            ./user/users/nixtop
           ];
-          };
         };
       };
-    }
+    };
+}
+
