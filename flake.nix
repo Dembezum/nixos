@@ -23,18 +23,14 @@
         nixtop = home-manager.lib.homeManagerConfiguration { 
           inherit pkgs;
           modules = [
-            ./user/modules/gnome
-            ./user/modules/neovim
+#            ./user/modules/gnome
+#            ./user/modules/neovim
             ./user/modules/normie
-            ./user/modules/shells
+            ./user/modules/shells/bash.nix
+		./user/users
             # Add any other user modules or configurations here
           ];
-          users = {
-            nixtop = ./user/users/nixtop;
-            # Add any other user configurations here
           };
         };
       };
-    };
-}
-
+    }
