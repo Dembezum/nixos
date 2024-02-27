@@ -5,7 +5,7 @@
     [ 
 # Default
       ./hardware-configuration.nix
-      ./system/regional
+      ./system/region
       ./universal.nix
 # Networking
       ./system/networking
