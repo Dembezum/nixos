@@ -1,8 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ 
+  imports = [ 
 # Default
       ./hardware-configuration.nix
       ./system/region
