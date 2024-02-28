@@ -1,13 +1,19 @@
 { config, pkgs, ... }:
 
+home.packages = with pkgs; [
+  # ...
+  tmux
+  # ...
+];
+
 {
   programs.tmux = {
     enable = true;
-    prefix = "C-x";
+    prefix = "C-a";
     terminal = "xterm-256color";
     extraConfig = ''
 # Reload hotkey
-bind r source-file ~/.tmux.conf \; display-message "Config reloaded..."
+#bind r source-file ~/.tmux.conf \; display-message "Config reloaded..."
 
 # Unbind
 unbind C-v
