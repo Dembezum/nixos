@@ -5,8 +5,13 @@
   ];
 
   # Program specific configuration
-  programs.neovim = {
+  programs.kitty = {
     enable = true;
+    font = "Fira Code";
+    fontSize = 12;
+    colors = "catppuccin";
+    
+
     extraConfig = ''
     
     '' # Config goes there ^
