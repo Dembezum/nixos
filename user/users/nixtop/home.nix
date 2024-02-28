@@ -9,7 +9,7 @@
   };
 
     home.packages = with pkgs; [
-    lxappearance-gtk3
+    lxappearance-gtk2
   ];
 
 

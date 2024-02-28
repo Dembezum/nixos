@@ -18,9 +18,10 @@
 
 {
   imports = [
-    ../../../user/modules/neovim/default.nix
-    ../../../user/modules/normie/default.nix
-    ../../../user/modules/shells/bash.nix
+    ../../../user/modules/neovim
+    ../../../user/modules/normie
+    ../../../user/modules/shells
+    ../../../user/modules/tmux
     ./home.nix
     # Add any other user module or configuration as needed
     # Uncomment other imports as necessary
