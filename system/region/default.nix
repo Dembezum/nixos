@@ -1,15 +1,10 @@
 { config, lib, pkgs, ... }:
 
+# Configure the system to use danish locale settings
 {
   time.timeZone = "Europe/Copenhagen";
   i18n.defaultLocale = "en_DK.UTF-8";
   console.keyMap = "dk-latin1";
-
-# Configure keymap in X11
-  services.xserver = {
-    layout = "dk";
-    xkbVariant = "";
-  };
 
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "da_DK.UTF-8";
