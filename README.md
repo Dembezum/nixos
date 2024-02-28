@@ -3,21 +3,21 @@
 ## Overview
 
 This repository contains a NixOS flake configuration designed for use with
-`home-manager`. It aims to provide a reproducible and declarative setup for a
-NixOS system with home-manager user environments.
+`home-manager`. It aims to provide a reproducible, modular and declarative setup
+for a NixOS system with home-manager user environments.
 
-> Note that this is very much a Work In Progress. Things might not work as
-> intended.
+> Note that this is very much a Work In Progress, and i'm working on it as much
+> as possible
 
 ## Structure
 
 The flake is organized into several directories, each serving a specific purpose:
 
-- `configuration.nix`: The main system configuration file.
+- `configuration.nix`: The main system configuration module.
 - `hardware-configuration.nix`: Specific configurations for the system hardware.
 - `flake.nix`: The entry point for the flake, including definitions of inputs and outputs.
 - `system/`: Contains system-level modules like `bluetooth`, `networking`, `pipewire`, `X11`, etc.
-- `user/`: Contains user-level configurations and modules such as `gnome`, `kde`, `neovim`, and more.
+- `user/`: Contains user-level configurations and modules such as `gnome`, `tmux`, `neovim`, and more.
 
 > Not every module is configured yet, but i'm working on it!
 
