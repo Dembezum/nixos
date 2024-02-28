@@ -30,7 +30,7 @@ To use this flake, you need to have Nix with flakes support enabled.
 To build the NixOS configuration:
 
 ```bash
-sudo nixos-rebuild switch --flake .#myNixOS
+sudo nixos-rebuild switch --flake .#nixos
 ```
 
 ### Managing Home Manager
