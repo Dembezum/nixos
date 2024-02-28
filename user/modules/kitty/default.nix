@@ -4,16 +4,8 @@
     neovim
   ];
 
-  # Program specific configuration
-  programs.kitty = {
-    enable = true;
-    font = "Fira Code";
-    fontSize = 12;
-    colors = "catppuccin";
-    
-
-    extraConfig = ''
-    
-    '' # Config goes there ^
-  };
+# Kitty configuration
+programs.kitty.enable = true;
+programs.kitty.font.name = "JetBrainsMono Nerd Font";
+programs.kitty.theme = "Kurayami";
 }

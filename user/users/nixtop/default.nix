@@ -22,6 +22,7 @@
     ../../../user/modules/normie
     ../../../user/modules/shells
     ../../../user/modules/tmux
+    ../../../user/modules/kitty
    # ../../../user/modules/gtk
     ./home.nix
     # Add any other user module or configuration as needed
