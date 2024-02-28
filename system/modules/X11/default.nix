@@ -30,7 +30,7 @@
 #    naturalScroll = true;
 #    tapping = true;
 
-  };
+#  };
 # services.xserver.displayManager.sessionCommands = '' ${pkgs.xorg.xrandr}/bin/xrandr --setprovideroutputsource 2 0 '';
 
 }
