@@ -1,4 +1,4 @@
-# Abdul er sej
+# My NixOS Flake Configuration
 
 ## Overview
 
