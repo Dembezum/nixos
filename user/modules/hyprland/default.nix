@@ -1,5 +1,18 @@
-{ config, lib, inputs, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 # modules/hyprland/default.nix
+
+wayland.windowManager.hyprland = {
+  enable = true;
+
+  settings = {
+        "$mod" = "SUPER";
+    bind =
+      [
+        "$mod, B, exec, firefox"
+        ", Print, exec, grimblast copy area"
+      ]
+  };
+};
 
 {
 # Ensure desired packages are available in the user environment.
@@ -10,6 +23,7 @@
       dunst
       waybar
       swww
+      grimblast
   ];
 
 # Xdg portals
