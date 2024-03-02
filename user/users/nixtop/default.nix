@@ -3,9 +3,9 @@
 {
   imports = [
 # Desktop
-   ../../../user/modules/hyprland
+#   ../../../user/modules/hyprland
     ../../../user/modules/normie
-#   ../../../user/modules/gnome
+   ../../../user/modules/gnome
 #   ../../../user/modules/kde
 # ../../../user/modules/gtk
 

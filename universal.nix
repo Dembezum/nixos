@@ -1,6 +1,7 @@
 { pkgs, ... }: {
   environment.systemPackages = with pkgs; [
 # Networking tools
+      fd
       wget
       git
       dnsutils
@@ -53,11 +54,11 @@
 
       ];
 
-# Xdg portals
-  xdg.portal = {
-    enable = true;
-    extraPortals = with pkgs; [ xdg-desktop-portal-gtk ];
-  };
+xdg.portal = { enable = true; extraPortals = [ 
+pkgs.xdg-desktop-portal-gtk
+pkgs.xdg-desktop-portal-wlr
+pkgs.xdg-desktop-portal-hyprland
+]; };
 
 # Show chnages in the system configuration
 system.activationScripts.diff = {
