@@ -3,9 +3,12 @@
 {
   imports = [
 # Desktop
-    ../../../user/modules/gnome
+#   ../../../user/modules/hyprland
     ../../../user/modules/normie
+#   ../../../user/modules/gnome
+#   ../../../user/modules/kde
 # ../../../user/modules/gtk
+
 # Productivity
     ../../../user/modules/tmux
     ../../../user/modules/kitty

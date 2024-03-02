@@ -28,7 +28,7 @@
   users.users.nixtop = {
     isNormalUser = true;
     description = "nixtop";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "video" "networkmanager" "wheel" ];
   };
 
   system.stateVersion = "23.11";
