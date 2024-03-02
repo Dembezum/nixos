@@ -54,11 +54,9 @@
 
       ];
 
-xdg.portal = { enable = true; extraPortals = [ 
-pkgs.xdg-desktop-portal-gtk
-pkgs.xdg-desktop-portal-wlr
-pkgs.xdg-desktop-portal-hyprland
-]; };
+#xdg.portal = { enable = true; extraPortals = [ 
+#pkgs.xdg-desktop-portal-gtk
+#]; };
 
 # Show chnages in the system configuration
 system.activationScripts.diff = {
