@@ -52,7 +52,6 @@
       efivar # EFI variable manager
 
       ];
-}
 
 # Xdg portals
 #  xdg.portal = {

@@ -3,7 +3,7 @@
 {
   imports = [
 # Desktop
-    ../../../user/modules/
+    ../../../user/modules/gnome
     ../../../user/modules/normie
 # ../../../user/modules/gtk
 # Productivity
