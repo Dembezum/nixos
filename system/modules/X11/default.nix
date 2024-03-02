@@ -20,7 +20,7 @@
 # Configure keymap in X11
   services.xserver = {
     layout = "dk";
-    xkbVariant = "";
+    xkb.variant = "";
   };
 
 
