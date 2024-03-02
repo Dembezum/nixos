@@ -7,6 +7,7 @@ services.xserver.desktopManager.plasma5.enable = true;
 
   plasma-browser-integration
   konsole
-  oxygen
+  brezze-gtk
+  breeze-cursor-theme
 ];
 
