@@ -14,10 +14,7 @@
   services.xserver.videoDrivers = [ "displaylink" "modesetting" ];
 
 # Configure keymap in X11
-  services.xserver.xkb.layout = "dk";
-  services.xserver = {
-    layout = "dk";
-  };
+  services.xserver.xkb.layout = "dk"; 
 
 # Touchpad support
 #services.xserver.libinput =  {
