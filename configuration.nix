@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 {
   imports = [ 
@@ -25,9 +25,6 @@
 
 # Hyprland
   programs.hyprland.enable = true;
-  programs.hyprland.package = inputs.hyprland.packages."${pkgs.system}".hyprland;
-
-}
 
 # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.nixtop = {
@@ -35,7 +32,7 @@
     description = "nixtop";
     extraGroups = [ "video" "networkmanager" "wheel" ];
   };
-
   system.stateVersion = "23.11";
-
 }
+
+
