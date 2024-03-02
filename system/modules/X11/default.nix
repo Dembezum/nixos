@@ -16,9 +16,8 @@
 # Configure keymap in X11
   services.xserver = {
     layout = "dk";
-    xkb.variant = "";
+    xkb.layout = "dk";
   };
-
 
 # Touchpad support
 #services.xserver.libinput =  {
