@@ -1,3 +1,5 @@
+# Flake.nix
+
 {
   description = "My first flake";
 
@@ -7,7 +9,7 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }: 
+  outputs = { self, nixpkgs, home-manager, ... }@inputs: 
     let 
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};

@@ -36,6 +36,12 @@
       tmux
       ];
 
+# Xdg portals
+  xdg.portal = {
+    enable = true;
+    extraPortals = with pkgs; [ xdg-desktop-portal-gtk ];
+  };
+
 # Show chnages in the system configuration
   system.activationScripts.diff = {
     supportsDryActivation = true;
@@ -45,5 +51,5 @@
       '';
   };
 
-               }
+}
 
