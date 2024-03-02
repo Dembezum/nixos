@@ -1,40 +1,58 @@
 { pkgs, ... }: {
   environment.systemPackages = with pkgs; [
-    wget
-      vim
-      htop
+# Networking tools
+      wget
       git
-      neofetch
-      zip
-      unzip
-      ripgrep
-      eza
-      fzf
       dnsutils
       nmap
-      gnutar
+      socat
+      screen
+      tcpdump
+      sshfs-fuse
+
+# System utilities
+      neofetch
+      ncdu
       tree
       which
       pciutils
       usbutils
       lm_sensors
+      xclip
+      fzf
+      eza
+      bat
+
+# Process management
+      htop
+      ripgrep
       btop
-      efibootmgr
-      efivar
       parted
       gptfdisk
       fuse
-      sshfs-fuse
-      socat
-      screen
-      tcpdump
+
+# Disk management
       sdparm
       hdparm
+
+# Archive management
+      gnutar
+      unzip
+      zip
+
+# Termianl Stuff
       kitty
-      xclip
-      ncdu
       tmux
+
+# Text manipulation / editing
+      vim
+
+# System recovery and management
+      efibootmgr # EFI boot manager
+      efivar # EFI variable manager
+
       ];
+}
 
 # Xdg portals
 #  xdg.portal = {
@@ -43,13 +61,13 @@
 #  };
 
 # Show chnages in the system configuration
-  system.activationScripts.diff = {
-    supportsDryActivation = true;
-    text = ''
-      ${pkgs.nvd}/bin/nvd --nix-bin-dir=${pkgs.nix}/bin diff \
-      /run/current-system "$systemConfig"
-      '';
-  };
+system.activationScripts.diff = {
+  supportsDryActivation = true;
+  text = ''
+    ${pkgs.nvd}/bin/nvd --nix-bin-dir=${pkgs.nix}/bin diff \
+    /run/current-system "$systemConfig"
+    '';
+};
 
 }
 
