@@ -2,18 +2,9 @@
 
 {
 
-# Example: Adding custom plugins
-# programs.neovim.plugins = with pkgs.vimPlugins; [
-#   {
-#     plugin = example-plugin;
-#     config = ''
-#       " Plugin-specific configurations here
-#     '';
-#   },
-# ];
 # Ensure desired packages are available in the user environment.
   home.packages = with pkgs; [
-      lua-language-server
+    lua-language-server
       rustup
       neovim
       nodejs_21
@@ -27,3 +18,14 @@
       zls
   ];
 }
+
+# Example: Adding custom plugins
+# programs.neovim.plugins = with pkgs.vimPlugins; [
+#   {
+#     plugin = example-plugin;
+#     config = ''
+#       " Plugin-specific configurations here
+#     '';
+#   },
+# ];
+
