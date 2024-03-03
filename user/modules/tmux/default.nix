@@ -31,6 +31,7 @@
       set-option -g detach-on-destroy off
 
 # TermType
+      set-option -sa terminal-overrides ",*256col*:Tc"
       set-option -sg escape-time 10
       set-option -g focus-events on
 

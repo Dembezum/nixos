@@ -15,6 +15,8 @@
       ./system/modules/pipewire
     ];
 
+  environment.localBinInPath = true;
+
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   services.printing.enable = true;
   nixpkgs.config.allowUnfree = true;
