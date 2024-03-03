@@ -11,24 +11,52 @@
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs: 
     let 
-    system = "x86_64-linux";
-  pkgs = nixpkgs.legacyPackages.${system};
-  lib = nixpkgs.lib;
+# --- SYSTEM CONFIGURATION ---
+    systemSettings = {
+      system = "x86_64-linux";
+      hostname = "nixtop";
+      profile = "nixtop";
+    };
+
+# --- USER CONFIGURATION ---
+    userSettings = rec {
+      username = "nixtop";
+      name = "Nixtop";
+      editor = "nvim";
+      term ="kitty";
+      browser = "firefox";
+    };
+
+    pkgs = nixpkgs.legacyPackages.${systemSettings.system};
+    lib = nixpkgs.lib;
+
   in {
+# --- NIXOS CONFIGURATIONS ---
     nixosConfigurations = {
       nixos = lib.nixosSystem {
-        inherit system;
-        modules = [ ./configuration.nix ];
+        modules = [ (./. + "/profiles"+("/"+systemSettings.profile)+"/home.nix") 
+        ];
+        specialArgs = {
+          inherit systemSettings;
+          inherit userSettings;
+        };
       };
     };
+
+# --- HOME CONFIGURATIONS ---
     homeConfigurations = {
       nixtop = home-manager.lib.homeManagerConfiguration { 
         inherit pkgs;
-        modules = [
-          ./user/users/nixtop
+        modules = [ (./. + "/profiles"+("/"+systemSettings.profile)+"/home.nix")
         ];
+        extraSpecialArgs = {
+          inherit systemSettings;
+          inherit userSettings;
+        };
       };
     };
+
+# --- DEVELOPMENT ENVIRONMENTS ---
     devShells.x86_64-linux.default =
       pkgs.mkShell
       {
@@ -50,7 +78,6 @@
           export X11LIB=${pkgs.xorg.libX11.out}/lib
           '';
       };
-
   };
 }
 

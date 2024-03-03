@@ -1,8 +1,8 @@
-{ config, pkgs, ... }:
+{ config, pkgs, userSettings, ... }:
 {
 #  NetworkManager
   networking.networkmanager.enable = true;
-  networking.hostName = "nixos";
+  networking.hostName = userSettings.hostname;
 
 # Firewall
   networking.firewall = {
