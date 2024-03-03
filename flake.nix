@@ -25,8 +25,8 @@
       term ="kitty";
       browser = "firefox";
     };
-
     pkgs = nixpkgs.legacyPackages.${systemSettings.system};
+
 
 # Lib
     lib = nixpkgs.lib;
