@@ -27,14 +27,20 @@
     };
 
     pkgs = nixpkgs.legacyPackages.${systemSettings.system};
+
+# Lib
     lib = nixpkgs.lib;
+
+    supportedSystems = [
+       "x86_64-linux"
+     ];
+
 
 in {
     homeConfigurations = {
       user = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
-          modules = [ (./. +
-          "/profiles"+("/"+systemSettings.profile)+"/home.nix") ];# load home.nix from selected PROFILE ];
+          modules = [ (./. + "/profiles"+("/"+systemSettings.profile)+"/home.nix") ];# load home.nix from selected PROFILE ];
           extraSpecialArgs = {
             inherit systemSettings;
             inherit userSettings;
@@ -61,17 +67,17 @@ in {
             neovim
             nodejs_21
             pkg-config
-            xorg.libX11
-            xorg.libXft
             fontconfig
             freetype
-            gd
             gnumake
             stdenv
             gcc
+            gd
+            xorg.libX11
+            xorg.libXft
         ];
         shellHook = ''
-          echo "Shell is ready to go!" | ${pkgs.lolcat}/bin/lolcat
+          echo -e '\033[0;36mHello\033[0m'
           export X11INC=${pkgs.xorg.libX11.dev}/include
           export X11LIB=${pkgs.xorg.libX11.out}/lib
           '';

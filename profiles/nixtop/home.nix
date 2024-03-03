@@ -2,14 +2,6 @@
 
 {
     imports = [
-# --- SYSTEM CONFIGURATION ---
-       ./hardware-configuration.nix
-      ../../universal.nix
-      ../../system/modules/networking
-      ../../system/modules/X11
-      ../../system/modules/bluetooth
-      ../../system/modules/pipewire
-# --- USER CONFIGURATION ---
       ../../user/modules/tmux
       ../../user/modules/kitty
       ../../user/modules/neovim
@@ -19,7 +11,7 @@
 #   ../../../user/modules/gnome
 #   ../../../user/modules/kde
 # ../../../user/modules/gtk
-      ./home.nix
+#      ./home.nix
   ];
 
   home.username = userSettings.username;

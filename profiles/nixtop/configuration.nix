@@ -3,6 +3,7 @@
 {
   imports = [
 # --- SYSTEM CONFIGURATION ---
+       ./home.nix
        ./hardware-configuration.nix
       ../../universal.nix
       ../../system/modules/networking
@@ -10,16 +11,15 @@
       ../../system/modules/bluetooth
       ../../system/modules/pipewire
 # --- USER CONFIGURATION ---
-      ../../user/modules/tmux
-      ../../user/modules/kitty
-      ../../user/modules/neovim
-      ../../user/modules/shells
+#      ../../user/modules/tmux
+#      ../../user/modules/kitty
+#      ../../user/modules/neovim
+#      ../../user/modules/shells
 #   ../../../user/modules/hyprland
 #    ../../../user/modules/normie
 #   ../../../user/modules/gnome
 #   ../../../user/modules/kde
 # ../../../user/modules/gtk
-      ./home.nix
   ];
 
 # Printer
