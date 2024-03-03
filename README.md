@@ -13,7 +13,8 @@ for a NixOS system with home-manager user environments.
 
 The flake is organized into several directories, each serving a specific purpose:
 
-- `configuration.nix`: The main system configuration module.
+- `profiles/`: Contains the configurations for each system.
+- `configuration.nix`: The main system configuration module for each profile.
 - `hardware-configuration.nix`: Specific configurations for the system hardware.
 - `flake.nix`: The entry point for the flake, including definitions of inputs and outputs.
 - `system/`: Contains system-level modules like `bluetooth`, `networking`, `pipewire`, `X11`, etc.
@@ -30,7 +31,7 @@ To use this flake, you need to have Nix with flakes support enabled.
 To build the NixOS configuration:
 
 ```bash
-sudo nixos-rebuild switch --flake .#nixos
+sudo nixos-rebuild switch --flake .#system
 ```
 
 ### Managing Home Manager
@@ -38,13 +39,13 @@ sudo nixos-rebuild switch --flake .#nixos
 To apply `home-manager` configurations:
 
 ```bash
-home-manager switch --flake .#nixtop
+home-manager switch --flake .#user
 ```
 
 ## Modules
 
 This configuration includes a variety of modules to set up different aspects of
-the system:
+the system here are some examples:
 
 - **Audio**: Managed by `pipewire` with support for both ALSA and PulseAudio.
 - **Display**: X11 and potentially others based on the system setup.
@@ -56,6 +57,9 @@ the system:
 The user `nixtop` is predefined with home-manager enabled. The home directory
 and various programs such as `git` are configured in `nixtop's home.nix`.
 
+The amazing part is that you only have to change flake.nix to configure it to
+your liking.
+
 ## Contributing
 
 Contributions to this flake are welcome. Feel free to fork the project, make
@@ -63,4 +67,4 @@ your changes, and submit a pull request.
 
 ## License
 
-Feel free to use as you please. 
+Feel free to do as you please.
