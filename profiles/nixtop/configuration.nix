@@ -3,7 +3,7 @@
 {
   imports = [
 # --- SYSTEM CONFIGURATION ---
-       ./home.nix
+#       ./home.nix
        ./hardware-configuration.nix
       ../../universal.nix
       ../../system/modules/networking

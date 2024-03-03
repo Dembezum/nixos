@@ -1,8 +1,8 @@
-{ config, pkgs, userSettings, ... }:
+{ config, pkgs, systemSettings, ... }:
 {
 #  NetworkManager
   networking.networkmanager.enable = true;
-  networking.hostName = userSettings.hostname;
+  networking.hostName = systemSettings.hostname;
 
 # Firewall
   networking.firewall = {
