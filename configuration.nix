@@ -15,8 +15,6 @@
       ./system/modules/pipewire
     ];
 
-  environment.localBinInPath = true;
-
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   services.printing.enable = true;
   nixpkgs.config.allowUnfree = true;
@@ -34,6 +32,7 @@
     description = "nixtop";
     extraGroups = [ "video" "networkmanager" "wheel" ];
   };
+
   system.stateVersion = "23.11";
 }
 
