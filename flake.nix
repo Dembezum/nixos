@@ -82,6 +82,7 @@ in {
           export X11LIB=${pkgs.xorg.libX11.out}/lib
           '';
       };
+
   };
 }
 
