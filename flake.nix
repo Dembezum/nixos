@@ -40,7 +40,7 @@ in {
     homeConfigurations = {
       user = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
-          modules = [ (./. + "/profiles"+("/"+systemSettings.profile)+"/home.nix") ];# load home.nix from selected PROFILE ];
+          modules = [ profiles/${systemSettings.profile}/home.nix ];
           extraSpecialArgs = {
             inherit systemSettings;
             inherit userSettings;
@@ -50,7 +50,7 @@ in {
     nixosConfigurations = {
       system = lib.nixosSystem {
         system = systemSettings.system;
-        modules = [ (./. + "/profiles"+("/"+systemSettings.profile)+"/configuration.nix") ]; # load configuration.nix from selected PROFILE
+        modules = [ profiles/${systemSettings.profile}/configuration.nix];
         specialArgs = {
           inherit systemSettings;
           inherit userSettings;
