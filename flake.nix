@@ -8,8 +8,7 @@
     home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
-
-  outputs = { self, nixpkgs, home-manager, ... }@inputs: 
+  outputs = inputs@{ self, nixpkgs, home-manager, ... }:
     let 
 # --- SYSTEM CONFIGURATION ---
     systemSettings = {
@@ -30,29 +29,26 @@
     pkgs = nixpkgs.legacyPackages.${systemSettings.system};
     lib = nixpkgs.lib;
 
-  in {
-# --- NIXOS CONFIGURATIONS ---
+in {
+    homeConfigurations = {
+      user = home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          modules = [ (./. +
+          "/profiles"+("/"+systemSettings.profile)+"/home.nix") ];# load home.nix from selected PROFILE ];
+          extraSpecialArgs = {
+            inherit systemSettings;
+            inherit userSettings;
+          };
+      };
+    };
     nixosConfigurations = {
-      nixos = lib.nixosSystem {
-        modules = [ (./. + "/profiles"+("/"+systemSettings.profile)+"/home.nix") 
-        ];
+      system = lib.nixosSystem {
+        system = systemSettings.system;
+        modules = [ (./. + "/profiles"+("/"+systemSettings.profile)+"/configuration.nix") ]; # load configuration.nix from selected PROFILE
         specialArgs = {
           inherit systemSettings;
           inherit userSettings;
-        };
-      };
-    };
-
-# --- HOME CONFIGURATIONS ---
-    homeConfigurations = {
-      nixtop = home-manager.lib.homeManagerConfiguration { 
-        inherit pkgs;
-        modules = [ (./. + "/profiles"+("/"+systemSettings.profile)+"/home.nix")
-        ];
-        extraSpecialArgs = {
-          inherit systemSettings;
-          inherit userSettings;
-        };
+       };
       };
     };
 
@@ -61,7 +57,9 @@
       pkgs.mkShell
       {
         nativeBuildInputs = with pkgs; [
-          pkgs.stdenv
+          stdenv
+            neovim
+            nodejs_21
             pkg-config
             xorg.libX11
             xorg.libXft

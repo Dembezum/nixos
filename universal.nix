@@ -79,7 +79,6 @@ system.activationScripts.diff = {
     ];
   };
 
-{
 # Configure the system to use danish locale settings
   time.timeZone = "Europe/Copenhagen";
   i18n.defaultLocale = "en_DK.UTF-8";
@@ -96,7 +95,6 @@ system.activationScripts.diff = {
     LC_TELEPHONE = "da_DK.UTF-8";
     LC_TIME = "da_DK.UTF-8";
   };
-}
 
 }
 

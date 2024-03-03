@@ -4,7 +4,6 @@
   imports = [
 # --- SYSTEM CONFIGURATION ---
        ./hardware-configuration.nix
-      ../../system/region
       ../../universal.nix
       ../../system/modules/networking
       ../../system/modules/X11

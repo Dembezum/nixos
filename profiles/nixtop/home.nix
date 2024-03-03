@@ -1,9 +1,31 @@
 { config, pkgs, lib, userSettings, ... }:
 
 {
+    imports = [
+# --- SYSTEM CONFIGURATION ---
+       ./hardware-configuration.nix
+      ../../universal.nix
+      ../../system/modules/networking
+      ../../system/modules/X11
+      ../../system/modules/bluetooth
+      ../../system/modules/pipewire
+# --- USER CONFIGURATION ---
+      ../../user/modules/tmux
+      ../../user/modules/kitty
+      ../../user/modules/neovim
+      ../../user/modules/shells
+#   ../../../user/modules/hyprland
+#    ../../../user/modules/normie
+#   ../../../user/modules/gnome
+#   ../../../user/modules/kde
+# ../../../user/modules/gtk
+      ./home.nix
+  ];
+
+  home.username = userSettings.username;
+  home.homeDirectory = "/home/"+userSettings.username;
+
   programs.home-manager.enable = true;
-  home.file = { };
-  home.stateVersion = "23.11";
 
 # Package configuration
   nixpkgs = {
@@ -13,19 +35,20 @@
     };
   };
 
+  home.stateVersion = "23.11";
+
   home.packages = with pkgs; [
     firefox
       vesktop
       spotify
+      rofi
 
   ];
 
-
-  home.username = userSettings.username;
-  home.homeDirectory = "/home/"+userSettings.username;
-
   home.sessionVariables = {
-    editor = userSettings.editor;
+    EDITOR = userSettings.editor;
+    TERM = userSettings.term;
+    BROWSER = userSettings.browser;
   };
 
   xdg.enable = true;
