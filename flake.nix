@@ -74,14 +74,25 @@
             stdenv
             gcc
             gd
+            python3
+            python3Packages.pip
             xorg.libX11
             xorg.libXft
-        ];
+            ];
         shellHook = ''
-          echo -e '\033[0;36mHello Welcome To Your devShell\033[0m'
-          export X11INC=${pkgs.xorg.libX11.dev}/include
-          export X11LIB=${pkgs.xorg.libX11.out}/lib
-          '';
+          clear
+          echo -e "\033[1;32m#############################\033[0m"
+          echo -e "\033[1;32m#  Development Enviornment  #\033[0m"
+          echo -e "\033[1;32m#############################\033[0m"
+          echo ""
+          echo -e "\033[1;36mNix:\033[0m $(lsb_release -s -d)"
+          echo -e "\033[1;36mLoad Average:\033[0m $(cut -d ' ' -f 1-3 /proc/loadavg)"
+          echo -e "\033[1;36mAvailable Memory:\033[0m $(free -h | awk '/Mem/ {print $7}')"
+          echo -e "\033[1;36mCPU Usage:\033[0m $(top -bn1 | awk '/%Cpu/ {printf("%.2f%", $2 + $4)}')"
+          echo ""
+        export X11INC=${pkgs.xorg.libX11.dev}/include
+        export X11LIB=${pkgs.xorg.libX11.out}/lib
+        '';
       };
 
   };

@@ -13,6 +13,7 @@
       sshfs-fuse
 
 # System utilities
+      lsb-release
       neofetch
       ncdu
       tree

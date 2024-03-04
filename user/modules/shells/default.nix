@@ -56,6 +56,17 @@
       export NIXPKGS_ALLOW_UNFREE=1
       shopt -s histappend
       PS1='\[\e[0;34m\][\[\e[0;34m\]\u\[\e[0;34m\]] \[\e[0;35m\]/\[\e[0;35m\]\W\[\e[0m\]]\[\e[0;32m\]$(git branch 2>/dev/null | grep '"'"'^*'"'"' | colrm 1 2) \[\e[0;37m\]\$ \[\e[0m\]'
+                clear
+          echo -e "\033[1;32m#####################\033[0m"
+          echo -e "\033[1;32m#  NIX Enviornment  #\033[0m"
+          echo -e "\033[1;32m#####################\033[0m"
+          echo ""
+          echo -e "\033[1;36mNix:\033[0m $(lsb_release -s -d)"
+          echo -e "\033[1;36mLoad Average:\033[0m $(cut -d ' ' -f 1-3 /proc/loadavg)"
+          echo -e "\033[1;36mAvailable Memory:\033[0m $(free -h | awk '/Mem/ {print $7}')"
+          echo -e "\033[1;36mCPU Usage:\033[0m $(top -bn1 | awk '/%Cpu/ {printf("%.2f%", $2 + $4)}')"
+          echo ""
+
       '';
   };
 
