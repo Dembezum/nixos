@@ -2,7 +2,7 @@
 
 {
 
-programs.neovim.withNodeJs = true;
+  programs.neovim.withNodeJs = true;
 
 # Ensure desired packages are available in the user environment.
   home.packages = with pkgs; [

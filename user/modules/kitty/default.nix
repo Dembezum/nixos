@@ -17,5 +17,5 @@
     "ctrl+shift+plus" = "increase_font_size";
     "ctrl+shift+minus" = "decrease_font_size";
   };
-}
+               }
 

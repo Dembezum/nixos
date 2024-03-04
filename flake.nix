@@ -18,28 +18,28 @@
     };
 
 # --- USER CONFIGURATION ---
-    userSettings = {
-      username = "nixtop";
-      name = "Nixtop";
-      editor = "nvim";
-      term ="kitty";
-      browser = "firefox";
-    };
-    pkgs = nixpkgs.legacyPackages.${systemSettings.system};
+  userSettings = {
+    username = "nixtop";
+    name = "Nixtop";
+    editor = "nvim";
+    term ="kitty";
+    browser = "firefox";
+  };
+  pkgs = nixpkgs.legacyPackages.${systemSettings.system};
 
 
 # Lib
-    lib = nixpkgs.lib;
+  lib = nixpkgs.lib;
 
-in {
+  in {
     homeConfigurations = {
       user = home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
-          modules = [ profiles/${systemSettings.profile}/home.nix ];
-          extraSpecialArgs = {
-            inherit systemSettings;
-            inherit userSettings;
-          };
+        inherit pkgs;
+        modules = [ profiles/${systemSettings.profile}/home.nix ];
+        extraSpecialArgs = {
+          inherit systemSettings;
+          inherit userSettings;
+        };
       };
     };
     nixosConfigurations = {
@@ -49,7 +49,7 @@ in {
         specialArgs = {
           inherit systemSettings;
           inherit userSettings;
-       };
+        };
       };
     };
 

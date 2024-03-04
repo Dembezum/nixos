@@ -1,9 +1,9 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
 # Packages to be installed
   home.packages = with pkgs; [
-      firefox
+    firefox
       vesktop
       spotify
   ];
