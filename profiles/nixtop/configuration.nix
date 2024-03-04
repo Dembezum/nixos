@@ -1,4 +1,4 @@
-{ userSettings, ... }:
+{ inputs, userSettings, ... }:
 
 {
   imports = [
@@ -39,6 +39,7 @@
     extraGroups = [ "video" "networkmanager" "wheel" ];
     uid = 1000;
   };
+  programs.hyprland.enable = true;
 
 #  xdg.portal = {
 #    enable = true;
@@ -47,6 +48,8 @@
 #      pkgs.xdg-desktop-portal-gtk
 #    ];
 #  };
+
+hardware.opengl.enable = true;
 
   system.stateVersion = "23.11";
 }
