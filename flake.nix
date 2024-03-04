@@ -8,7 +8,7 @@
     home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
-  outputs = inputs@{ self, nixpkgs, home-manager, ... }:
+  outputs = { nixpkgs, home-manager, ... }:
     let 
 # --- SYSTEM CONFIGURATION ---
     systemSettings = {
@@ -18,7 +18,7 @@
     };
 
 # --- USER CONFIGURATION ---
-    userSettings = rec {
+    userSettings = {
       username = "nixtop";
       name = "Nixtop";
       editor = "nvim";
@@ -30,11 +30,6 @@
 
 # Lib
     lib = nixpkgs.lib;
-
-    supportedSystems = [
-       "x86_64-linux"
-     ];
-
 
 in {
     homeConfigurations = {
@@ -59,11 +54,14 @@ in {
     };
 
 # --- DEVELOPMENT ENVIRONMENTS ---
-    devShells.x86_64-linux.default =
+    devShells.${systemSettings.system}.default =
       pkgs.mkShell
       {
         nativeBuildInputs = with pkgs; [
           stdenv
+            nixd
+            nil
+            rnix-lsp
             neovim
             binutils
             clang
