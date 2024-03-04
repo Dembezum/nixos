@@ -1,6 +1,7 @@
 { config, pkgs, userSettings, ... }:
 
 {
+# -- IMPORTS --
     imports = [
       ../../user/modules/tmux
       ../../user/modules/kitty
@@ -14,9 +15,9 @@
 #      ./home.nix
   ];
 
+# -- USER SETTINGS --
   home.username = userSettings.username;
   home.homeDirectory = "/home/"+userSettings.username;
-
   programs.home-manager.enable = true;
 
 # Package configuration
@@ -29,6 +30,13 @@
 
   home.stateVersion = "23.11";
 
+# -- STARSHIP CONFIGURATION --
+ programs.starship = {
+    enable = false;
+  };
+
+
+# -- DEFAULT PACKAGES --
   home.packages = with pkgs; [
     firefox
       vesktop
@@ -37,12 +45,14 @@
 
   ];
 
+# -- VARIABLES --
   home.sessionVariables = {
     EDITOR = userSettings.editor;
     TERM = userSettings.term;
     BROWSER = userSettings.browser;
   };
 
+# -- XDG CONFIGURATION --
   xdg.enable = true;
   xdg.userDirs = {
     extraConfig = {
