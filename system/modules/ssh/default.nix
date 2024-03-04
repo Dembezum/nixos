@@ -6,4 +6,4 @@ services.openssh = {
   settings.PasswordAuthentication = true;
   settings.KbdInteractiveAuthentication = false;
   settings.PermitRootLogin = "no";
-};
+}

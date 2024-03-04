@@ -1,4 +1,4 @@
-{ config, pkgs, ... }: {
+{ pkgs, ... }: {
 # Ensure Program is installed by declaring it in the home.packages
   home.packages = with pkgs; [
     kitty

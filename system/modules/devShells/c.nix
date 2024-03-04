@@ -1,4 +1,4 @@
-{ config, pkgs, userSettings, lib, ... }
+{ pkgs, ... }:
 {
 
 # --- DEVELOPMENT SHELL ---

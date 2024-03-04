@@ -1,4 +1,4 @@
-{ config, pkgs, lib, userSettings, systemSettings, ...}:
+{ pkgs, ...}:
 
 {
 # Enable virtualization support
@@ -10,7 +10,6 @@
   virtualisation = {
     spiceUSBRedirection.enable = true;
     libvirtd = {
-      enable = true;
       allowedBridges = ["virbr0"];
       qemu = {
         swtpm.enable = true;
