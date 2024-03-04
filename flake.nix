@@ -65,6 +65,9 @@ in {
         nativeBuildInputs = with pkgs; [
           stdenv
             neovim
+            binutils
+            clang
+            glibc
             nodejs_21
             pkg-config
             fontconfig
@@ -77,7 +80,7 @@ in {
             xorg.libXft
         ];
         shellHook = ''
-          echo -e '\033[0;36mHello\033[0m'
+          echo -e '\033[0;36mHello Welcome To Your devShell\033[0m'
           export X11INC=${pkgs.xorg.libX11.dev}/include
           export X11LIB=${pkgs.xorg.libX11.out}/lib
           '';
