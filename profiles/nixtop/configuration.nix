@@ -40,16 +40,15 @@
     uid = 1000;
   };
   programs.hyprland.enable = true;
-
-#  xdg.portal = {
-#    enable = true;
-#    extraPortals = [
-#      pkgs.xdg-desktop-portal
-#      pkgs.xdg-desktop-portal-gtk
-#    ];
-#  };
-
 hardware.opengl.enable = true;
+
+  xdg.portal = {
+    enable = true;
+    extraPortals = [
+      pkgs.xdg-desktop-portal
+      pkgs.xdg-desktop-portal-gtk
+    ];
+  };
 
   system.stateVersion = "23.11";
 }

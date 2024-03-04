@@ -54,23 +54,23 @@
   ];
 
 
-  wayland.windowManager.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-    settings = {
-      "$mod" = "SUPER";
-      bind =
-        [
-        "$mod SHIFT, B, exec, firefox"
-        "$mod SHIFT, Q, killactive"
-        "$mod X, exec, kitty"
-        ", Print, exec, grimblast copy area"
-        ];
-    };
-    extraConfig = ''
-      env = WLR_DRM_DEVICES,/dev/dri/card1:/dev/dri/card0;
-    '';
-  };
+#  wayland.windowManager.hyprland = {
+#    enable = true;
+#    xwayland.enable = true;
+#    settings = {
+#      "$mod" = "SUPER";
+#      bind =
+#        [
+#        "$mod SHIFT, B, exec, firefox"
+#        "$mod SHIFT, Q, killactive"
+#        "$mod X, exec, kitty"
+#        ", Print, exec, grimblast copy area"
+#        ];
+#    };
+#    extraConfig = ''
+#      env = WLR_DRM_DEVICES,/dev/dri/card1:/dev/dri/card0;
+#    '';
+#  };
 
 
 # -- VARIABLES --
