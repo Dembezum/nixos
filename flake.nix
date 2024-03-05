@@ -33,7 +33,7 @@
 
   in {
     homeConfigurations = {
-      systemSettings.profile = home-manager.lib.homeManagerConfiguration {
+      user = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         modules = [ profiles/${systemSettings.profile}/home.nix ];
         extraSpecialArgs = {
@@ -43,7 +43,7 @@
       };
     };
     nixosConfigurations = {
-      systemSettings.profile = lib.nixosSystem {
+      system = lib.nixosSystem {
         system = systemSettings.system;
         modules = [ profiles/${systemSettings.profile}/configuration.nix];
         specialArgs = {
