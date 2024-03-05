@@ -7,6 +7,7 @@
       ../../user/modules/kitty
       ../../user/modules/neovim
       ../../user/modules/shells
+      ../../system/modules/virtualization
 #   ../../../user/modules/hyprland
 #    ../../../user/modules/normie
 #   ../../../user/modules/gnome

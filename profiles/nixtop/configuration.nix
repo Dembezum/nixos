@@ -36,7 +36,7 @@
   users.users.${userSettings.username} = {
     isNormalUser = true;
     description = userSettings.name;
-    extraGroups = [ "video" "networkmanager" "wheel" ];
+    extraGroups = ["libvirt" "video" "networkmanager" "wheel" ];
     uid = 1000;
   };
   programs.hyprland.enable = true;

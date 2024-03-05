@@ -1,23 +1,7 @@
 { pkgs, ...}:
 
 {
-# Enable virtualization support
   virtualisation.libvirtd.enable = true;
-
-# Automatically start the libvirt daemon
-  services.libvirtd.enable = true;
-
-  virtualisation = {
-    spiceUSBRedirection.enable = true;
-    libvirtd = {
-      allowedBridges = ["virbr0"];
-      qemu = {
-        swtpm.enable = true;
-        ovmf.enable = true;
-        ovmf.packages = [ pkgs.OVMFFull.fd ];
-      };
-    };
-  };
 
   home.packages = with pkgs; [
     virt-manager
@@ -29,7 +13,6 @@
       spice-protocol
       qemu_kvm
       libvirt
-
   ];
 
 }
