@@ -42,13 +42,13 @@
   programs.hyprland.enable = true;
 hardware.opengl.enable = true;
 
-  xdg.portal = {
-    enable = true;
-    extraPortals = [
-      pkgs.xdg-desktop-portal
-      pkgs.xdg-desktop-portal-gtk
-    ];
-  };
+#  xdg.portal = {
+#    enable = true;
+#    extraPortals = [
+#      pkgs.xdg-desktop-portal
+#      pkgs.xdg-desktop-portal-gtk
+#    ];
+#  };
 
   system.stateVersion = "23.11";
 }

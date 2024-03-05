@@ -35,10 +35,10 @@
   home.packages = with pkgs; [
     firefox
       vesktop
+      gnome.gdm
       spotify
 #  rofi
 # Hyprland
-#      gnome.gdm
 #      rofi-wayland
 #      libnotify
 #      dunst
