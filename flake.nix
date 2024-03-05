@@ -33,7 +33,7 @@
 
   in {
     homeConfigurations = {
-      user = home-manager.lib.homeManagerConfiguration {
+      systemSettings.profile = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         modules = [ profiles/${systemSettings.profile}/home.nix ];
         extraSpecialArgs = {
@@ -43,7 +43,7 @@
       };
     };
     nixosConfigurations = {
-      system = lib.nixosSystem {
+      systemSettings.profile = lib.nixosSystem {
         system = systemSettings.system;
         modules = [ profiles/${systemSettings.profile}/configuration.nix];
         specialArgs = {
@@ -74,16 +74,16 @@
             stdenv
             gcc
             gd
-            python3
+            ffmpeg
             python3Packages.pip
             xorg.libX11
             xorg.libXft
             ];
         shellHook = ''
           clear
-          echo -e "\033[1;32m#############################\033[0m"
-          echo -e "\033[1;32m#  Development Enviornment  #\033[0m"
-          echo -e "\033[1;32m#############################\033[0m"
+          echo -e "\033[1;32m###############################\033[0m"
+          echo -e "\033[1;32m##  Development Enviornment  ##\033[0m"
+          echo -e "\033[1;32m###############################\033[0m"
           echo ""
           echo -e "\033[1;36mNix:\033[0m $(lsb_release -s -d)"
           echo -e "\033[1;36mLoad Average:\033[0m $(cut -d ' ' -f 1-3 /proc/loadavg)"
