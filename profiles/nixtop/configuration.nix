@@ -10,6 +10,7 @@
       ../../system/modules/X11
       ../../system/modules/bluetooth
       ../../system/modules/pipewire
+      ../../system/modules/virtualization
 # --- USER CONFIGURATION ---
 #      ../../user/modules/tmux
 #      ../../user/modules/kitty
