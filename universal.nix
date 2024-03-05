@@ -56,9 +56,9 @@
       efivar # EFI variable manager
       ];
 
-#xdg.portal = { enable = true; extraPortals = [ 
-#pkgs.xdg-desktop-portal-gtk
-#]; };
+xdg.portal = { enable = true; extraPortals = [ 
+pkgs.xdg-desktop-portal-gtk
+]; };
 
 # Show chnages in the system configuration
   system.activationScripts.diff = {
