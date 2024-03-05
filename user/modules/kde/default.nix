@@ -1,13 +1,11 @@
-# Kde plasma module 
-{ config, lib, pkgs, ... }:
+{pgks, lib, config, systemSettings, userSettings, ...}:
+{
+  programs.plasma6.enable = true;
 
 services.xserver.enable = true;
-services.xserver.displayManager.sddm.enable = true;
-services.xserver.desktopManager.plasma5.enable = true;
-
-  plasma-browser-integration
-  konsole
-  brezze-gtk
-  breeze-cursor-theme
-];
+#  services.xserver.displayManager.defaultSession = "plasma";
+  services.xserver.desktopManager.plasma6.enable = true;
+  services.xserver.displayManager.gdm.enable = true;
+  #services.xserver.displayManager.sddm.wayland.enable = true;
+}
 

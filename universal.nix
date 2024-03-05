@@ -27,12 +27,13 @@
       bat
 
 # Process management
-      htop
       ripgrep
+      killall
+      htop
       btop
       parted
-      gptfdisk
       fuse
+      gptfdisk
 
 # Disk management
       sdparm
@@ -97,5 +98,5 @@
     LC_TIME = "da_DK.UTF-8";
   };
 
-               }
+}
 

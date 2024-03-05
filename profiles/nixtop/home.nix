@@ -38,19 +38,19 @@
       spotify
 #  rofi
 # Hyprland
-      gnome.gdm
-      rofi-wayland
-      libnotify
-      dunst
-      drm_info
-      waybar
-      swww
-      wlroots
-      wl-clipboard
-      wdisplays
-      wlr-randr
-      xdg-desktop-portal-wlr
-      grimblast
+#      gnome.gdm
+#      rofi-wayland
+#      libnotify
+#      dunst
+#      drm_info
+#      waybar
+#      swww
+#      wlroots
+#      wl-clipboard
+#      wdisplays
+#      wlr-randr
+#      xdg-desktop-portal-wlr
+#      grimblast
   ];
 
 
