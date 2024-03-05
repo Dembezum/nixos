@@ -49,6 +49,6 @@ environment.systemPackages = with pkgs; [
     spice-protocol
     qemu_kvm
     libvirt
-    ovmf
+    #ovmf
   ];
 }
