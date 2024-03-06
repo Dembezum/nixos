@@ -2,29 +2,29 @@
 
 ## Overview
 
-This repository contains a NixOS flake configuration designed for use with
+This repository contains my NixOS flake configuration designed for use with
 `home-manager`. It aims to provide a reproducible, modular and declarative setup
 for a NixOS system with home-manager user environments.
-
-> Note that this is very much a Work In Progress, and i'm working on it as much
-> as possible
 
 ## Structure
 
 The flake is organized into several directories, each serving a specific purpose:
 
-- `profiles/`: Contains the configurations for each system.
-- `configuration.nix`: The main system configuration module for each profile.
-- `hardware-configuration.nix`: Specific configurations for the system hardware.
 - `flake.nix`: The entry point for the flake, including definitions of inputs and outputs.
-- `system/`: Contains system-level modules like `bluetooth`, `networking`, `pipewire`, `X11`, etc.
-- `user/`: Contains user-level configurations and modules such as `gnome`, `tmux`, `neovim`, and more.
+- `./profiles/`: Contains the configurations for each system including `home.nix`, `configuration.nix`, `hardware-configuration.nix`.
+- `./system/`: Contains system-level modules like `bluetooth`, `networking`, `pipewire`, `X11`, etc.
+- `./user/`: Contains user-level configurations and modules such as `gnome`, `tmux`, `neovim`, and more.
 
 > Not every module is configured yet, but i'm working on it!
 
 ## Usage
 
-To use this flake, you need to have Nix with flakes support enabled.
+To use this flake, you need to have Nix with [flakes](https://nixos.wiki/wiki/Flakes) enabled. You will
+also make sure to generate a hardware-config.nix and replace it with the one in 
+the flake. The beauty is that you can decide what you want included in the build by 
+just en -disabling the modules in the `configuration.nix`, and `home.nix`.
+
+You will want to install [home-mnager](https://nix-community.github.io/home-manager/) as well.
 
 ### Building the System
 
@@ -55,10 +55,10 @@ the system here are some examples:
 ## User Configuration
 
 The user `nixtop` is predefined with home-manager enabled. The home directory
-and various programs such as `git` are configured in `nixtop's home.nix`.
+and various programs such as `git` are configured in `./profiles/nixtop/home.nix`.
 
-The amazing part is that you only have to change flake.nix to configure it to
-your liking.
+> If you desire another username/hostname etc, you edit the variable in `flake.nix`,
+> this will change the entire configuration to match it.
 
 ## Contributing
 
