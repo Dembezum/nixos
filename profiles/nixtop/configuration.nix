@@ -11,6 +11,7 @@
       ../../system/modules/bluetooth
       ../../system/modules/pipewire
       ../../system/modules/virtualization
+      ../../system/modules/syncthing
 # --- USER CONFIGURATION ---
 #      ../../user/modules/tmux
 #      ../../user/modules/kitty

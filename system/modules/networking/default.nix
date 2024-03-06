@@ -7,7 +7,8 @@
 # Firewall
   networking.firewall = {
     enable = true;
-    allowedTCPPorts = [ 22 443 ];
+    allowedTCPPorts = [ 22 443 8384 22000 ];
+    allowedUDPPorts = [ 22000 21027 ];
 #allowedUDPPorts = [ 53 ];
 
 # Port ranges
