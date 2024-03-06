@@ -11,17 +11,17 @@ for a NixOS system with home-manager user environments.
 1. [Overview](#overview)
 2. [Structure](#structure)
    - [2.1 flake.nix](#flakenix)
-   - [2.2 Profiles Directory](#profiles-directory)
-   - [2.3 System Directory](#system-directory)
-   - [2.4 User Directory](#user-directory)
+   - [2.2 Profiles Directory](#structure)
+   - [2.3 System Directory](#structure)
+   - [2.4 User Directory](#structure)
 3. [Usage](#usage)
-   - [3.1 Building the System](#building-the-system)
-   - [3.2 Managing Home Manager](#managing-home-manager)
+   - [3.1 Building the System](#usage)
+   - [3.2 Managing Home Manager](#usage)
 4. [Modules](#modules)
-   - [4.1 Audio](#audio)
-   - [4.2 Display](#display)
-   - [4.3 Networking](#networking)
-   - [4.4 User Environments](#user-environments)
+   - [4.1 Audio](#modules)
+   - [4.2 Display](#modules)
+   - [4.3 Networking](#modules)
+   - [4.4 User Environments](#modules)
 5. [User Configuration](#user-configuration)
 6. [Contributing](#contributing)
 7. [License](#license)
@@ -32,7 +32,7 @@ for a NixOS system with home-manager user environments.
 The flake is organized into several directories, each serving a specific purpose:
 
 - `flake.nix`: The entry point for the flake, including definitions of inputs and outputs.
-- `./profiles/`: Contains the configurations for each system including `home.nix`, `configuration.nix`, and `hardware-configuration.nix`.
+- `./profiles/`: Contains the configurations for each system essentially a different machine including `home.nix`, `configuration.nix`, and `hardware-configuration.nix`.
 - `./system/`: Contains system-level modules like `bluetooth`, `networking`, `pipewire`, `virtualization`, etc.
 - `./user/`: Contains user-level configurations and modules such as `gnome`, `tmux`, `neovim`, and more.
 
