@@ -6,6 +6,27 @@ This repository contains my NixOS flake configuration designed for use with
 `home-manager`. It aims to provide a reproducible, modular and declarative setup
 for a NixOS system with home-manager user environments.
 
+## Table of Contents
+
+1. [Overview](#overview)
+2. [Structure](#structure)
+   - [2.1 flake.nix](#flakenix)
+   - [2.2 Profiles Directory](#profiles-directory)
+   - [2.3 System Directory](#system-directory)
+   - [2.4 User Directory](#user-directory)
+3. [Usage](#usage)
+   - [3.1 Building the System](#building-the-system)
+   - [3.2 Managing Home Manager](#managing-home-manager)
+4. [Modules](#modules)
+   - [4.1 Audio](#audio)
+   - [4.2 Display](#display)
+   - [4.3 Networking](#networking)
+   - [4.4 User Environments](#user-environments)
+5. [User Configuration](#user-configuration)
+6. [Contributing](#contributing)
+7. [License](#license)
+
+
 ## Structure
 
 The flake is organized into several directories, each serving a specific purpose:
