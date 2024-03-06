@@ -10,7 +10,7 @@ for a NixOS system with home-manager user environments.
 
 1. [Overview](#overview)
 2. [Structure](#structure)
-   - [2.1 flake.nix](#flakenix)
+   - [2.1 flake.nix](#structure)
    - [2.2 Profiles Directory](#structure)
    - [2.3 System Directory](#structure)
    - [2.4 User Directory](#structure)
