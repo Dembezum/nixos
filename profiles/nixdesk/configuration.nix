@@ -10,21 +10,12 @@
       ../../system/modules/X11
       ../../system/modules/bluetooth
       ../../system/modules/pipewire
-#      ../../system/modules/virtualization
-# --- USER CONFIGURATION ---
-#      ../../user/modules/tmux
-#      ../../user/modules/kitty
-#      ../../user/modules/neovim
-#      ../../user/modules/shells
-#   ../../../user/modules/hyprland
-#    ../../../user/modules/normie
-#   ../../../user/modules/gnome
-#   ../../../user/modules/kde
-# ../../../user/modules/gtk
+      ../../system/modules/virtualization
+#      ../../system/modules/syncthing
   ];
 
 # Printer
-#  services.printing.enable = true;
+  services.printing.enable = true;
 
 # Nix options.
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -37,11 +28,11 @@
   users.users.${userSettings.username} = {
     isNormalUser = true;
     description = userSettings.name;
-    extraGroups = [ "video" "networkmanager" "wheel" ];
+    extraGroups = ["libvirt" "video" "networkmanager" "wheel" ];
     uid = 1000;
   };
   programs.hyprland.enable = true;
-hardware.opengl.enable = true;
+  hardware.opengl.enable = true;
 
 #  xdg.portal = {
 #    enable = true;

@@ -1,13 +1,16 @@
-{ systemSettings, ... }:
+{ userSettings, ... }:
 
 #  -- SYNCTHING --
 {
 services = {
   syncthing = {
     enable = true;
-    user = systemSettings.username;
-    dataDir = "/home/${systemSettings.username}/Sync";
-    configDir = "/home/${systemSettings.username}/.config/syncthing";
+    user = userSettings.username;
+    relay = {
+        enable = false;
+      };
+    dataDir = "/home/${userSettings.username}/Sync";
+    configDir = "/home/${userSettings.username}/.config/syncthing";
 #    overrideDevices = true;     # overrides any devices added or deleted through the WebUI
     overrideFolders = true;     # overrides any folders added or deleted through the WebUI
     settings = {
@@ -17,7 +20,7 @@ services = {
 #      };
       folders = {
         "Sync" = {         # Name of folder in Syncthing, also the folder ID
-          path = "/home/${systemSettings.username}/Sync";    # Which folder to add to Syncthing
+          path = "/home/${userSettings.username}/Sync";    # Which folder to add to Syncthing
           #devices = [ "device1" "device2" ];      # Which devices to share the folder with
         };
       };

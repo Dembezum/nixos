@@ -1,4 +1,4 @@
-{ pkgs, inputs, userSettings, ... }:
+{ systemSettings, userSettings, ... }:
 
 {
   imports = [
@@ -52,6 +52,7 @@ hardware.opengl.enable = true;
 #    ];
 #  };
 
-  system.stateVersion = "23.11";
+system.stateVersion = systemSettings.systemstate;
+
 }
 

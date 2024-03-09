@@ -28,8 +28,7 @@
     };
   };
 
-  home.stateVersion = "23.11";
-
+  home.stateVersion = userSettings.homestate;
 
 # -- DEFAULT PACKAGES --
   home.packages = with pkgs; [

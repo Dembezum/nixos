@@ -15,6 +15,7 @@
       system = "x86_64-linux";
       hostname = "nixtop";
       profile = "nixtop";
+      systemstate = "23.11";
     };
 
 # --- USER CONFIGURATION ---
@@ -24,6 +25,7 @@
     editor = "nvim";
     term ="kitty";
     browser = "firefox";
+    homestate = "23.11";
   };
   pkgs = nixpkgs.legacyPackages.${systemSettings.system};
 

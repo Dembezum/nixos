@@ -31,7 +31,6 @@
   home.stateVersion = userSettings.homestate;
 
 
-
 # -- DEFAULT PACKAGES --
   home.packages = with pkgs; [
     firefox
