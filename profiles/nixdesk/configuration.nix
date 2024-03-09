@@ -4,13 +4,14 @@
   imports = [
 # --- SYSTEM CONFIGURATION ---
 #       ./home.nix
-       ./hardware-configuration.nix
-      ../../universal.nix
-      ../../system/modules/networking
+    ../../universal.nix
       ../../system/modules/X11
+      ../../system/modules/nvidia
+      ../../system/modules/networking
       ../../system/modules/bluetooth
       ../../system/modules/pipewire
       ../../system/modules/virtualization
+      ./hardware-configuration.nix
 #      ../../system/modules/syncthing
   ];
 
@@ -31,7 +32,8 @@
     extraGroups = ["libvirt" "video" "networkmanager" "wheel" ];
     uid = 1000;
   };
-  programs.hyprland.enable = true;
+
+  #programs.hyprland.enable = true;
   hardware.opengl.enable = true;
 
 #  xdg.portal = {
