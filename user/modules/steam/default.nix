@@ -12,7 +12,6 @@
 
 # Packages to be installed
 environment.systemPackages = with pkgs; [
-  steam-run
   glxinfo
   bumblebee
   steam
