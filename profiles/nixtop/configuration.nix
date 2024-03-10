@@ -8,6 +8,7 @@
       ../../universal.nix
       ../../system/modules/networking
       ../../system/modules/X11
+      ../../system/modules/ssh
       ../../system/modules/bluetooth
       ../../system/modules/pipewire
       ../../system/modules/virtualization
