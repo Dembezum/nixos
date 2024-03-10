@@ -2,29 +2,36 @@
 
   environment.systemPackages = with pkgs; [
 # Networking tools
-    fd
       wget
-      git
       dnsutils
       nmap
       socat
       screen
       tcpdump
-      sshfs-fuse
 
 # System utilities
+      inxi
       lsb-release
       neofetch
-      ncdu
       tree
       which
       pciutils
       usbutils
       lm_sensors
-      xclip
+      git
+
+# QOL
       fzf
+      xclip
       eza
       bat
+      fd
+
+# File systems
+      ntfs3g
+      exfat
+      exfatprogs
+      sshfs-fuse
 
 # Process management
       ripgrep
@@ -33,11 +40,12 @@
       btop
       parted
       fuse
-      gptfdisk
 
 # Disk management
       sdparm
       hdparm
+      gptfdisk
+      ncdu
 
 # Archive management
       gnutar
@@ -50,6 +58,7 @@
 
 # Text manipulation / editing
       vim
+      shellcheck
 
 # System recovery and management
       efibootmgr # EFI boot manager
