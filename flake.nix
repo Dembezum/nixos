@@ -92,9 +92,9 @@
           echo -e "\033[1;36m[Available Memory:\033[0m $(free -h | awk '/Mem/ {print $7}')"
           echo -e "\033[1;36m[CPU Usage:\033[0m $(top -bn1 | awk '/%Cpu/ {printf("%.2f%", $2 + $4)}')"
           echo ""
-        export X11INC=${pkgs.xorg.libX11.dev}/include
-        export X11LIB=${pkgs.xorg.libX11.out}/lib
-        '';
+          export X11INC=${pkgs.xorg.libX11.dev}/include
+          export X11LIB=${pkgs.xorg.libX11.out}/lib
+          '';
       };
 
   };
