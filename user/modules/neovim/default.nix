@@ -7,17 +7,12 @@
 # Ensure desired packages are available in the user environment.
   home.packages = with pkgs; [
     lua-language-server
-      rustup
+      #rustup
       neovim
       nodejs_21
-      ripgrep
       lua-language-server 
       neovim
-      ripgrep
-      nixd 
-      gopls 
-      clang-tools
-      zls
+      #nixd 
   ];
 }
 

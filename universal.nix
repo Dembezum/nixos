@@ -28,9 +28,9 @@
       fd
 
 # File systems
-      ntfs3g
-      exfat
-      exfatprogs
+#      ntfs3g
+#      exfat
+#      exfatprogs
       sshfs-fuse
 
 # Process management

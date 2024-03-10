@@ -60,10 +60,10 @@
       pkgs.mkShell
       {
         nativeBuildInputs = with pkgs; [
-          stdenv
-            nixd
-            nil
-            rnix-lsp
+          #stdenv
+           # nixd
+           # nil
+           # rnix-lsp
             neovim
             binutils
             clang

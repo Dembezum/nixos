@@ -12,7 +12,7 @@
       ../../system/modules/pipewire
       ../../system/modules/virtualization
 #      ../../system/modules/bluetooth
-##      ../../system/modules/syncthing
+#      ../../system/modules/syncthing
 # --- USER CONFIGURATION ---
 #      ../../user/modules/steam
 #      ../../user/modules/tmux
@@ -56,4 +56,3 @@
 
 system.stateVersion = systemSettings.systemstate;
 }
-
