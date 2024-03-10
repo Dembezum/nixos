@@ -13,6 +13,7 @@
       ../../system/modules/virtualization
       ../../system/modules/syncthing
 # --- USER CONFIGURATION ---
+      ../../user/modules/steam
 #      ../../user/modules/tmux
 #      ../../user/modules/kitty
 #      ../../user/modules/neovim
