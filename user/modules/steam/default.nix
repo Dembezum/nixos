@@ -13,7 +13,7 @@
 # Packages to be installed
 environment.systemPackages = with pkgs; [
   #glxinfo
-  bumblebee
+  #bumblebee
   steam
   ];
 }
