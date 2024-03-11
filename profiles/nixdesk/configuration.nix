@@ -10,7 +10,9 @@
       ../../system/modules/networking
       ../../system/modules/bluetooth
       ../../system/modules/pipewire
+      ../../system/modules/ssh
       ../../system/modules/virtualization
+      ../../user/modules/steam
       ./hardware-configuration.nix
 #      ../../system/modules/syncthing
   ];
@@ -29,7 +31,7 @@
   users.users.${userSettings.username} = {
     isNormalUser = true;
     description = userSettings.name;
-    extraGroups = ["libvirt" "video" "networkmanager" "wheel" ];
+    extraGroups = [ "libvirt" "video" "networkmanager" "wheel" ];
     uid = 1000;
   };
 

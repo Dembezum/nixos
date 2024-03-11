@@ -21,6 +21,7 @@
 
   services.xserver.xkb.layout = "dk"; 
   services.xserver.videoDrivers = [ "displaylink" "modesetting" ];
+#  services.xserver.videoDrivers = [ "modesetting" ];
 
 # Touchpad support
 #services.xserver.libinput =  {
