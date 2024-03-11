@@ -20,6 +20,7 @@
 # Printer
   services.printing.enable = true;
 
+environment.localBinInPath = true;
 # Nix options.
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs.config.allowUnfree = true;
