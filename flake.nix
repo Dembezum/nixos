@@ -37,6 +37,7 @@
     homeConfigurations = {
       user = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
+# This is a module where the user's home-manager configuration is defined
         modules = [ profiles/${systemSettings.profile}/home.nix ];
         extraSpecialArgs = {
           inherit systemSettings;
@@ -47,6 +48,7 @@
     nixosConfigurations = {
       system = lib.nixosSystem {
         system = systemSettings.system;
+# This is a module where the system's nixos configuration is defined
         modules = [ profiles/${systemSettings.profile}/configuration.nix];
         specialArgs = {
           inherit systemSettings;

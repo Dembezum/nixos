@@ -5,7 +5,7 @@
     enable = true;
 
     shellAliases = {
-      nixtop = "cd ~/Git/flakes/nixos && el";
+      flake = "cd ~/Git/flakes/nixos && el";
       net = "cd ~/Projects/Network/ && el";
       docs = "cd ~/Projects/h1/docs/ && el";
       ccna = "cd ~/Documents/Skole/It/CCNA/";
