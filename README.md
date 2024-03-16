@@ -1,4 +1,4 @@
-# My Numse
+# My NixOS Flake Configuration
 
 ## Overview
 
