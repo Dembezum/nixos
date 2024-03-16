@@ -1,14 +1,14 @@
-{ pkgs, systemSettings, userSettings, ... }:
+{ systemSettings, userSettings, ... }:
 
 {
   imports = [
 # --- SYSTEM CONFIGURATION ---
 #       ./home.nix
-       ./hardware-configuration.nix
       ../../universal.nix
-      ../../system/modules/networking
       ../../system/modules/X11
       ../../system/modules/ssh
+      ./hardware-configuration.nix
+      ../../system/modules/networking
       ../../system/modules/pipewire
       ../../system/modules/virtualization
 #      ../../system/modules/bluetooth
@@ -27,7 +27,7 @@
   ];
 
 # Printer
-  services.printing.enable = true;
+#  services.printing.enable = true;
 
 # Nix options.
   nix.settings.experimental-features = [ "nix-command" "flakes" ];

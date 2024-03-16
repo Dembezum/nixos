@@ -7,11 +7,11 @@
 
 # Gnome
 #  services.xserver.enable = true;
-#  services.xserver.displayManager.gdm.enable = true;
+  services.xserver.displayManager.gdm.enable = true;
 #  services.xserver.desktopManager.gnome.enable = true;
 
   services.xserver.enable = true;
-  services.xserver.displayManager.sddm.enable = true;
+#  services.xserver.displayManager.sddm.enable = true;
   services.xserver.desktopManager.plasma6.enable = true;
 
 #qt = {
@@ -20,7 +20,8 @@
 #  style = "adwaita";
 
   services.xserver.xkb.layout = "dk"; 
-  services.xserver.videoDrivers = [ "displaylink" "modesetting" ];
+  services.xserver.videoDrivers = [ "nvidia" "displaylink" "modesetting" ];
+  #services.xserver.videoDrivers = [ "displaylink" "modesetting" ];
 #  services.xserver.videoDrivers = [ "modesetting" ];
 
 # Touchpad support
