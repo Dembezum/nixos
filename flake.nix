@@ -83,6 +83,9 @@
             python3Packages.pip
             xorg.libX11
             xorg.libXft
+            xorg.libX11.dev
+            xorg.libXft
+            xorg.libXinerama
             ];
         shellHook = ''
           clear
