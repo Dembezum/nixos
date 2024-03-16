@@ -6,29 +6,11 @@
   ];
 
 # Gnome
-<<<<<<< HEAD
-<<<<<<< HEAD
-  services.xserver.enable = true;
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
-
-#  services.xserver.enable = true;
-#  services.xserver.displayManager.sddm.enable = true;
-#  services.xserver.desktopManager.plasma6.enable = true;
-=======
-#  services.xserver.enable = true;
-=======
->>>>>>> 620d2f9 (updates nvidia)
   services.xserver.displayManager.gdm.enable = true;
 #  services.xserver.desktopManager.gnome.enable = true;
 
 #  services.xserver.displayManager.sddm.enable = true;
-<<<<<<< HEAD
-  services.xserver.desktopManager.plasma6.enable = true;
->>>>>>> 2749093ea44b25ce574a423b3663d8940dd15418
-=======
   services.desktopManager.plasma6.enable = true;
->>>>>>> 620d2f9 (updates nvidia)
 
 #  qt = {
 #    enable = true;
