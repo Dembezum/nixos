@@ -46,6 +46,14 @@
 #  programs.hyprland.enable = true;
 #hardware.opengl.enable = true;
 
+  hardware.opengl = {
+    enable = true;
+    driSupport = true;
+    driSupport32Bit = true;
+  };
+
+
+
 #xdg.portal = {
 #  enable = true;
 #  extraPortals = [
