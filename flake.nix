@@ -13,17 +13,17 @@
 # --- SYSTEM CONFIGURATION ---
     systemSettings = {
       system = "x86_64-linux";
-      hostname = "nixtop";
-      profile = "nixtop";
+      hostname = "nixdesk";
+      profile = "nixdesk";
       systemstate = "23.11";
     };
 
 # --- USER CONFIGURATION ---
   userSettings = {
-    username = "nixtop";
-    name = "nixtop";
+    username = "nixdesk";
+    name = "nixdesk";
     editor = "nvim";
-    term ="kitty";
+    term ="st";
     browser = "firefox";
     homestate = "23.11";
   };
