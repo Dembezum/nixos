@@ -1,4 +1,4 @@
-{ systemSettings, userSettings, pkgs, ... }:
+{ systemSettings, userSettings, ... }:
 
 {
   imports = [
@@ -46,17 +46,6 @@ environment.localBinInPath = true;
 #      pkgs.xdg-desktop-portal-gtk
 #    ];
 #  };
-
-xdg = {
-    portal = {
-      enable = true;
-      gtkUsePortal = true;
-      extraPortals = with pkgs; [
-        xdg-desktop-portal-gtk
-        xdg-desktop-portal-wlr
-      ];
-    };
-  };
 
   system.stateVersion = systemSettings.systemstate;
 }
