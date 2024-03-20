@@ -8,6 +8,7 @@
       ../../user/modules/neovim
       ../../user/modules/shells
       ../../user/modules/minecraft
+      ../../user/modules/lutris
 #   ../../../user/modules/hyprland
 #    ../../../user/modules/normie
 #   ../../../user/modules/gnome
