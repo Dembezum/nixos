@@ -37,8 +37,6 @@
       firefox
       vesktop
       spotify
-#  rofi
-# Hyprland
 #      rofi-wayland
 #      libnotify
 #      dunst
