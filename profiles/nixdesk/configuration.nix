@@ -13,6 +13,7 @@
       ../../system/modules/ssh
       ../../system/modules/virtualization
       ../../user/modules/steam
+      ../../user/modules/lutris
       ./hardware-configuration.nix
 #      ../../system/modules/syncthing
   ];
