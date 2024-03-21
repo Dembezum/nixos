@@ -43,7 +43,7 @@
       setw -g mouse on
 
 # CheatSheat
-#bind-key i run-shell "tmux neww ~/Projects/Shell/fzfcht.sh -t"
+bind-key i run-shell "tmux neww ~/Projects/Shell/fzfcht.sh -t"
 
 # Copy to clipboard
       set-option -s set-clipboard on
