@@ -36,6 +36,7 @@
       firefox
       vesktop
       spotify
+      lazygit
 #      rofi-wayland
 #      libnotify
 #      dunst
