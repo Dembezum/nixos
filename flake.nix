@@ -1,7 +1,7 @@
 # Flake.nix
 
 {
-  description = "My first flake";
+  description = "Zum flake";
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
