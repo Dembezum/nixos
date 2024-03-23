@@ -1,4 +1,4 @@
-{ systemSettings, userSettings, ... }:
+{ lib, pkgs, systemSettings, userSettings, ... }:
 
 {
   imports = [
@@ -17,6 +17,9 @@
       ./hardware-configuration.nix
 #      ../../system/modules/syncthing
   ];
+
+#    programs.nix-ld.enable = true;
+    services.envfs.enable = true;
 
 # Printer
 #  services.printing.enable = true;
