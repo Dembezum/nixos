@@ -34,9 +34,9 @@
 
 # -- DEFAULT PACKAGES --
   home.packages = with pkgs; [
+#      gnome.gdm
     firefox
       vesktop
-      gnome.gdm
       spotify
       lazygit
 #  rofi
