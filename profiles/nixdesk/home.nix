@@ -34,7 +34,7 @@
 
 # -- DEFAULT PACKAGES --
   home.packages = with pkgs; [
-#      gnome.gdm
+      gnome.gdm
     firefox
       vesktop
       spotify
