@@ -38,6 +38,7 @@
       vesktop
       gnome.gdm
       spotify
+      lazygit
 #  rofi
 # Hyprland
 #      rofi-wayland
