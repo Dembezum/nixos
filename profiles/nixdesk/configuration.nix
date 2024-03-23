@@ -19,9 +19,11 @@
   ];
 
 # Printer
-  services.printing.enable = true;
+#  services.printing.enable = true;
 
+hardware.nvidia.forceFullCompositionPipeline = true;
 environment.localBinInPath = true;
+
 # Nix options.
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs.config.allowUnfree = true;
@@ -33,12 +35,11 @@ environment.localBinInPath = true;
   users.users.${userSettings.username} = {
     isNormalUser = true;
     description = userSettings.name;
-    extraGroups = [ "libvirt" "video" "networkmanager" "wheel" ];
+    extraGroups = [ "plugdev" "libvirt" "video" "networkmanager" "wheel" ];
     uid = 1000;
   };
 
   #programs.hyprland.enable = true;
-  hardware.opengl.enable = true;
 
 #  xdg.portal = {
 #    enable = true;
