@@ -3,17 +3,17 @@
 {
 # -- IMPORTS --
   imports = [
-    ../../user/modules/tmux
+      ../../user/modules/tmux
       ../../user/modules/kitty
       ../../user/modules/neovim
       ../../user/modules/shells
       ../../user/modules/minecraft
-#   ../../../user/modules/hyprland
-#    ../../../user/modules/normie
-#   ../../../user/modules/gnome
-#   ../../../user/modules/kde
-# ../../../user/modules/gtk
-#      ./home.nix
+#      ../../../user/modules/hyprland
+#      ../../../user/modules/normie
+#      ../../../user/modules/gnome
+#      ../../../user/modules/kde
+#      ../../../user/modules/gtk
+#       ./home.nix
   ];
 
 # -- USER SETTINGS --
@@ -35,7 +35,7 @@
 # -- DEFAULT PACKAGES --
   home.packages = with pkgs; [
       gnome.gdm
-    firefox
+      firefox
       vesktop
       spotify
       lazygit
