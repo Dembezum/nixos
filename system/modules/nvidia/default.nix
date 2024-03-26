@@ -21,7 +21,7 @@
 #  };
 #}
 
-{ pkgs, config, libs, ... }:
+{ pkgs, config, ... }:
 
 {
 
