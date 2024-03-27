@@ -35,6 +35,7 @@
     firefox
 #      vesktop
       gnome.gdm
+      lazygit
 #      spotify
 #  rofi
 # Hyprland

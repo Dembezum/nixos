@@ -1,5 +1,10 @@
 { systemSettings, ... }:
 {
+# Tailscale
+  services.tailscale = {
+      enable = true;
+    };
+
 #  NetworkManager
   networking.networkmanager.enable = true;
   networking.hostName = systemSettings.hostname;

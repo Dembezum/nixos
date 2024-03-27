@@ -55,6 +55,7 @@
       export HISTTIMEFORMAT="%F %T "
       export NIXPKGS_ALLOW_UNFREE=1
       shopt -s histappend
+      grep --color=always
       PS1='\[\e[0;34m\][\[\e[0;34m\]\u\[\e[0;34m\]] \[\e[0;35m\]/\[\e[0;35m\]\W\[\e[0m\]]\[\e[0;32m\]$(git branch 2>/dev/null | grep '"'"'^*'"'"' | colrm 1 2) \[\e[0;37m\]\$ \[\e[0m\]'
                 clear
           echo -e "\033[1;32m#####################\033[0m"

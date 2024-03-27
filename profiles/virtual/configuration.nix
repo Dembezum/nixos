@@ -40,8 +40,8 @@
     extraGroups = [ "video" "networkmanager" "wheel" ];
     uid = 1000;
   };
-  programs.hyprland.enable = true;
-hardware.opengl.enable = true;
+
+  hardware.opengl.enable = true;
 
 #  xdg.portal = {
 #    enable = true;
