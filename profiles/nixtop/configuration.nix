@@ -1,4 +1,4 @@
-{ systemSettings, userSettings, ... }:
+{ pkgs, systemSettings, userSettings, ... }:
 
 {
   imports = [
@@ -28,6 +28,10 @@
 
 # Printer
 #  services.printing.enable = true;
+
+  environment.systemPackages = with pkgs; [
+    gns3-gui
+  ];
 
 # Nix options.
   nix.settings.experimental-features = [ "nix-command" "flakes" ];

@@ -1,4 +1,4 @@
-{ lib, pkgs, systemSettings, userSettings, ... }:
+{ pkgs, systemSettings, userSettings, ... }:
 
 {
   imports = [
@@ -20,6 +20,10 @@
 
     programs.nix-ld.enable = true;
     services.envfs.enable = true;
+
+    environment.systemPackages = with pkgs; [ 
+      gns3-gui
+    ];
 
 # Printer
 #  services.printing.enable = true;
