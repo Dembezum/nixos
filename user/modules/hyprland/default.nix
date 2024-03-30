@@ -34,7 +34,6 @@
 wayland.windowManager.hyprland = {
     enable = true;
 #    systemdIntegration = true;
-#    nvidiaPatches = true;
     extraConfig = ''
 monitor=DP-3,3440x1440@100,3440x0,1
 monitor=DP-5,1920x1080@60,2360x0,1,transform,3

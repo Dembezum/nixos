@@ -5,10 +5,11 @@
   imports = [
       ../../user/modules/tmux
       ../../user/modules/kitty
+      ../../user/modules/foot
       ../../user/modules/neovim
       ../../user/modules/shells
       ../../user/modules/minecraft
-#      ../../../user/modules/hyprland
+      ../../user/modules/hyprland
 #      ../../../user/modules/normie
 #      ../../../user/modules/gnome
 #      ../../../user/modules/kde
@@ -34,7 +35,7 @@
 
 # -- DEFAULT PACKAGES --
   home.packages = with pkgs; [
-      gnome.gdm
+#      gnome.gdm
       firefox
       vesktop
       spotify
