@@ -65,9 +65,12 @@
       efivar # EFI variable manager
       ];
 
-#xdg.portal = { enable = true; extraPortals = [ 
-#pkgs.xdg-desktop-portal-gtk
-#]; };
+xdg.portal = { 
+  enable = true; 
+  extraPortals = [ 
+    pkgs.xdg-desktop-portal-gtk
+    pkgs.xdg-desktop-portal-wlr
+]; };
 
 # FHS
   programs.nix-ld.enable = true;

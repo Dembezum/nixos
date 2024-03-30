@@ -43,7 +43,7 @@ monitor=eDP-1,1920x1080@60,4240x1440,1
 # source = ~/.path/to/file.conf
 
 # Variables
-$terminal = st
+$terminal = foot
 $browser = firefox
 $fileManager = thunar
 $menu = rofi -show drun

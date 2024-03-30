@@ -39,16 +39,6 @@ environment.localBinInPath = true;
     uid = 1000;
   };
 
-  #programs.hyprland.enable = true;
-
-#  xdg.portal = {
-#    enable = true;
-#    extraPortals = [
-#      pkgs.xdg-desktop-portal
-#      pkgs.xdg-desktop-portal-gtk
-#    ];
-#  };
-
   system.stateVersion = systemSettings.systemstate;
 }
 
