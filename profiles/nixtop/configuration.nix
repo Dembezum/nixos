@@ -31,7 +31,7 @@
 
   environment.systemPackages = with pkgs; [
     gns3-gui
-    brightnesctl
+    brightnessctl
   ];
 
 # Nix options.
