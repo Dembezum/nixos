@@ -17,7 +17,7 @@
       swww
       wlroots
       wl-clipboard
-      wdisplay
+      wdisplays
       wlr-randr
       xdg-desktop-portal-wlr
       grimblast

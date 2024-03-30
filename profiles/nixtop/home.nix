@@ -8,7 +8,7 @@
       ../../user/modules/neovim
       ../../user/modules/shells
       ../../user/modules/minecraft
-#   ../../../user/modules/hyprland
+      ../../user/modules/hyprland
 #    ../../../user/modules/normie
 #   ../../../user/modules/gnome
 #   ../../../user/modules/kde

@@ -47,7 +47,7 @@
     extraGroups = ["libvirt" "video" "networkmanager" "wheel" ];
     uid = 1000;
   };
-#  programs.hyprland.enable = true;
+  programs.hyprland.enable = true;
 #hardware.opengl.enable = true;
 
   hardware.opengl = {
