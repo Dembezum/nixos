@@ -11,6 +11,7 @@
       ../../system/modules/networking
       ../../system/modules/pipewire
       ../../system/modules/virtualization
+      ../../user/modules/foot
 #      ../../system/modules/bluetooth
 #      ../../system/modules/syncthing
 # --- USER CONFIGURATION ---
