@@ -7,11 +7,11 @@
 # -- MAIN --
     main = {
       term = "xterm-256color";
-      font = "JetBrainsMonoNerdFont-Regular:size=12";
+      font = "JetBrainsMono Nerd Font:size=12";
       dpi-aware = "no";
     };
 # -- SCROLLBACK --
-    scroolback = {
+    scrollback = {
       lines = 10000;
     };
 # -- MOUSE --

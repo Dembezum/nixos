@@ -8,6 +8,7 @@
       ../../user/modules/shells
       ./hardware-configuration.nix
       ../../system/modules/networking
+      ../../system/modules/nix-settings
   ];
 
   environment.systemPackages = [ 
@@ -59,10 +60,6 @@
 # otherwise authenticate with tailscale
           ${tailscale}/bin/tailscale up -authkey tskey-auth-kN5XLi5odW11CNTRL-akQPxKDChxfRxgsu53qsxfbPDDBYTWYFW
           '';
-
-# Nix options.
-    nix.settings.experimental-features = [ "nix-command" "flakes" ];
-    nixpkgs.config.allowUnfree = true;
 
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;

@@ -10,6 +10,7 @@
       ../../system/modules/networking
       ../../system/modules/bluetooth
       ../../system/modules/pipewire
+      ../../system/modules/nix-settings
       ../../system/modules/ssh
       ../../system/modules/virtualization
       ../../user/modules/steam
@@ -18,9 +19,6 @@
 #      ../../system/modules/syncthing
   ];
 
-    programs.nix-ld.enable = true;
-    services.envfs.enable = true;
-
     environment.systemPackages = with pkgs; [ 
       gns3-gui
     ];
@@ -28,12 +26,7 @@
 # Printer
 #  services.printing.enable = true;
 
-hardware.nvidia.forceFullCompositionPipeline = true;
 environment.localBinInPath = true;
-
-# Nix options.
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  nixpkgs.config.allowUnfree = true;
 
 # Bootloader.
   boot.loader.systemd-boot.enable = true;

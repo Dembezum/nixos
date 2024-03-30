@@ -10,6 +10,7 @@
       ../../system/modules/X11
       ../../system/modules/bluetooth
       ../../system/modules/pipewire
+      ../../system/modules/nix-settings
 #      ../../system/modules/virtualization
 # --- USER CONFIGURATION ---
 #      ../../user/modules/tmux
@@ -22,13 +23,6 @@
 #   ../../../user/modules/kde
 # ../../../user/modules/gtk
   ];
-
-# Printer
-#  services.printing.enable = true;
-
-# Nix options.
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  nixpkgs.config.allowUnfree = true;
 
 # Bootloader.
   boot.loader.systemd-boot.enable = true;

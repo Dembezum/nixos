@@ -25,6 +25,8 @@
 
 {
 
+hardware.nvidia.forceFullCompositionPipeline = true;
+
 # Enable OpenGL
   hardware.opengl = {
     enable = true;

@@ -8,6 +8,7 @@
 
   home.packages = with pkgs; [
     gnome.gdm
+      hyprland
       rofi-wayland
       libnotify
       dunst
@@ -23,10 +24,10 @@
       playerctl
   ];
 
-  xdg.portal = {
-    enable = true;
-    wlr.enable = true;
-  };
+#  xdg.portal = {
+#    enable = true;
+#    wlr.enable = true;
+#  };
 
 wayland.windowManager.hyprland = {
     enable = true;
@@ -221,7 +222,8 @@ bind = $mainMod, h, resizeactive, -50 0
 bind = $mainMod, k, resizeactive, 0 -50
 bind = $mainMod, j, resizeactive, 0 50
 
-''
+'';
+};
 #  wayland.windowManager.hyprland = {
 #    enable = true;
 #    xwayland.enable = true;

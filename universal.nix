@@ -69,6 +69,10 @@
 #pkgs.xdg-desktop-portal-gtk
 #]; };
 
+# FHS
+  programs.nix-ld.enable = true;
+  services.envfs.enable = true;
+
 # Show chnages in the system configuration
   system.activationScripts.diff = {
     supportsDryActivation = true;
