@@ -11,7 +11,6 @@
       ../../system/modules/networking
       ../../system/modules/pipewire
       ../../system/modules/virtualization
-      ../../user/modules/foot
 #      ../../system/modules/bluetooth
 #      ../../system/modules/syncthing
 # --- USER CONFIGURATION ---
@@ -32,6 +31,7 @@
 
   environment.systemPackages = with pkgs; [
     gns3-gui
+    brightnesctl
   ];
 
 # Nix options.
@@ -48,7 +48,7 @@
     extraGroups = ["libvirt" "video" "networkmanager" "wheel" ];
     uid = 1000;
   };
-  programs.hyprland.enable = true;
+#  programs.hyprland.enable = true;
 #hardware.opengl.enable = true;
 
   hardware.opengl = {

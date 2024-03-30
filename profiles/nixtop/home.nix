@@ -5,15 +5,11 @@
   imports = [
       ../../user/modules/tmux
       ../../user/modules/kitty
-      ../../user/modules/neovim
+      ../../user/modules/foot
       ../../user/modules/shells
-      ../../user/modules/minecraft
+      ../../user/modules/neovim
       ../../user/modules/hyprland
-#    ../../../user/modules/normie
-#   ../../../user/modules/gnome
-#   ../../../user/modules/kde
-# ../../../user/modules/gtk
-#      ./home.nix
+      ../../user/modules/minecraft
   ];
 
 # -- USER SETTINGS --
@@ -37,18 +33,6 @@
       vesktop
       spotify
       lazygit
-#      rofi-wayland
-#      libnotify
-#      dunst
-#      drm_info
-#      waybar
-#      swww
-#      wlroots
-#      wl-clipboard
-#      wdisplays
-#      wlr-randr
-#      xdg-desktop-portal-wlr
-#      grimblast
   ];
 
 # -- VARIABLES --
