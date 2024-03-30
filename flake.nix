@@ -23,7 +23,7 @@
     username = "nixtop";
     name = "nixtop";
     editor = "nvim";
-    term ="st";
+    term ="foot";
     browser = "firefox";
     homestate = "23.11";
   };
