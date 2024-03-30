@@ -33,11 +33,15 @@
 
 wayland.windowManager.hyprland = {
     enable = true;
-#    systemdIntegration = true;
     extraConfig = ''
-monitor=DP-3,3440x1440@100,3440x0,1
-monitor=DP-5,1920x1080@60,2360x0,1,transform,3
-monitor=eDP-1,1920x1080@60,4240x1440,1
+monitor=Unknown-3,3440x1440@100,3440x0,1
+monitor=Unknown-4,1920x1080@60,2360x0,1,transform,3
+#monitor=eDP-1,1920x1080@60,4240x1440,1
+
+# -- WORKING CONFIG --
+#monitor=DP-3,3440x1440@100,3440x0,1
+#monitor=DP-5,1920x1080@60,2360x0,1,transform,3
+#monitor=eDP-1,1920x1080@60,4240x1440,1
 
 # exec-once = waybar & hyprpaper & firefox
 
