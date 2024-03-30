@@ -14,7 +14,7 @@
   ];
 
   environment.systemPackages = with pkgs; [
-    gns4-gui
+    gns3-gui
     brightnessctl
   ];
 
