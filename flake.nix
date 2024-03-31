@@ -28,15 +28,12 @@
     homestate = "23.11";
   };
   pkgs = nixpkgs.legacyPackages.${systemSettings.system};
-
-# Lib
   lib = nixpkgs.lib;
 
   in {
     homeConfigurations = {
       user = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-# This is a module where the user's home-manager configuration is defined
         modules = [ profiles/${systemSettings.profile}/home.nix ];
         extraSpecialArgs = {
           inherit systemSettings;
@@ -47,7 +44,6 @@
     nixosConfigurations = {
       system = lib.nixosSystem {
         system = systemSettings.system;
-# This is a module where the system's nixos configuration is defined
         modules = [ profiles/${systemSettings.profile}/configuration.nix];
         specialArgs = {
           inherit systemSettings;
@@ -62,10 +58,7 @@
       {
         nativeBuildInputs = with pkgs; [
           stdenv
-           # nixd
-           # nil
-           # rnix-lsp
-           cargo
+            cargo
             neovim
             binutils
             clang
