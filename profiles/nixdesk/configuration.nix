@@ -5,28 +5,23 @@
 # --- SYSTEM CONFIGURATION ---
 #       ./home.nix
     ../../universal.nix
-      ../../system/modules/X11
-      ../../system/modules/nvidia
-      ../../system/modules/networking
-      ../../system/modules/bluetooth
-      ../../system/modules/pipewire
-      ../../system/modules/nix-settings
       ../../system/modules/ssh
-      ../../system/modules/virtualization
+      ../../system/modules/X11
       ../../user/modules/steam
       ../../user/modules/lutris
+      ../../system/modules/nvidia
+      ../../system/modules/pipewire
+      ../../system/modules/networking
+      ../../system/modules/virtualization
       ./hardware-configuration.nix
 #      ../../system/modules/syncthing
+#      ../../system/modules/bluetooth
   ];
 
     environment.systemPackages = with pkgs; [ 
       gns3-gui
     ];
 
-# Printer
-#  services.printing.enable = true;
-
-environment.localBinInPath = true;
 
 # Bootloader.
   boot.loader.systemd-boot.enable = true;

@@ -10,6 +10,7 @@
       tcpdump
 
 # System utilities
+      kmon
       inxi
       lsb-release
       neofetch
@@ -65,9 +66,6 @@
       efivar # EFI variable manager
       ];
 
-# FHS
-  programs.nix-ld.enable = true;
-  services.envfs.enable = true;
 
 # Show chnages in the system configuration
   system.activationScripts.diff = {
@@ -77,6 +75,15 @@
       /run/current-system "$systemConfig"
       '';
   };
+
+# -- NIX OPTIONS --
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nixpkgs.config.allowUnfree = true;
+  environment.localBinInPath = true;
+
+# -- Nix Enviornment --
+  programs.nix-ld.enable = true;
+  services.envfs.enable = true;
 
   environment.sessionVariables = rec {
     XDG_CACHE_HOME  = "$HOME/.cache";

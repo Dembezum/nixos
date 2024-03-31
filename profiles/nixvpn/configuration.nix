@@ -5,16 +5,13 @@
   imports = [
       ../../universal.nix
       ../../user/modules/tmux
-      ../../user/modules/shells
       ./hardware-configuration.nix
       ../../system/modules/networking
       ../../system/modules/ssh
-      ../../system/modules/nix-settings
   ];
 
   environment.systemPackages = [ 
     pkgs.tailscale 
-    pkgs.neovim
   ];
 
   programs.neovim = {

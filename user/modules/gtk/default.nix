@@ -1,7 +1,7 @@
 { 
   pkgs, 
     custom ? {
-      font = "RobotoMono Nerd Font";
+      font = "JetBrainsMono Nerd Font";
       fontsize = "12";
       cursor = "Numix-Cursor";
     },
