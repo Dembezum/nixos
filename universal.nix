@@ -37,7 +37,6 @@
       btop
       parted
       fuse
-
 # Disk management
       sdparm
       hdparm
