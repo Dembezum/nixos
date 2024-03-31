@@ -1,8 +1,7 @@
 # Flake.nix
-
 {
   description = "My flake";
-
+  
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager/master";
@@ -27,27 +26,33 @@
     browser = "firefox";
     homestate = "23.11";
   };
-
   pkgs = nixpkgs.legacyPackages.${systemSettings.system};
+
+# Lib
   lib = nixpkgs.lib;
 
   in {
-    nixosConfigurations.${systemSettings.profile} = lib.nixosSystem {
-      system = systemSettings.system;
-      modules = [
-        ./profiles/${systemSettings.profile}/configuration.nix
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.${userSettings.username} = { pkgs, ... }: {
-              imports = [
-                ./profiles/${systemSettings.profile}/home.nix
-              ];
-            };
-          }
-      ];
-      specialArgs = { inherit systemSettings userSettings; };
+    homeConfigurations = {
+      user = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+# This is a module where the user's home-manager configuration is defined
+        modules = [ profiles/${systemSettings.profile}/home.nix ];
+        extraSpecialArgs = {
+          inherit systemSettings;
+          inherit userSettings;
+        };
+      };
+    };
+    nixosConfigurations = {
+      system = lib.nixosSystem {
+        system = systemSettings.system;
+# This is a module where the system's nixos configuration is defined
+        modules = [ profiles/${systemSettings.profile}/configuration.nix];
+        specialArgs = {
+          inherit systemSettings;
+          inherit userSettings;
+        };
+      };
     };
 
 # --- DEVELOPMENT ENVIRONMENTS ---
@@ -56,16 +61,20 @@
       {
         nativeBuildInputs = with pkgs; [
           stdenv
-            cargo
+           # nixd
+           # nil
+           # rnix-lsp
+           cargo
             neovim
             binutils
             clang
             glibc
-            nodejs
+            nodejs_21
             pkg-config
             fontconfig
             freetype
             gnumake
+            stdenv
             gcc
             gd
             ffmpeg
@@ -73,8 +82,9 @@
             xorg.libX11
             xorg.libXft
             xorg.libX11.dev
+            xorg.libXft
             xorg.libXinerama
-        ];
+            ];
         shellHook = ''
           clear
           echo -e "\033[1;32m###############################\033[0m"
