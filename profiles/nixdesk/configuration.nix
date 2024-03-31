@@ -22,17 +22,26 @@
       gns3-gui
     ];
 
-    xdg.portal = {
-      enable = true;
+    xdg.portal = { 
+      enable = true; 
       extraPortals = [
-        pkgs.xdg-desktop-portal
-          pkgs.xdg-desktop-portal-gtk
+        pkgs.xdg-desktop-portal-gtk 
           pkgs.xdg-desktop-portal-wlr
       ];
     };
 
-# Noisetorch
-programs.noisetorch.enable = true;
+    programs.hyprland.enable = true;
+
+    xdg.portal.config = {
+      common = {
+        default = [
+          "wlr"
+        ];
+        "org.freedesktop.impl.portal.Secret" = [
+          "gnome-keyring"
+    ];
+      };
+    };
 
 # Bootloader.
   boot.loader.systemd-boot.enable = true;
