@@ -11,10 +11,6 @@
       ../../user/modules/hyprland
       ../../user/modules/minecraft
       ../../user/modules/desktop
-#      ../../../user/modules/gnome
-#      ../../../user/modules/kde
-#      ../../../user/modules/gtk
-#       ./home.nix
   ];
 
 # -- USER SETTINGS --
@@ -29,9 +25,6 @@
       allowUnfreePredicate = (_: true);
     };
   };
-
-  home.stateVersion = userSettings.homestate;
-
 
 # -- DEFAULT PACKAGES --
   home.packages = with pkgs; [
@@ -53,4 +46,5 @@
     };
   };
 
+  home.stateVersion = userSettings.homestate;
 }
