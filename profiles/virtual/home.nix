@@ -1,18 +1,13 @@
 { config, pkgs, userSettings, ... }:
 
 {
-# -- IMPORTS --
   imports = [
     ../../user/modules/tmux
       ../../user/modules/kitty
       ../../user/modules/neovim
       ../../user/modules/shells
-#   ../../../user/modules/hyprland
-#    ../../../user/modules/normie
-#   ../../../user/modules/gnome
-#   ../../../user/modules/kde
-# ../../../user/modules/gtk
-#      ./home.nix
+      ../../user/modules/desktop
+   ../../../user/modules/gnome
   ];
 
 # -- USER SETTINGS --
@@ -28,50 +23,12 @@
     };
   };
 
-  home.stateVersion = userSettings.homestate;
-
 # -- DEFAULT PACKAGES --
   home.packages = with pkgs; [
     firefox
-#      vesktop
       gnome.gdm
       lazygit
-#      spotify
-#  rofi
-# Hyprland
-#      rofi-wayland
-#      libnotify
-#      dunst
-#      drm_info
-#      waybar
-#      swww
-#      wlroots
-#      wl-clipboard
-#      wdisplays
-#      wlr-randr
-#      xdg-desktop-portal-wlr
-#      grimblast
   ];
-
-
-#  wayland.windowManager.hyprland = {
-#    enable = true;
-#    xwayland.enable = true;
-#    settings = {
-#      "$mod" = "SUPER";
-#      bind =
-#        [
-#        "$mod SHIFT, B, exec, firefox"
-#        "$mod SHIFT, Q, killactive"
-#        "$mod X, exec, kitty"
-#        ", Print, exec, grimblast copy area"
-#        ];
-#    };
-#    extraConfig = ''
-#      env = WLR_DRM_DEVICES,/dev/dri/card1:/dev/dri/card0;
-#    '';
-#  };
-
 
 # -- VARIABLES --
   home.sessionVariables = {
@@ -87,5 +44,5 @@
       XDG_GAME_DIR = "${config.home.homeDirectory}/Games";
     };
   };
-
+  home.stateVersion = userSettings.homestate;
 }

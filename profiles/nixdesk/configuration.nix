@@ -20,8 +20,12 @@
 
     environment.systemPackages = with pkgs; [ 
       gns3-gui
+      polkit
+      polkit_gnome
     ];
 
+# Noisetorch
+programs.noisetorch.enable = true;
 
 # Bootloader.
   boot.loader.systemd-boot.enable = true;

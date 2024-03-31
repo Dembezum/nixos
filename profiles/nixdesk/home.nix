@@ -8,9 +8,9 @@
       ../../user/modules/foot
       ../../user/modules/neovim
       ../../user/modules/shells
-      ../../user/modules/minecraft
       ../../user/modules/hyprland
-#      ../../../user/modules/normie
+      ../../user/modules/minecraft
+      ../../user/modules/desktop
 #      ../../../user/modules/gnome
 #      ../../../user/modules/kde
 #      ../../../user/modules/gtk
@@ -35,46 +35,8 @@
 
 # -- DEFAULT PACKAGES --
   home.packages = with pkgs; [
-#      gnome.gdm
-      firefox
-      vesktop
-      spotify
       lazygit
-#  rofi
-# Hyprland
-#      rofi-wayland
-#      libnotify
-#      dunst
-#      drm_info
-#      waybar
-#      swww
-#      wlroots
-#      wl-clipboard
-#      wdisplays
-#      wlr-randr
-#      xdg-desktop-portal-wlr
-#      grimblast
   ];
-
-
-#  wayland.windowManager.hyprland = {
-#    enable = true;
-#    xwayland.enable = true;
-#    settings = {
-#      "$mod" = "SUPER";
-#      bind =
-#        [
-#        "$mod SHIFT, B, exec, firefox"
-#        "$mod SHIFT, Q, killactive"
-#        "$mod X, exec, kitty"
-#        ", Print, exec, grimblast copy area"
-#        ];
-#    };
-#    extraConfig = ''
-#      env = WLR_DRM_DEVICES,/dev/dri/card1:/dev/dri/card0;
-#    '';
-#  };
-
 
 # -- VARIABLES --
   home.sessionVariables = {

@@ -8,6 +8,7 @@
       ../../user/modules/foot
       ../../user/modules/shells
       ../../user/modules/neovim
+      ../../user/modules/desktop
       ../../user/modules/hyprland
       ../../user/modules/minecraft
   ];

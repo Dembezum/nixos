@@ -8,7 +8,6 @@
       socat
       screen
       tcpdump
-
 # System utilities
       kmon
       inxi
@@ -20,20 +19,17 @@
       usbutils
       lm_sensors
       git
-
 # QOL
       fzf
       xclip
       eza
       bat
       fd
-
 # File systems
       ntfs3g
       exfat
       exfatprogs
       sshfs-fuse
-
 # Process management
       ripgrep
       killall
@@ -47,25 +43,20 @@
       hdparm
       gptfdisk
       ncdu
-
 # Archive management
       gnutar
       unzip
       zip
-
 # Termianl Stuff
       kitty
       tmux
-
 # Text manipulation / editing
       vim
       shellcheck
-
 # System recovery and management
       efibootmgr # EFI boot manager
       efivar # EFI variable manager
       ];
-
 
 # Show chnages in the system configuration
   system.activationScripts.diff = {

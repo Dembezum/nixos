@@ -14,13 +14,6 @@
     enable = true;
     allowedTCPPorts = [ 22 443 8384 22000 ];
     allowedUDPPorts = [ 22000 21027 ];
-#allowedUDPPorts = [ 53 ];
-
-# Port ranges
-#      networking.firewall.allowedTCPPortRanges = [
-#  { from = 4000; to = 4007; }
-#  { from = 8000; to = 8010; }
-#];
 
   };
 
@@ -31,20 +24,5 @@
 #    networking.defaultGateway = "192.168.1.1";
 #    networking.nameservers = [ "1.1.1.1" ];
 #}];
-
-# Wireless
-#  networking.wireless.networks = {
-#  echelon = {                # SSID with no spaces or special characters
-#    psk = "abcdefgh";
-#  };
-#  "echelon's AP" = {         # SSID with spaces and/or special characters
-#    psk = "ijklmnop";
-#  };
-#  echelon = {                # Hidden SSID
-#    hidden = true;
-#    psk = "qrstuvwx";
-#  };
-#  free.wifi = {};            # Public wireless network
-#};
 
 }

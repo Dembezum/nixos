@@ -4,12 +4,12 @@
   imports = [
 # --- SYSTEM CONFIGURATION ---
 #       ./home.nix
-       ./hardware-configuration.nix
       ../../universal.nix
-      ../../system/modules/networking
       ../../system/modules/X11
-      ../../system/modules/bluetooth
+      ./hardware-configuration.nix
       ../../system/modules/pipewire
+      ../../system/modules/bluetooth
+      ../../system/modules/networking
 #      ../../system/modules/virtualization
 # --- USER CONFIGURATION ---
 #      ../../user/modules/tmux
