@@ -6,7 +6,7 @@
 
 # Kitty configuration
   programs.kitty.enable = true;
-  programs.kitty.font.name = "JetBrainsMono Nerd Font Mono";
+  programs.kitty.font.name = "JetBrainsMono NF Regular";
   programs.kitty.theme = "Kurayami";
 
 # Adjusting keybindings to include font size changes
