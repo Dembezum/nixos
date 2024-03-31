@@ -27,29 +27,27 @@
     browser = "firefox";
     homestate = "23.11";
   };
+
   pkgs = nixpkgs.legacyPackages.${systemSettings.system};
   lib = nixpkgs.lib;
 
   in {
-    homeConfigurations = {
-      user = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-        modules = [ profiles/${systemSettings.profile}/home.nix ];
-        extraSpecialArgs = {
-          inherit systemSettings;
-          inherit userSettings;
-        };
-      };
-    };
-    nixosConfigurations = {
-      system = lib.nixosSystem {
-        system = systemSettings.system;
-        modules = [ profiles/${systemSettings.profile}/configuration.nix];
-        specialArgs = {
-          inherit systemSettings;
-          inherit userSettings;
-        };
-      };
+    nixosConfigurations.${systemSettings.profile} = lib.nixosSystem {
+      system = systemSettings.system;
+      modules = [
+        ./profiles/${systemSettings.profile}/configuration.nix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.${userSettings.username} = { pkgs, ... }: {
+              imports = [
+                ./profiles/${systemSettings.profile}/home.nix
+              ];
+            };
+          }
+      ];
+      specialArgs = { inherit systemSettings userSettings; };
     };
 
 # --- DEVELOPMENT ENVIRONMENTS ---
@@ -63,12 +61,11 @@
             binutils
             clang
             glibc
-            nodejs_21
+            nodejs
             pkg-config
             fontconfig
             freetype
             gnumake
-            stdenv
             gcc
             gd
             ffmpeg
@@ -76,9 +73,8 @@
             xorg.libX11
             xorg.libXft
             xorg.libX11.dev
-            xorg.libXft
             xorg.libXinerama
-            ];
+        ];
         shellHook = ''
           clear
           echo -e "\033[1;32m###############################\033[0m"
