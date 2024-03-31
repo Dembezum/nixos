@@ -8,6 +8,7 @@
       ../../user/modules/shells
       ./hardware-configuration.nix
       ../../system/modules/networking
+      ../../system/modules/ssh
       ../../system/modules/nix-settings
   ];
 
