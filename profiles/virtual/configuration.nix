@@ -42,7 +42,7 @@
 #      pkgs.xdg-desktop-portal
 #      pkgs.xdg-desktop-portal-gtk
 #    ];
-#  };
+#  };xdg
 
   system.stateVersion = systemSettings.systemstate;
 }

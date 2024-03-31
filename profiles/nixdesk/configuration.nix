@@ -20,9 +20,16 @@
 
     environment.systemPackages = with pkgs; [ 
       gns3-gui
-      polkit
-      polkit_gnome
     ];
+
+    xdg.portal = {
+      enable = true;
+      extraPortals = [
+        pkgs.xdg-desktop-portal
+          pkgs.xdg-desktop-portal-gtk
+          pkgs.xdg-desktop-portal-wlr
+      ];
+    };
 
 # Noisetorch
 programs.noisetorch.enable = true;
