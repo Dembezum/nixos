@@ -5,7 +5,7 @@
   programs.tmux = {
     enable = true;
     prefix = "C-a";
-    terminal = "foot-256color";
+    terminal = "xterm-256color";
     extraConfig = ''
 # Reload hotkey
 #bind r source-file ~/.tmux.conf \; display-message "Config reloaded..."
@@ -25,7 +25,7 @@
       set-option -g detach-on-destroy off
 
 # TermType
-      set-option -sa terminal-overrides ",*256col*:Tc"
+#      set-option -sa terminal-overrides ",*256col*:Tc"
       set-option -sg escape-time 10
       set-option -g focus-events on
 
