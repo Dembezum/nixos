@@ -48,7 +48,7 @@ monitor=Unknown-4,1920x1080@60,2360x0,1,transform,3
 # source = ~/.path/to/file.conf
 
 # Variables
-$terminal = foot
+$terminal = foot -e tmux
 $browser = firefox
 $fileManager = thunar
 $menu = rofi -show drun
