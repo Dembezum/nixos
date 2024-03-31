@@ -60,21 +60,17 @@
       pkgs.mkShell
       {
         nativeBuildInputs = with pkgs; [
-          stdenv
-           # nixd
-           # nil
-           # rnix-lsp
-           cargo
+            stdenv
+            cargo
             neovim
             binutils
             clang
             glibc
-            nodejs_21
+            nodejs
             pkg-config
             fontconfig
             freetype
             gnumake
-            stdenv
             gcc
             gd
             ffmpeg
@@ -82,7 +78,6 @@
             xorg.libX11
             xorg.libXft
             xorg.libX11.dev
-            xorg.libXft
             xorg.libXinerama
             ];
         shellHook = ''
