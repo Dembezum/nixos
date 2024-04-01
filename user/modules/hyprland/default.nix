@@ -6,6 +6,7 @@
   imports = [
     inputs.nix-colors.homeManagerModules.default
      ./waybar.nix
+     ./wlogout
       ../foot
   ];
 
@@ -218,6 +219,10 @@
 #monitor=DP-3,3440x1440@100,3440x0,1
 #monitor=DP-5,1920x1080@60,2360x0,1,transform,3
 #monitor=eDP-1,1920x1080@60,4240x1440,1
+
+exec-once = swww-daemon &
+exec-once = waybar &
+exec-once = swww img ~/Pictures/wp.png
       '';
   };
 }
