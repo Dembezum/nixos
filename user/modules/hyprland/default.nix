@@ -154,6 +154,8 @@
           "$mainMod SHIFT, B, exec, firefox"
           "$mainMod SHIFT, C, exit,"
           "$mainMod, R, exec, pkill rofi || rofi -show drun -modi drun,filebrowser,run,window -theme ~/.config/rofi/launchers/type-2/style-2.rasi"
+          "$mainMod SHIFT, N, exec, swaync-client -t -sw"
+          "$mainMod, B, exec, killall -SIGUSR1 waybar"
 
           "$mainMod SHIFT, Q, killactive,"
           "$mainMod SHIFT, T, pseudo, # dwindle"
@@ -214,6 +216,9 @@
           ",XF86AudioLowerVolume, exec, pamixer -d 2"
           ",XF86AudioMute, exec, pamixer -t"
 
+# Brightness 
+          ",XF86MonBrightnessup,exec, brightnessctl set 10+"
+          ",XF86MonBrightnessDown,exec, brightnessctl set 10-"
 # Media keys
           ",XF86AudioPlay, exec, playerctl play-pause"
           ",XF86AudioNext, exec, playerctl next"
@@ -230,13 +235,14 @@
 
 # -- MONITOR CONFIGURATION --
     extraConfig = ''
-      monitor=Unknown-3,3440x1440@100,3440x0,1
-      monitor=Unknown-4,1920x1080@60,2360x0,1,transform,3
+#      monitor=Unknown-3,3440x1440@100,3440x0,1
+#      monitor=Unknown-4,1920x1080@60,2360x0,1,transform,3
 
 # -- WORKING CONFIG --
 #monitor=DP-3,3440x1440@100,3440x0,1
 #monitor=DP-5,1920x1080@60,2360x0,1,transform,3
 #monitor=eDP-1,1920x1080@60,4240x1440,1
+monitor=eDP-1,1920x1080@60,0x0,1
 
 
 # Autostart

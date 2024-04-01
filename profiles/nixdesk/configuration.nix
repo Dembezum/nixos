@@ -1,9 +1,9 @@
 { pkgs, systemSettings, userSettings, ... }:
+# Nixdesk
 
 {
   imports = [
 # --- SYSTEM CONFIGURATION ---
-#       ./home.nix
     ../../universal.nix
       ../../system/modules/ssh
       ../../system/modules/X11

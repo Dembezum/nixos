@@ -1,4 +1,5 @@
 { pkgs, systemSettings, userSettings, ... }:
+# Nixtop
 
 {
   imports = [
@@ -9,7 +10,6 @@
       ./hardware-configuration.nix
       ../../system/modules/networking
       ../../system/modules/pipewire
-      ../../system/modules/nix-settings
       ../../system/modules/virtualization
   ];
 
@@ -17,6 +17,26 @@
     gns3-gui
     brightnessctl
   ];
+
+  xdg.portal = { 
+    enable = true; 
+    extraPortals = [
+      pkgs.xdg-desktop-portal-gtk 
+        pkgs.xdg-desktop-portal-wlr
+    ];
+  };
+
+  programs.hyprland.enable = true;
+  xdg.portal.config = {
+    common = {
+      default = [
+        "wlr"
+      ];
+      "org.freedesktop.impl.portal.Secret" = [
+        "gnome-keyring"
+      ];
+    };
+  };
 
 # Bootloader.
   boot.loader.systemd-boot.enable = true;

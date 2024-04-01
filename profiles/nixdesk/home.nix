@@ -6,7 +6,6 @@
       ../../user/modules/gtk
       ../../user/modules/tmux
       ../../user/modules/kitty
-      ../../user/modules/foot
       ../../user/modules/neovim
       ../../user/modules/shells
       ../../user/modules/hyprland
