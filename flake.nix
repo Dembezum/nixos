@@ -6,7 +6,7 @@
     nixpkgs.url = "nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    nix-colors.url = "gitub:misterio77/nix-colors";
+    nix-colors.url = "github:misterio77/nix-colors";
 
   };
 
