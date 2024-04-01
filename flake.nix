@@ -35,10 +35,27 @@
   lib = nixpkgs.lib;
 
   in {
+  #  homeConfigurations = {
+  #    user = home-manager.lib.homeManagerConfiguration {
+  #      inherit pkgs;
+  #      modules = [ profiles/${systemSettings.profile}/home.nix ];
+  #      extraSpecialArgs = {
+  #        inherit systemSettings;
+  #        inherit userSettings;
+  #        inherit inputs;
+  #      };
+  #    };
+  #  };
+
     homeConfigurations = {
-      user = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
+      ${systemSettings.username} = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.${systemSettings.system};
         modules = [ profiles/${systemSettings.profile}/home.nix ];
+        home = {
+          username = systemSettings.username;
+          homeDirectory = "/home/${systemSettings.username}";
+          stateVersion = "systemstate";
+        };
         extraSpecialArgs = {
           inherit systemSettings;
           inherit userSettings;

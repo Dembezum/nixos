@@ -6,7 +6,6 @@
   imports = [
     inputs.nix-colors.homeManagerModules.default
      ./waybar.nix
-     ./swaylock
      ./swaync
      ./wlogout
      ../foot
