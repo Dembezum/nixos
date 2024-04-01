@@ -14,7 +14,7 @@
       waybar
       swww
 # -- DISPLAY --
-      gnome.gdm
+#      gnome.gdm
       drm_info
       wdisplays
       wlroots
@@ -57,6 +57,7 @@ $menu = rofi -show drun
 env = XCURSOR_SIZE,24
 env = QT_QPA_PLATFORMTHEME,qt5ct # change to qt6ct if you have that
 env = WLR_NO_HARDWARE_CURSORS,1
+
 
 # For all categories, see https://wiki.hyprland.org/Configuring/Variables/
 input {
@@ -162,6 +163,8 @@ misc {
 $mainMod = SUPER
 
 # Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
+
+bind = SUPER_SHIFT, S, exec, grimblast copy area
 bind = $mainMod, X, exec, $terminal
 bind = SUPER_SHIFT , B, exec, $browser
 bind = SUPER_SHIFT, Q, killactive, 
@@ -203,8 +206,8 @@ bind = $mainMod SHIFT, 9, movetoworkspace, 9
 bind = $mainMod SHIFT, 0, movetoworkspace, 10
 
 # Example special workspace (scratchpad)
-bind = $mainMod, S, togglespecialworkspace, magic
-bind = $mainMod SHIFT, S, movetoworkspace, special:magic
+#bind = $mainMod, ,, togglespecialworkspace, magic
+#bind = $mainMod, ., movetoworkspace, special:magic
 
 # Scroll through existing workspaces with mainMod + scroll
 bind = $mainMod, mouse_down, workspace, e+1

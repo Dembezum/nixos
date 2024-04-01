@@ -18,30 +18,30 @@
 #      ../../system/modules/bluetooth
   ];
 
-    environment.systemPackages = with pkgs; [ 
-      gns3-gui
-    ];
+  environment.systemPackages = with pkgs; [ 
+    gns3-gui
+  ];
 
-    xdg.portal = { 
-      enable = true; 
-      extraPortals = [
-        pkgs.xdg-desktop-portal-gtk 
-          pkgs.xdg-desktop-portal-wlr
+  xdg.portal = { 
+    enable = true; 
+    extraPortals = [
+      pkgs.xdg-desktop-portal-gtk 
+        pkgs.xdg-desktop-portal-wlr
+    ];
+  };
+
+  programs.hyprland.enable = true;
+
+  xdg.portal.config = {
+    common = {
+      default = [
+        "wlr"
+      ];
+      "org.freedesktop.impl.portal.Secret" = [
+        "gnome-keyring"
       ];
     };
-
-    programs.hyprland.enable = true;
-
-    xdg.portal.config = {
-      common = {
-        default = [
-          "wlr"
-        ];
-        "org.freedesktop.impl.portal.Secret" = [
-          "gnome-keyring"
-    ];
-      };
-    };
+  };
 
 # Bootloader.
   boot.loader.systemd-boot.enable = true;

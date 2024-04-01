@@ -38,6 +38,7 @@
       parted
       fuse
 # Disk management
+      gnome.gnome-disk-utility
       sdparm
       hdparm
       gptfdisk
@@ -57,6 +58,14 @@
       efivar # EFI variable manager
       ];
 
+# -- FONTS --
+  fonts.packages = with pkgs; [
+    (nerdfonts.override {fonts = [ "JetBrainsMono" ];})
+      font-awesome
+      material-design-icons
+  ];
+
+
 # Show chnages in the system configuration
   system.activationScripts.diff = {
     supportsDryActivation = true;
@@ -68,12 +77,19 @@
 
 # -- NIX OPTIONS --
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+# -- GARBAGE --
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 30d";
+  };
+
   nixpkgs.config.allowUnfree = true;
-  environment.localBinInPath = true;
 
 # -- Nix Enviornment --
   programs.nix-ld.enable = true;
   services.envfs.enable = true;
+  environment.localBinInPath = true;
 
   environment.sessionVariables = rec {
     XDG_CACHE_HOME  = "$HOME/.cache";
