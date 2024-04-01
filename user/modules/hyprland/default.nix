@@ -54,7 +54,7 @@
 # -- GENERAL --
       general = {
         gaps_in = 10;
-        gaps_out = 20;
+        gaps_out = 10;
         border_size = 2;
         "col.active_border" = "rgb(${base0E}) rgb(${base0E}) 45deg";
         "col.inactive_border" = "rgb(${base00})";
