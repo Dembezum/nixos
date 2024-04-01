@@ -5,6 +5,7 @@
 {
   imports = [
     inputs.nix-colors.homeManagerModules.default
+     ./waybar.nix
       ../foot
   ];
 
@@ -18,7 +19,6 @@
       rofi-wayland
       libnotify
       mako
-      waybar
       swww
 # -- DISPLAY --
       drm_info

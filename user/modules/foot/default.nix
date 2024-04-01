@@ -19,7 +19,6 @@
       hide-when-typing = "no";
     };
     colors = {
-
         # Catppuccin mocha
         alpha = "1";
         foreground = "cdd6f4"; # Text
