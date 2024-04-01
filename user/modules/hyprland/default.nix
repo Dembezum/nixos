@@ -153,13 +153,16 @@
           "$mainMod, E, exec, pcmanfm"
           "$mainMod, X, exec, foot -e tmux"
           "$mainMod SHIFT, B, exec, firefox"
-          "$mainMod SHIFT, Q, killactive,"
           "$mainMod SHIFT, C, exit,"
-          "$mainMod, F, togglefloating,"
-          "$mainMod, R, exec, rofi -show drun"
+          "$mainMod, R, exec, pkill rofi || rofi -show drun -modi drun,filebrowser,run,window -theme ~/.config/rofi/launchers/type-2/style-2.rasi"
+
+          "$mainMod SHIFT, Q, killactive,"
           "$mainMod SHIFT, T, pseudo, # dwindle"
-          "$mainMod, J, togglesplit,"
+          "$mainMod, F, togglefloating,"
+          "$mainMod SHIFT, J, togglesplit,"
           "$mainMod, M, fullscreen"
+          "$mainMod, Tab, cyclenext"
+          "$mainMod, Tab, bringactivetotop"
 
 # Focus
           "$mainMod, left, movefocus, l"
