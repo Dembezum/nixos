@@ -72,6 +72,5 @@
     };
   };
 
-
   system.stateVersion = systemSettings.systemstate;
 }
