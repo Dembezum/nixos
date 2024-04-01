@@ -1,20 +1,24 @@
-{ pkgs, ... }:
+{ inputs, config, pkgs, ... }:
 # modules/hyprland/default.nix
+# Fully configured Hyprland enviornment
 
 {
   imports = [
-    ../foot
+    inputs.nix-colors.homeManagerModules.default
+      ../foot
   ];
+
+# -- COLORSCHEME --
+colorScheme = inputs.nix-colors.colorSchemes.catppuccin-mocha;
 
   home.packages = with pkgs; [
       hyprland
       rofi-wayland
       libnotify
-      dunst
+      mako
       waybar
       swww
 # -- DISPLAY --
-#      gnome.gdm
       drm_info
       wdisplays
       wlroots
@@ -26,10 +30,15 @@
       pavucontrol
   ];
 
-#  xdg.portal = {
-#    enable = true;
-#    wlr.enable = true;
-#  };
+services.mako = {
+    enable = true;
+    backgroundColor = "#${config.colorScheme.palette.base00}";
+    borderColor = "#${config.colorScheme.colors.base0E}";
+    borderRadius = 5;
+    borderSize = 2;
+    textColor = "#${config.colorScheme.colors.base05}";
+    layer = "overlay";
+  };
 
 wayland.windowManager.hyprland = {
     enable = true;

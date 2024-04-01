@@ -1,9 +1,8 @@
-{ inputs, config, pkgs, userSettings, ... }:
+{ config, pkgs, userSettings, ... }:
 
 {
 # -- IMPORTS --
   imports = [
-    inputs.nix-colors.homeManagerModules.default
       ../../user/modules/tmux
       ../../user/modules/kitty
       ../../user/modules/foot
@@ -13,19 +12,6 @@
       ../../user/modules/minecraft
       ../../user/modules/desktop
   ];
-
-# -- COLORSCHEMES --
-colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-hard;
-
-services.mako = {
-    enable = true;
-    backgroundColor = "#${config.colorScheme.colors.base01}";
-    borderColor = "#${config.colorScheme.colors.base0E}";
-    borderRadius = 5;
-    borderSize = 2;
-    textColor = "#${config.colorScheme.colors.base04}";
-    layer = "overlay";
-  };
 
 # -- USER SETTINGS --
   home.username = userSettings.username;
@@ -52,13 +38,24 @@ services.mako = {
     BROWSER = userSettings.browser;
   };
 
-# -- XDG CONFIGURATION --
-  xdg.enable = true;
-  xdg.userDirs = {
-    extraConfig = {
-      XDG_GAME_DIR = "${config.home.homeDirectory}/Games";
-    };
+# -- XDG USER CONFIGURATION --
+xdg.enable = true;
+xdg.userDirs = {
+  enable = true;
+  createDirectories = true;
+  music = "${config.home.homeDirectory}/Media/Music";
+  videos = "${config.home.homeDirectory}/Media/Videos";
+  pictures = "${config.home.homeDirectory}/Media/Pictures";
+  templates = "${config.home.homeDirectory}/Templates";
+  download = "${config.home.homeDirectory}/Downloads";
+  documents = "${config.home.homeDirectory}/Documents";
+  desktop = null;
+  publicShare = null;
+  extraConfig = {
+    XDG_GAME_DIR = "${config.home.homeDirectory}/Games";
   };
+};
+
 
   home.stateVersion = userSettings.homestate;
 }
