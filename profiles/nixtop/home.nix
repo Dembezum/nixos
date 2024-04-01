@@ -31,6 +31,7 @@
 # -- DEFAULT PACKAGES --
   home.packages = with pkgs; [
       lazygit
+      jq
   ];
 
 # -- VARIABLES --

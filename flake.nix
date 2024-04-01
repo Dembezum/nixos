@@ -51,15 +51,15 @@
       ${systemSettings.username} = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.${systemSettings.system};
         modules = [ profiles/${systemSettings.profile}/home.nix ];
-        home = {
-          username = systemSettings.username;
-          homeDirectory = "/home/${systemSettings.username}";
-          stateVersion = "systemstate";
-        };
-        extraSpecialArgs = {
-          inherit systemSettings;
-          inherit userSettings;
-          inherit inputs;
+        home-manager.useGlobalPkgs = true;
+        home-manager.useUserPackages = true;
+        home-manager.users.${systemSettings.username} = {
+          home = "/home/${systemSettings.username}";
+          extraSpecialArgs = {
+            inherit systemSettings;
+            inherit userSettings;
+            inherit inputs;
+          };
         };
       };
     };
