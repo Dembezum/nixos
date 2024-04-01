@@ -20,6 +20,7 @@
       pcmanfm
       rofi-wayland
       libnotify
+      swaync
       mako
       swww
 # -- DISPLAY --
