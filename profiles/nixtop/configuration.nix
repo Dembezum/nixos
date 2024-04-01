@@ -4,7 +4,7 @@
 {
   imports = [
 # --- SYSTEM CONFIGURATION ---
-      ../../universal.nix
+    ../../universal.nix
       ../../system/modules/X11
       ../../system/modules/ssh
       ./hardware-configuration.nix
@@ -15,7 +15,7 @@
 
   environment.systemPackages = with pkgs; [
     gns3-gui
-    brightnessctl
+      brightnessctl
   ];
 
   xdg.portal = { 
@@ -27,6 +27,7 @@
   };
 
   programs.hyprland.enable = true;
+
   xdg.portal.config = {
     common = {
       default = [
@@ -55,5 +56,22 @@
     driSupport32Bit = true;
   };
 
-system.stateVersion = systemSettings.systemstate;
+  services.tlp = {
+    enable = true;
+    settings = {
+      CPU_SCALING_GOVERNOR_ON_AC = "performance";
+      CPU_SCALING_GOVERNOR_ON_BAT = "schedutil";
+
+      CPU_ENERGY_PERF_POLICY_ON_BAT = "power";
+      CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
+
+      CPU_MIN_PERF_ON_AC = 0;
+      CPU_MAX_PERF_ON_AC = 100;
+      CPU_MIN_PERF_ON_BAT = 0;
+      CPU_MAX_PERF_ON_BAT = 80;
+    };
+  };
+
+
+  system.stateVersion = systemSettings.systemstate;
 }
