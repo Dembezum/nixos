@@ -1,13 +1,16 @@
 # Flake.nix
 {
-  description = "My flake";
+  description = "Zums flake";
   
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    nix-colors.url = "gitub:misterio77/nix-colors";
+
   };
-  outputs = { nixpkgs, home-manager, ... }:
+
+  outputs = { self, nixpkgs, home-manager, ... }@inputs:
     let 
 # --- SYSTEM CONFIGURATION ---
     systemSettings = {
@@ -40,6 +43,7 @@
         extraSpecialArgs = {
           inherit systemSettings;
           inherit userSettings;
+          inherit inputs;
         };
       };
     };
@@ -51,6 +55,7 @@
         specialArgs = {
           inherit systemSettings;
           inherit userSettings;
+          inherit inputs;
         };
       };
     };
