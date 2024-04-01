@@ -8,7 +8,8 @@
      ./waybar.nix
      ./swaync
      ./wlogout
-      ../foot
+     ../foot
+     ./rofi
   ];
 
 # -- COLORSCHEME --
@@ -20,10 +21,14 @@
       pcmanfm
       rofi-wayland
       libnotify
-      swaync
-      mako
+      swaynotificationcenter
+      networkmanagerapplet
+      swappy
       swww
 # -- DISPLAY --
+      wlsunset
+      slurp
+      light
       drm_info
       wdisplays
       wlroots
@@ -37,16 +42,16 @@
   ];
 
 # -- MAKO (Notifications) --
-  services.mako = {
-    enable = true;
-    backgroundColor = "#${config.colorScheme.palette.base00}";
-    borderColor = "#${config.colorScheme.palette.base0E}";
-    textColor = "#${config.colorScheme.palette.base05}";
-    defaultTimeout = 5000;
-    borderRadius = 5;
-    borderSize = 2;
-    layer = "overlay";
-  };
+#  services.mako = {
+#    enable = true;
+#    backgroundColor = "#${config.colorScheme.palette.base00}";
+#    borderColor = "#${config.colorScheme.palette.base0E}";
+#    textColor = "#${config.colorScheme.palette.base05}";
+#    defaultTimeout = 5000;
+#    borderRadius = 5;
+#    borderSize = 2;
+#    layer = "overlay";
+#  };
 
 # -- HYPRLAND CONFIGURATION --
   wayland.windowManager.hyprland = {
@@ -85,7 +90,8 @@
 
 # -- GESTURES --
       gestures = {
-        workspace_swipe = "on";
+        workspace_swipe = true;
+        workspace_swipe_fingers = 3;
       };
 
 # -- DECORATION --
@@ -135,9 +141,10 @@
 
 # -- MISC --
       misc = {
-        disable_hyprland_logo = false;
+        disable_hyprland_logo = true;
         disable_splash_rendering = true;
         force_default_wallpaper = 1;
+        vrr = "on";
       };
 
 # -- KEYBINDS --
@@ -210,6 +217,14 @@
           ",XF86AudioNext, exec, playerctl next"
           ",XF86AudioPrev, exec, playerctl previous"
       ];
+      bindm = [
+
+# Mouse movements
+          "$mainMod, mouse:272, movewindow"
+          "$mainMod, mouse:273, resizewindow"
+          "$mainMod ALT, mouse:272, resizewindow"
+      ];
+
     };
 
 # -- MONITOR CONFIGURATION --
@@ -223,7 +238,10 @@
 #monitor=eDP-1,1920x1080@60,4240x1440,1
 
 
+# Autostart
+      exec-once = nm-applet --indicator
       exec-once = ~/.config/hypr/scripts/wallpaper.sh
+      exec-once = swaync &
       exec-once = waybar &
       '';
   };
