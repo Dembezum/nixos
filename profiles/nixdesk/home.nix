@@ -3,6 +3,7 @@
 {
 # -- IMPORTS --
   imports = [
+      ../../user/modules/gtk
       ../../user/modules/tmux
       ../../user/modules/kitty
       ../../user/modules/foot
