@@ -7,7 +7,7 @@
 # -- MAIN --
     main = {
       term = "xterm-256color";
-      font = "JetBrainsMono Nerd Font:size=12";
+      font = "JetBrainsMono Nerd Font:size=14";
       dpi-aware = "no";
     };
 # -- SCROLLBACK --
