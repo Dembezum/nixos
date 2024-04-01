@@ -6,6 +6,7 @@
   imports = [
     inputs.nix-colors.homeManagerModules.default
      ./waybar.nix
+     ./swaync
      ./wlogout
       ../foot
   ];
@@ -220,9 +221,9 @@
 #monitor=DP-5,1920x1080@60,2360x0,1,transform,3
 #monitor=eDP-1,1920x1080@60,4240x1440,1
 
-exec-once = swww-daemon &
-exec-once = waybar &
-exec-once = swww img ~/Pictures/wp.png
+
+      exec-once = ~/.config/hypr/scripts/wallpaper.sh
+      exec-once = waybar &
       '';
   };
 }
