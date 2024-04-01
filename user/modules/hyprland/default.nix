@@ -134,7 +134,6 @@
           natural_scroll = "no";
           disable_while_typing = false;
         };
-
         sensitivity = 0;
         accel_profile = "flat";
       };
@@ -220,14 +219,13 @@
           ",XF86AudioNext, exec, playerctl next"
           ",XF86AudioPrev, exec, playerctl previous"
       ];
-      bindm = [
 
 # Mouse movements
-          "$mainMod, mouse:272, movewindow"
+      bindm = [
+        "$mainMod, mouse:272, movewindow"
           "$mainMod, mouse:273, resizewindow"
           "$mainMod ALT, mouse:272, resizewindow"
       ];
-
     };
 
 # -- MONITOR CONFIGURATION --
