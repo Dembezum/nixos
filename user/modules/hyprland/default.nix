@@ -163,6 +163,8 @@
           "$mainMod SHIFT, J, togglesplit,"
           "$mainMod, M, fullscreen"
           "$mainMod, Tab, cyclenext"
+          "$mainMod SHIFT, Tab, cyclenext"
+          "$mainMod, Return, swapnext" 
           "$mainMod, Tab, bringactivetotop"
 
 # Focus
