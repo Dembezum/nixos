@@ -85,7 +85,7 @@
       dwindle = {
         pseudotile = "yes";
         preserve_split = "yes";
-        force_split = 2;
+        force_split = 1;
       };
 
 # -- GESTURES --
