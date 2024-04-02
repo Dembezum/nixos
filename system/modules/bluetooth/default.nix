@@ -11,7 +11,7 @@
     };
   };
 
-  #hardware.pulseaudio.extraConfig = ''
-  #  load-module module-switch-on-connect
-  #  '';
+  hardware.pulseaudio.extraConfig = ''
+    load-module module-switch-on-connect
+    '';
 }

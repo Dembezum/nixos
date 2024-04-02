@@ -7,6 +7,7 @@
     ../../universal.nix
       ../../system/modules/X11
       ../../system/modules/ssh
+      ../../system/modules/bluetooth
       ./hardware-configuration.nix
       ../../system/modules/networking
       ../../system/modules/pipewire
@@ -71,6 +72,5 @@
       CPU_MAX_PERF_ON_BAT = 80;
     };
   };
-
   system.stateVersion = systemSettings.systemstate;
 }

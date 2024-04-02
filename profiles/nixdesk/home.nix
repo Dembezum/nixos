@@ -1,9 +1,9 @@
 { config, pkgs, userSettings, ... }:
-
+# Nixdesk
 {
 # -- IMPORTS --
   imports = [
-      ../../user/modules/gtk
+    ../../user/modules/gtk
       ../../user/modules/tmux
       ../../user/modules/kitty
       ../../user/modules/neovim
@@ -28,7 +28,8 @@
 
 # -- DEFAULT PACKAGES --
   home.packages = with pkgs; [
-      lazygit
+    lazygit
+      jq
   ];
 
 # -- VARIABLES --
@@ -39,23 +40,21 @@
   };
 
 # -- XDG USER CONFIGURATION --
-xdg.enable = true;
-xdg.userDirs = {
-  enable = true;
-  createDirectories = true;
-  music = "${config.home.homeDirectory}/Media/Music";
-  videos = "${config.home.homeDirectory}/Media/Videos";
-  pictures = "${config.home.homeDirectory}/Media/Pictures";
-  templates = "${config.home.homeDirectory}/Templates";
-  download = "${config.home.homeDirectory}/Downloads";
-  documents = "${config.home.homeDirectory}/Documents";
-  desktop = null;
-  publicShare = null;
-  extraConfig = {
-    XDG_GAME_DIR = "${config.home.homeDirectory}/Games";
+  xdg.enable = true;
+  xdg.userDirs = {
+    enable = true;
+    createDirectories = true;
+    music = "${config.home.homeDirectory}/Media/Music";
+    videos = "${config.home.homeDirectory}/Media/Videos";
+    pictures = "${config.home.homeDirectory}/Media/Pictures";
+    templates = "${config.home.homeDirectory}/Templates";
+    download = "${config.home.homeDirectory}/Downloads";
+    documents = "${config.home.homeDirectory}/Documents";
+    desktop = null;
+    publicShare = null;
+    extraConfig = {
+      XDG_GAME_DIR = "${config.home.homeDirectory}/Games";
+    };
   };
-};
-
-
   home.stateVersion = userSettings.homestate;
 }

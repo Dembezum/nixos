@@ -53,7 +53,5 @@
     extraGroups = [ "plugdev" "libvirt" "video" "networkmanager" "wheel" ];
     uid = 1000;
   };
-
   system.stateVersion = systemSettings.systemstate;
 }
-

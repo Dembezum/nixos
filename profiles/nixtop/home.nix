@@ -1,16 +1,16 @@
 { config, pkgs, userSettings, ... }:
-
+# Nixtop
 {
 # -- IMPORTS --
   imports = [
-      ../../user/modules/gtk
+    ../../user/modules/gtk
       ../../user/modules/tmux
       ../../user/modules/kitty
-      ../../user/modules/shells
       ../../user/modules/neovim
-      ../../user/modules/desktop
+      ../../user/modules/shells
       ../../user/modules/hyprland
       ../../user/modules/minecraft
+      ../../user/modules/desktop
   ];
 
 # -- USER SETTINGS --
@@ -26,11 +26,9 @@
     };
   };
 
-  home.stateVersion = userSettings.homestate;
-
 # -- DEFAULT PACKAGES --
   home.packages = with pkgs; [
-      lazygit
+    lazygit
       jq
   ];
 
@@ -58,4 +56,5 @@
       XDG_GAME_DIR = "${config.home.homeDirectory}/Games";
     };
   };
+  home.stateVersion = userSettings.homestate;
 }
