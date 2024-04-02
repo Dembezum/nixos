@@ -77,7 +77,6 @@
 
 # -- NIX OPTIONS --
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-# -- GARBAGE --
   nix.gc = {
     automatic = true;
     dates = "weekly";

@@ -20,7 +20,14 @@
 
   environment.systemPackages = with pkgs; [ 
     gns3-gui
+    gnome.nautilus
   ];
+
+
+# -- File management --
+  services.gvfs.enable = true;
+  services.udisks2.enable = true;
+  services.devmon.enable = true;
 
   xdg.portal = { 
     enable = true; 
