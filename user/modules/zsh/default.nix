@@ -63,7 +63,7 @@
         git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
       }
       setopt PROMPT_SUBST
-      PROMPT='%B%F{cyan}[%f%F{green}%n%f%B%F{cyan}]%f%F{red} /%1~%f%F{blue}$(parse_git_branch)%f > '
+      PROMPT='%B%F{cyan}[%f%F{green}%n%f%B%F{cyan}]%f%F{red} /%1~%f%F{blue}$(parse_git_branch)%f%F{183} > '
 
 			if [[ "$TERM" == "dumb" ]]
 			then
