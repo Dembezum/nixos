@@ -1,15 +1,16 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   home.packages = with pkgs; [
-  zoxide
+    zoxide
   ];
-programs.zsh = {
+  programs.zsh = {
     enable = true;
     autocd = true;
     autosuggestion.enable = true;
     enableCompletion = true;
     syntaxHighlighting.enable = true;
+
     shellAliases = {
       lt        =  "eza -a --tree --level=2 --icons";
       flake     =  "cd ~/Git/flakes/nixos && el";
@@ -51,8 +52,25 @@ programs.zsh = {
       mem5      =  "ps -eo pid,comm,%cpu,%mem --sort=-%mem | head -n 5";
       lsablk    =  "lsblk --output name,type,fstype,size,fsavail,mountpoint";
       screenkey = "screenkey --position fixed --geometry $(slop -n -f '%g')";
-      sbash     = "source ~/.bashrc";
+      sbash     = "source ~/.zshrc";
 
+      initExtra = ''
+        parse_git_branch() {
+          git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+                                                              }
+      PROMPT='%B%F{183}%m%f%F{111}[%f%F{158}%~%f%F{111}]%f%F{111}$(parse_git_branch)%f %F{183}>%f%f%b '
+
+        setopt appendhistory
+        export PATH=$PATH:~/.local/bin
+        export HISTSIZE=10000
+        export HISTFILESIZE=10000
+        export HISTCONTROL=ignoredups
+        export HISTTIMEFORMAT="%F %T "
+        export NIXPKGS_ALLOW_UNFREE=1
+        shopt -s histappend
+        grep --color=always
+
+        '';
     };
 
 

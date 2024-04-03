@@ -4,6 +4,7 @@
 # -- IMPORTS --
   imports = [
     ../../user/modules/gtk
+      ../../user/modules/zsh
       ../../user/modules/tmux
       ../../user/modules/kitty
       ../../user/modules/neovim
@@ -13,13 +14,6 @@
       ../../user/modules/desktop
   ];
 
-# -- ZSH --
-programs.zsh = {
-  enable = true;
-  enableCompletion = true;
-  autosuggestion.enable = true;
-  syntaxHighlighting.enable = true;
-};
 
 # -- USER SETTINGS --
   home.username = userSettings.username;
