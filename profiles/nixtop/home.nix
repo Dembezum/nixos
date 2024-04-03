@@ -13,6 +13,16 @@
       ../../user/modules/desktop
   ];
 
+# -- ZSH --
+  programs.zsh = {
+    enable = true;
+    enableCompletion = true;
+    enableAutosuggestions = true;
+    syntaxHighlighting = true;
+    historySize = 10000;
+  };
+
+
 # -- USER SETTINGS --
   home.username = userSettings.username;
   home.homeDirectory = "/home/"+userSettings.username;
