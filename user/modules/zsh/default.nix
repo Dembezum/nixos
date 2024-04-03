@@ -1,9 +1,15 @@
 { ... }:
 
 {
-  programs.bash = {
+  home.packages = with pkgs; [
+  zoxide
+  ];
+programs.zsh = {
     enable = true;
-
+    autocd = true;
+    autosuggestion.enable = true;
+    enableCompletion = true;
+    syntaxHighlighting.enable = true;
     shellAliases = {
       lt        =  "eza -a --tree --level=2 --icons";
       flake     =  "cd ~/Git/flakes/nixos && el";
@@ -46,45 +52,9 @@
       lsablk    =  "lsblk --output name,type,fstype,size,fsavail,mountpoint";
       screenkey = "screenkey --position fixed --geometry $(slop -n -f '%g')";
       sbash     = "source ~/.bashrc";
+
     };
 
-    initExtra = ''
-      parse_git_branch() {
-        git branch 2> /dev/null | grep "^*" | colrm 1 2
-      }
 
-
-    PROMPT='%B%F{183}%n%f %F{111}|%f%F{158}%~%f %F{111}|%f$(parse_git_branch) %F{183}>%f%f%b '
-      setopt appendhistory
-      export PATH=$PATH:~/.local/bin
-      export HISTSIZE=10000
-      export HISTFILESIZE=10000
-      export HISTCONTROL=ignoredups
-      export HISTTIMEFORMAT="%F %T "
-      export NIXPKGS_ALLOW_UNFREE=1
-      grep --color=always
-                clear
-          echo -e "\033[1;32m#####################\033[0m"
-          echo -e "\033[1;32m#  NIX Enviornment  #\033[0m"
-          echo -e "\033[1;32m#####################\033[0m"
-          echo ""
-          echo -e "\033[1;36mNix:\033[0m $(lsb_release -s -d)"
-          echo -e "\033[1;36mLoad Average:\033[0m $(cut -d ' ' -f 1-3 /proc/loadavg)"
-          echo -e "\033[1;36mAvailable Memory:\033[0m $(free -h | awk '/Mem/ {print $7}')"
-          echo -e "\033[1;36mCPU Usage:\033[0m $(top -bn1 | awk '/%Cpu/ {printf("%.2f%", $2 + $4)}')"
-          echo ""
-
-          eval "$(zoxide init --cmd z zsh)"
-          function cd() {
-            if [ $# -eq 0 ]; then
-              z && eza --group-directories-first
-            else
-              z "$@" && eza --group-directories-first
-                fi
-          }
-
-      '';
   };
-
 }
-

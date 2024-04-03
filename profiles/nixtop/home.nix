@@ -14,13 +14,6 @@
   ];
 
 # -- ZSH --
-  programs.zsh = {
-    enable = true;
-    enableCompletion = true;
-    enableAutosuggestions = true;
-    syntaxHighlighting = true;
-    historySize = 10000;
-  };
 
 
 # -- USER SETTINGS --

@@ -13,6 +13,14 @@
       ../../user/modules/desktop
   ];
 
+# -- ZSH --
+programs.zsh = {
+  enable = true;
+  enableCompletion = true;
+  autosuggestion.enable = true;
+  syntaxHighlighting.enable = true;
+};
+
 # -- USER SETTINGS --
   home.username = userSettings.username;
   home.homeDirectory = "/home/"+userSettings.username;
