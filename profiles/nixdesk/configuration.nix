@@ -23,7 +23,6 @@
     gnome.nautilus
   ];
 
-  users.defaultUserShell = pkgs.zsh;
 
 # -- File management --
   services.gvfs.enable = true;
