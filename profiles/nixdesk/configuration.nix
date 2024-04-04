@@ -38,6 +38,8 @@
   };
 
   programs.hyprland.enable = true;
+  programs.zsh.enable = true;
+  services.xserver.displayManager.lightdm.enable = true;
 
   xdg.portal.config = {
     common = {
@@ -59,6 +61,7 @@
     description = userSettings.name;
     extraGroups = [ "plugdev" "libvirt" "video" "networkmanager" "wheel" ];
     uid = 1000;
+    shell = pkgs.zsh;
   };
   system.stateVersion = systemSettings.systemstate;
 }

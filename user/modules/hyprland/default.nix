@@ -75,11 +75,11 @@
         "XCURSOR_SIZE,24"
         "WLR_NO_HARDWARE_CURSORS,1"
 # NVIDIA
-        "QT_QPA_PLATFORM,wayland"
-        "LIBVA_DRIVER_NAME,nvidia"
-        "XDG_SESSION_TYPE,wayland"
-        "GBM_BACKEND,nvidia-drm"
-        "__GLX_VENDOR_LIBRARY_NAME,nvidia"
+       # "QT_QPA_PLATFORM,wayland"
+       # "LIBVA_DRIVER_NAME,nvidia"
+       # "XDG_SESSION_TYPE,wayland"
+       # "GBM_BACKEND,nvidia-drm"
+       # "__GLX_VENDOR_LIBRARY_NAME,nvidia"
 #        "__GL_VRR_ALLOWED,1"
 #        "WLR_DRM_NO_ATOMIC,1"
       ];
