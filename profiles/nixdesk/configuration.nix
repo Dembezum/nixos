@@ -39,7 +39,6 @@
 
   programs.hyprland.enable = true;
   programs.zsh.enable = true;
-  services.xserver.displayManager.lightdm.enable = true;
 
   xdg.portal.config = {
     common = {
