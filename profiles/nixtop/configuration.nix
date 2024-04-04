@@ -49,7 +49,9 @@
     description = userSettings.name;
     extraGroups = [ "plugdev" "libvirt" "video" "networkmanager" "wheel" ];
     uid = 1000;
+    shell = pkgs.zsh;
   };
+  programs.zsh.enable = true;
 
   hardware.opengl = {
     enable = true;

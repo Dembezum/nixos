@@ -21,7 +21,7 @@
       lua-language-server
     #    neovim
         lua-language-server 
-        neovim
+    #    neovim
     ];
 }
 
