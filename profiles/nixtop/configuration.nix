@@ -40,6 +40,14 @@
     };
   };
 
+# -- ZSH --
+  programs.zsh.enable = true;
+
+# -- HANDLE DEVICES --
+  services.gvfs.enable = true;
+  services.udisks2.enable = true;
+  services.devmon.enable = true;
+
 # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -51,7 +59,6 @@
     uid = 1000;
     shell = pkgs.zsh;
   };
-  programs.zsh.enable = true;
 
   hardware.opengl = {
     enable = true;

@@ -157,7 +157,7 @@
 # -- KEYBINDS --
       bind = [
         ",PRINT, exec, grimblast --freeze copy area"
-          "$mainMod, E, exec, pcmanfm"
+          "$mainMod, E, exec, nautilus"
           "$mainMod, X, exec, foot -e tmux"
           "$mainMod SHIFT, B, exec, firefox"
           "$mainMod SHIFT, C, exit,"

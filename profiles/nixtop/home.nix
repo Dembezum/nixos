@@ -33,6 +33,7 @@
       jq
       screenkey
       slop
+      gnome.nautilus
   ];
 
 # -- VARIABLES --

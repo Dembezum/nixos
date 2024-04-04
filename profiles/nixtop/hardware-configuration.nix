@@ -16,6 +16,10 @@
   boot.supportedFilesystems =
     [ "btrfs" "cifs" "f2fs" "jfs" "ntfs" "reiserfs" "vfat" "xfs" ];
 
+  fileSystems."/mnt/extra" = {
+    device = "/dev/disk/by-uuid/a5cfa160-1852-4b98-9251-6ce1eeabc266";
+    fsType = "ext4";
+  };
 
   fileSystems."/" =
   { device = "/dev/disk/by-uuid/c323aad0-c457-4011-973e-131207cfaefc";
