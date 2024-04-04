@@ -4,6 +4,7 @@
 # -- IMPORTS --
   imports = [
     ../../user/modules/gtk
+      ../../user/modules/zsh
       ../../user/modules/tmux
       ../../user/modules/kitty
       ../../user/modules/neovim
@@ -12,9 +13,6 @@
       ../../user/modules/minecraft
       ../../user/modules/desktop
   ];
-
-# -- ZSH --
-
 
 # -- USER SETTINGS --
   home.username = userSettings.username;
@@ -31,8 +29,10 @@
 
 # -- DEFAULT PACKAGES --
   home.packages = with pkgs; [
-    lazygit
+      lazygit
       jq
+      screenkey
+      slop
   ];
 
 # -- VARIABLES --

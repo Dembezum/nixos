@@ -48,6 +48,7 @@
     };
 
     initExtra = ''
+      zsh
       export PATH=$PATH:~/.local/bin
       export HISTSIZE=10000
       export HISTFILESIZE=10000

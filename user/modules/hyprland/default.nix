@@ -65,7 +65,7 @@
         gaps_out = 10;
         border_size = 2;
         "col.active_border" = "rgb(${base0E}) rgb(${base0E}) 45deg";
-        "col.inactive_border" = "rgb(${base00})";
+        "col.inactive_border" = "rgb(${base04})";
         layout = "master";
         allow_tearing = false;
       };
