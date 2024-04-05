@@ -34,9 +34,11 @@
     };
   };
 
-  services.tailscale = {
+  boot.loader.grub = {
     enable = true;
-    useRoutingFeatures = "server";
+    grub.device = [ "/dev/sda" ];
+    grub.useOSProber = true;
+
   };
 
   users.users.${userSettings.username} = {
