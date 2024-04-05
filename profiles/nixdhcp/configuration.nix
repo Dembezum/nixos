@@ -3,7 +3,8 @@
 # --- VPN CONFIGURATION ---
 {
   imports = [
-    ../../universal.nix
+    ./dhcp.nix
+      ../../universal.nix
       ../../user/modules/tmux
       ./hardware-configuration.nix
       ../../system/modules/networking
