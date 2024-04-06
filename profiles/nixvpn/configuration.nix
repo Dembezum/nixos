@@ -4,7 +4,6 @@
 {
   imports = [
     ../../universal.nix
-      ../../user/modules/tmux
       ./hardware-configuration.nix
       ../../system/modules/networking
       ../../system/modules/ssh
