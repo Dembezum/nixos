@@ -39,6 +39,8 @@
       fuse
 # Disk management
       gnome.gnome-disk-utility
+      du-dust
+      duf
       sdparm
       hdparm
       gptfdisk

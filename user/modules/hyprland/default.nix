@@ -75,13 +75,13 @@
         "XCURSOR_SIZE,24"
         "WLR_NO_HARDWARE_CURSORS,1"
 # NVIDIA
-       # "QT_QPA_PLATFORM,wayland"
-       # "LIBVA_DRIVER_NAME,nvidia"
-       # "XDG_SESSION_TYPE,wayland"
-       # "GBM_BACKEND,nvidia-drm"
-       # "__GLX_VENDOR_LIBRARY_NAME,nvidia"
+        "XDG_SESSION_DESKTOP,Hyprland"
+        "XDG_CURRENT_DESKTOP,Hyprland"
+        "XDG_SESSION_TYPE,wayland"
+#        "GBM_BACKEND,nvidia-drm"
 #        "__GL_VRR_ALLOWED,1"
 #        "WLR_DRM_NO_ATOMIC,1"
+        "LIBVA_DRIVER_NAME,nvidia"
       ];
 
 # -- MASTER LAYOUT --
@@ -245,8 +245,8 @@
 
 # -- MONITOR CONFIGURATION --
     extraConfig = ''
-#      monitor=Unknown-3,3440x1440@100,3440x0,1
-#      monitor=Unknown-4,1920x1080@60,2360x0,1,transform,3
+      monitor=Unknown-3,3440x1440@100,3440x0,1
+      monitor=Unknown-4,1920x1080@60,2360x0,1,transform,3
 monitor=eDP-1,1920x1080@60,0x0,1
 
 # -- WORKING CONFIG --
