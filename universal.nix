@@ -56,8 +56,8 @@
       vim
       shellcheck
 # System recovery and management
-      efibootmgr # EFI boot manager
-      efivar # EFI variable manager
+      efibootmgr
+      efivar
       ];
 
 # -- FONTS --

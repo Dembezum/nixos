@@ -7,7 +7,6 @@
     home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     nix-colors.url = "github:misterio77/nix-colors";
-
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs:
@@ -15,23 +14,22 @@
 # --- SYSTEM CONFIGURATION ---
     systemSettings = {
       system = "x86_64-linux";
-      hostname = "nixtop";
-      profile = "nixtop";
+      hostname = "nixdesk";
+      profile = "nixdesk";
       systemstate = "23.11";
     };
 
 # --- USER CONFIGURATION ---
   userSettings = {
-    username = "nixtop";
-    name = "nixtop";
+    username = "nixdesk";
+    name = "nixdesk";
     editor = "nvim";
     term ="foot";
     browser = "firefox";
     homestate = "23.11";
   };
-  pkgs = nixpkgs.legacyPackages.${systemSettings.system};
 
-# Lib
+  pkgs = nixpkgs.legacyPackages.${systemSettings.system};
   lib = nixpkgs.lib;
 
   in {
@@ -59,6 +57,7 @@
       };
     };
 
+
 # --- DEVELOPMENT ENVIRONMENTS ---
     devShells.${systemSettings.system}.default =
       pkgs.mkShell
@@ -77,13 +76,14 @@
             gnumake
             gcc
             gd
+            nil
             ffmpeg
             python3Packages.pip
             xorg.libX11
             xorg.libXft
             xorg.libX11.dev
             xorg.libXinerama
-        ];
+            ];
         shellHook = ''
           clear
           echo -e "\033[1;32m###############################\033[0m"
@@ -99,7 +99,6 @@
           export X11LIB=${pkgs.xorg.libX11.out}/lib
           '';
       };
-
   };
 }
 

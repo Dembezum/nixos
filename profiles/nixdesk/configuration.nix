@@ -14,13 +14,10 @@
       ../../system/modules/networking
       ../../system/modules/virtualization
       ./hardware-configuration.nix
-#      ../../system/modules/syncthing
-#      ../../system/modules/bluetooth
   ];
 
   environment.systemPackages = with pkgs; [ 
     gns3-gui
-    gnome.nautilus
   ];
 
 

@@ -22,28 +22,21 @@
       rebind-timer = 2000;
       renew-timer = 1000;
 
-# Subnet configuration
+# DHCP Pool configuration
       subnet4 = [
       {
-        subnet = "192.168.0.0/24";
+        subnet = "192.168.1.0/24";
         pools = [
         {
-          pool = "192.168.0.100 - 192.168.0.240";
+          pool = "192.168.1.110 - 192.168.1.254";
         }
         ];
         option-data = [
-        { name = "routers"; data = "192.168.0.1"; }
-        { name = "domain-name-servers"; data = "1.1.1.1, 1.0.0.1"; }
+        { name = "routers"; data = "192.168.1.1"; }
+        { name = "domain-name-servers"; data = "192.168.1.160, 1.1.1.1"; }
         ];
       }
       ];
     };
-  };
-
-  networking.firewall = {
-    enable = true;
-    allowedTCPPorts = [ 22 443 8384 8000 22000 ];
-    allowedUDPPorts = [ 67 68 8000 22000 21027 ];
-
   };
 }

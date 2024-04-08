@@ -32,6 +32,7 @@
   home.packages = with pkgs; [
     lazygit
       jq
+    gnome.nautilus
   ];
 
 # -- VARIABLES --

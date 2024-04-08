@@ -1,23 +1,23 @@
-{ lib, config, systemSettings, userSettings, pkgs, ... }:
+{ systemSettings, userSettings, ... }:
 
 {
   imports = [
     ./dhcpserver.nix
       ../../universal.nix
       ./hardware-configuration.nix
-#      ../../system/modules/networking
       ../../system/modules/ssh
   ];
 
-  environment.systemPackages = [ 
-    pkgs.tailscale 
-  ];
-
-
   boot.loader.grub = {
-	  enable = true;
-	  device = "/dev/sda";
-	  useOSProber = true;
+    enable = true;
+    device = "/dev/sda";
+    useOSProber = true;
+  };
+
+  networking.firewall = {
+    enable = true;
+    allowedTCPPorts = [ 22 61208 ];
+    allowedUDPPorts = [ 67 68 61208 ];
   };
 
   users.users.${userSettings.username} = {
