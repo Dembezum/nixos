@@ -48,10 +48,7 @@
     nixosConfigurations = {
       system = lib.nixosSystem {
         system = systemSettings.system;
-        modules = [ 
-        profiles/${systemSettings.profile}/configuration.nix
-        home-manager.nixosModule.home-manager
-        ];
+        modules = [ profiles/${systemSettings.profile}/configuration.nix];
         specialArgs = {
           inherit systemSettings;
           inherit userSettings;

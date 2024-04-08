@@ -9,13 +9,15 @@
   ];
 
   networking = {
+    defaultGateway = "192.168.1.1";
+    nameservers = [ "192.168.1.160" ];
     interfaces = {
-      ens18.ipv4.addresses = [ {
-        prefixLength = 24;
-        address = "192.168.1.2";
-        networking.defaultGateway = "192.168.1.1";
-        networking.nameservers = [ "192.168.1.160" ];
-      }];
+      ens18 = {
+        ipv4.addresses = {
+          address = "192.168.1.2";
+          prefixLength = 24;
+        };
+      };
     };
   };
 
