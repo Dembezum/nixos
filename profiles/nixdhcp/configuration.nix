@@ -4,9 +4,20 @@
   imports = [
     ./dhcpserver.nix
       ../../universal.nix
-      ./hardware-configuration.nix
       ../../system/modules/ssh
+      ./hardware-configuration.nix
   ];
+
+  networking = {
+    interfaces = {
+      ens18.ipv4.addresses = [ {
+        prefixLength = 24;
+        address = "192.168.1.2";
+        networking.defaultGateway = "192.168.1.1";
+        networking.nameservers = [ "192.168.1.160" ];
+      }];
+    };
+  };
 
   boot.loader.grub = {
     enable = true;
