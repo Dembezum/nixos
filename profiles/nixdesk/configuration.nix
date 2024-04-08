@@ -20,6 +20,14 @@
     gns3-gui
   ];
 
+# -- VPN --
+  services.tailscale =  {
+    enable = true;
+  };
+
+
+  programs.hyprland.enable = true;
+  programs.zsh.enable = true;
 
 # -- File management --
   services.gvfs.enable = true;
@@ -33,9 +41,6 @@
         pkgs.xdg-desktop-portal-wlr
     ];
   };
-
-  programs.hyprland.enable = true;
-  programs.zsh.enable = true;
 
   xdg.portal.config = {
     common = {
