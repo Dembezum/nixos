@@ -169,7 +169,7 @@
           "$mainMod SHIFT, T, pseudo, # dwindle"
           "$mainMod, F, togglefloating,"
           "$mainMod SHIFT, J, togglesplit,"
-          "$mainMod, M, fullscreen"
+          "$mainMod, M, fullscreen,1"
           "$mainMod, Tab, cyclenext"
           "$mainMod SHIFT, Tab, cyclenext"
           "$mainMod, Return, swapnext" 

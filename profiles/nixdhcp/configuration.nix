@@ -1,13 +1,12 @@
-{ systemSettings, userSettings, pkgs, ... }:
+{ lib, config, systemSettings, userSettings, pkgs, ... }:
 
 # --- VPN CONFIGURATION ---
 {
   imports = [
-    ./dhcp.nix
+    ./dhcpserver.nix
       ../../universal.nix
-      ../../user/modules/tmux
       ./hardware-configuration.nix
-      ../../system/modules/networking
+#      ../../system/modules/networking
       ../../system/modules/ssh
   ];
 
@@ -15,31 +14,11 @@
     pkgs.tailscale 
   ];
 
-  programs.neovim = {
-    enable = true;
-    configure = {
-      customRC = ''
-        set cc=80
-        set number
-        set relativenumber
-        set hlsearch = false
-        set incsearch = true
-        set swapfile = false
-        set cursorline = true
-        set virtualedit = "block"
-        endif
-        '';
-      packages.myVimPackage = with pkgs.vimPlugins; {
-        start = [ ctrlp ];
-      };
-    };
-  };
 
   boot.loader.grub = {
-    enable = true;
-    grub.device = [ "/dev/sda" ];
-    grub.useOSProber = true;
-
+	  enable = true;
+	  device = "/dev/sda";
+	  useOSProber = true;
   };
 
   users.users.${userSettings.username} = {
