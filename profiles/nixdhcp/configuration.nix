@@ -9,14 +9,19 @@
   ];
 
   networking = {
-    defaultGateway = "192.168.1.1";
     nameservers = [ "192.168.1.160" ];
+    defaultGateway = {
+      address = "192.168.1.1";
+      interface = "ens18";
+    };
     interfaces = {
       ens18 = {
-        ipv4.addresses = {
+        ipv4.addresses = [
+        {
           address = "192.168.1.2";
           prefixLength = 24;
-        };
+        }
+        ];
       };
     };
   };
@@ -42,3 +47,4 @@
 
   system.stateVersion = systemSettings.systemstate;
 }
+
