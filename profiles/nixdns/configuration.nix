@@ -1,18 +1,17 @@
-{ lib, config, systemSettings, userSettings, pkgs, ... }:
+{ systemSettings, userSettings, pkgs, ... }:
 
 {
   imports = [
-    ./dhcpserver.nix
+      ./bind.nix
       ../../universal.nix
       ./hardware-configuration.nix
-#      ../../system/modules/networking
+      ../../system/modules/networking
       ../../system/modules/ssh
   ];
 
   environment.systemPackages = [ 
     pkgs.tailscale 
   ];
-
 
   boot.loader.grub = {
 	  enable = true;
