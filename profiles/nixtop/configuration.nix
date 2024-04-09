@@ -27,6 +27,10 @@
     ];
   };
 
+  services.tailscale = {
+    enable = true;
+  };
+
   programs.hyprland.enable = true;
 
   xdg.portal.config = {

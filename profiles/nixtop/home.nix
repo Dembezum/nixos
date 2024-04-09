@@ -27,7 +27,7 @@
     };
   };
 
-# -- DEFAULT PACKAGES --
+# -- PACKAGES --
   home.packages = with pkgs; [
       lazygit
       jq

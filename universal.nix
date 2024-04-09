@@ -9,16 +9,17 @@
       screen
       tcpdump
 # System utilities
+      git
       kmon
       inxi
-      lsb-release
-      neofetch
       tree
       which
+      glances
       pciutils
       usbutils
+      neofetch
       lm_sensors
-      git
+      lsb-release
 # QOL
       fzf
       xclip
