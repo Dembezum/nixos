@@ -56,9 +56,10 @@
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.users.${userSettings.username} = {
-                import = [ profiles/${systemSettings.profile}/home.nix];
+              home-manager.users.${userSettings.username} = { ... }: {
+                imports = [ profiles/${systemSettings.profile}/home.nix ];
               };
+
             }
         ];
         specialArgs = {
