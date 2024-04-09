@@ -56,7 +56,7 @@
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.users.${userSettings.username} = { ... }: {
+              home-manager.users.${userSettings.username} = {
                 imports = [ profiles/${systemSettings.profile}/home.nix ];
               };
 
