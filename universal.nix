@@ -38,6 +38,7 @@
       btop
       parted
       fuse
+      procs
 # Disk management
       gnome.gnome-disk-utility
       du-dust
@@ -51,6 +52,7 @@
       unzip
       zip
 # Termianl Stuff
+      eva
       kitty
       tmux
 # Text manipulation / editing
@@ -79,12 +81,20 @@
   };
 
 # -- NIX OPTIONS --
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  nix.gc = {
-    automatic = true;
-    dates = "weekly";
-    options = "--delete-older-than 3d";
-
+  nix = {
+    settings = {
+      auto-optimise-store = true;
+    };
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 3d";
+    };
+    extraOptions = ''
+      experimental-features = nix-command flakes
+      keep-outputs          = true
+      keep-derivations      = true
+      '';
   };
 
   nixpkgs.config.allowUnfree = true;
