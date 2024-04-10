@@ -1,10 +1,16 @@
-{ systemSettings, userSettings, ... }:
+{ pkgs, systemSettings, userSettings, ... }:
 
 {
   imports = [
       ../../universal.nix
       ../../system/modules/ssh
       ./hardware-configuration.nix
+  ];
+
+  virtualisation.docker.enable = true;
+
+  environment.systemPackages = with pkgs; [
+    dockerCompose
   ];
 
   networking = {
@@ -33,7 +39,7 @@
 
   networking.firewall = {
     enable = true;
-    allowedTCPPorts = [ 22 61208 ];
+    allowedTCPPorts = [ 22 80 443 61208 ];
     allowedUDPPorts = [ 61208 ];
   };
 
