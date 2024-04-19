@@ -7,6 +7,7 @@
       ./hardware-configuration.nix
       ../../system/modules/networking
       ../../system/modules/ssh
+      ../../system/modules/glances
   ];
 
   environment.systemPackages = [ 

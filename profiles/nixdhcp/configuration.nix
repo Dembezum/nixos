@@ -5,6 +5,7 @@
     ./dhcpserver.nix
       ../../universal.nix
       ../../system/modules/ssh
+      ../../system/modules/glances
       ./hardware-configuration.nix
   ];
 

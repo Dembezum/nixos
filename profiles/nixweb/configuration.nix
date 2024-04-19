@@ -5,6 +5,7 @@
       ../../universal.nix
       ../../system/modules/ssh
       ./hardware-configuration.nix
+      ../../system/modules/glances
   ];
 
   virtualisation.docker.enable = true;
