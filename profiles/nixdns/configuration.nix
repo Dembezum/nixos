@@ -5,7 +5,6 @@
       ./bind.nix
       ../../universal.nix
       ./hardware-configuration.nix
-      ../../system/modules/networking
       ../../system/modules/glances
       ../../system/modules/ssh
   ];

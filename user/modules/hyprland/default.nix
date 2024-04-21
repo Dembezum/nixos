@@ -91,9 +91,8 @@
 
 # -- DWINDLE LAYOUT --
       dwindle = {
-        pseudotile = "yes";
-        preserve_split = "yes";
-        force_split = 1;
+        preserve_split = 1;
+        force_split = 2;
       };
 
 # -- GESTURES --
@@ -166,14 +165,15 @@
           "$mainMod, B, exec, killall -SIGUSR1 waybar"
 
           "$mainMod SHIFT, Q, killactive,"
-          "$mainMod SHIFT, T, pseudo, # dwindle"
+          "$mainMod, T, pseudo, # dwindle"
           "$mainMod, F, togglefloating,"
-          "$mainMod SHIFT, J, togglesplit,"
+          "$mainMod, Y, togglesplit,"
           "$mainMod, M, fullscreen,1"
           "$mainMod, Tab, cyclenext"
           "$mainMod SHIFT, Tab, cyclenext"
           "$mainMod, Return, swapnext" 
           "$mainMod, Tab, bringactivetotop"
+
 
 # Focus
           "$mainMod, left, movefocus, l"

@@ -11,7 +11,6 @@
       ../../user/modules/lutris
       ../../system/modules/nvidia
       ../../system/modules/pipewire
-      ../../system/modules/networking
       ../../system/modules/virtualization
       ./hardware-configuration.nix
   ];
@@ -26,7 +25,11 @@
   };
 
 
-  programs.hyprland.enable = true;
+  programs.hyprland = {
+    enable = true;
+    xwayland.enable = true;
+  };
+
   programs.zsh.enable = true;
 
 # -- File management --
@@ -63,6 +66,17 @@
     extraGroups = [ "plugdev" "libvirt" "video" "networkmanager" "wheel" ];
     uid = 1000;
     shell = pkgs.zsh;
+  };
+
+  networking.networkmanager.enable = true;
+  networking.hostName = systemSettings.hostname;
+
+# Firewall
+  networking.firewall = {
+    enable = true;
+    allowedTCPPorts = [ 22 443 8384 22000 61208 61209];
+    allowedUDPPorts = [ 22000 21027 61208 ];
+
   };
   system.stateVersion = systemSettings.systemstate;
 }
