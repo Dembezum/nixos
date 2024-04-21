@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ userSettings, pkgs, ... }: {
 
   environment.systemPackages = with pkgs; [
 # Networking tools
@@ -21,6 +21,8 @@
       lm_sensors
       lsb-release
 # QOL
+      nh
+      nvd
       fzf
       xclip
       eza
@@ -105,6 +107,7 @@
   environment.localBinInPath = true;
 
   environment.sessionVariables = rec {
+    FLAKE           = "/home/${userSettings.username}/Git/flakes/nixos";
     XDG_CACHE_HOME  = "$HOME/.cache";
     XDG_CONFIG_HOME = "$HOME/.config";
     XDG_DATA_HOME   = "$HOME/.local/share";
