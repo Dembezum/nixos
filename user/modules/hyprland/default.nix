@@ -255,6 +255,7 @@ monitor=eDP-1,1920x1080@60,0x0,1
 #monitor=eDP-1,1920x1080@60,4240x1440,1
 
 
+                  bind=SUPER,s,togglesplit
 # Autostart
       exec-once = nm-applet --indicator
       exec-once = ~/.config/hypr/scripts/wallpaper.sh
