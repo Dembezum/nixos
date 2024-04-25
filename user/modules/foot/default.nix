@@ -18,6 +18,9 @@
     mouse = {
       hide-when-typing = "no";
     };
+    search-bindings = {
+      find-prev = "Control+r";
+    };
     colors = {
         # Catppuccin mocha
         alpha = "0.9";

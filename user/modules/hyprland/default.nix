@@ -157,7 +157,8 @@
       bind = [
         ",PRINT, exec, grimblast --freeze copy area"
           "$mainMod, E, exec, nautilus"
-          "$mainMod, X, exec, foot -e tmux"
+          "$mainMod, X, exec, foot"
+          "$mainMod SHIFT, X, exec, foot -e tmux"
           "$mainMod SHIFT, B, exec, firefox"
           "$mainMod SHIFT, C, exit,"
           "$mainMod, R, exec, pkill rofi || rofi -show drun -modi drun,filebrowser,run,window -theme ~/.config/rofi/launchers/type-2/style-2.rasi"
