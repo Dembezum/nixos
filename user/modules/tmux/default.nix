@@ -5,7 +5,7 @@
   programs.tmux = {
     enable = true;
     prefix = "C-a";
-    terminal = "xterm-256color";
+    terminal = "foot";
     extraConfig = ''
 # Reload hotkey
 #bind r source-file ~/.tmux.conf \; display-message "Config reloaded..."

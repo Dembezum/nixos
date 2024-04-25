@@ -10,6 +10,9 @@
       font = "JetBrainsMono Nerd Font:size=14";
       dpi-aware = "no";
     };
+    tweak = {
+      overflowing-glyphs = "yes";
+    };
 # -- SCROLLBACK --
     scrollback = {
       lines = 10000;
@@ -18,9 +21,21 @@
     mouse = {
       hide-when-typing = "no";
     };
-    search-bindings = {
-      find-prev = "Control+r";
+# -- KEYBINDS --
+    key-bindings = {
+      font-reset = "Control+0";
+      font-increase = "Control+k";
+      font-decrease = "Control+j";
+      scrollback-up-page = "Shift+Page_Up";
+      scrollback-down-page = "Shift+Page_Down";
     };
+    mouse-bindings = {
+      scrollback-up-mouse = "BTN_BACK";
+      scrollback-down-mouse = "BTN_FORWARD";
+      select-begin = "BTN_LEFT";
+      select-begin-block = "Control+BTN_LEFT";
+      select-extend = "BTN_RIGHT";
+      };
     colors = {
         # Catppuccin mocha
         alpha = "0.9";
