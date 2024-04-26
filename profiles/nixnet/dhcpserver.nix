@@ -18,7 +18,7 @@
       };
 
 # Global values 
-      valid-lifetime = 4000;
+      valid-lifetime = 3600;
       rebind-timer = 2000;
       renew-timer = 1000;
 

@@ -43,6 +43,7 @@
       procs
 # Disk management
       gnome.gnome-disk-utility
+      nfs-utils
       du-dust
       duf
       sdparm
