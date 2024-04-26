@@ -14,22 +14,18 @@
     device = "/dev/disk/by-uuid/c2b0371a-ffbf-40ea-9a00-316407e76788";
     fsType = "ext4";
   };
-
   fileSystems."/" =
   { device = "/dev/disk/by-uuid/38b391bf-ffcb-46a0-be81-dd0eea1bcd92";
     fsType = "ext4";
   };
-
   fileSystems."/boot" =
   { device = "/dev/disk/by-uuid/DC70-63F7";
     fsType = "vfat";
   };
-
-  fileSystems."/mnt/share" = {
-  device = "192.168.1.4:/mnt/Pool1/iso";
-  fsType = "nfs";
-};
-
+  fileSystems."/mnt/nas/Homelab" = {
+    device = "192.168.1.4:/mnt/Pool1/Homelab";
+    fsType = "nfs";
+  };
   swapDevices = [ ];
 
   networking.useDHCP = lib.mkDefault true;
