@@ -137,5 +137,11 @@
     LC_TIME = "da_DK.UTF-8";
   };
 
+# -- Uncomment for Virtual machines --
+# boot.loader.grub = {
+#    enable = true;
+#    device = "/dev/sda";
+#    useOSProber = true;
+#  };
 }
 
