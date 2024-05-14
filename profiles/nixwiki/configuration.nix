@@ -1,6 +1,5 @@
 { systemSettings, userSettings, pkgs, ... }:
 
-# --- VPN CONFIGURATION ---
 {
   imports = [
     ../../universal.nix
@@ -30,21 +29,23 @@
     };
   };
 
-{ systemSettings, ... }:
-
-{
-
-#  NetworkManager
-  networking.hostName = systemSettings.hostname;
-  networking.networkmanager.enable = true;
-# Firewall
-  networking.firewall = {
-    enable = true;
-    allowedTCPPorts = [ 22 443 8080 53 80 443 61208 ];
-    allowedUDPPorts = [ 61208 ];
-
+  networking = {
+    nameservers = [ "1.1.1.1" ];
+    defaultGateway = {
+      address = "10.0.20.103";
+      interface = "ens18";
+    };
+    interfaces = {
+      ens18 = {
+        ipv4.addresses = [
+        {
+          address = "10.0.20.2";
+          prefixLength = 24;
+        }
+        ];
+      };
+    };
   };
-}
 
   users.users.${userSettings.username} = {
     isNormalUser = true;
