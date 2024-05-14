@@ -6,7 +6,7 @@
       ./hardware-configuration.nix
       ../../system/modules/ssh
       ../../system/modules/glances
-      ./mediawiki
+      ./mediawiki.nix
   ];
 
   programs.neovim = {
@@ -45,6 +45,12 @@
         ];
       };
     };
+  };
+
+  boot.loader.grub = {
+    enable = true;
+    device = "/dev/sda";
+    useOSProber = true;
   };
 
   users.users.${userSettings.username} = {
