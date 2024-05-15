@@ -31,19 +31,26 @@
   networking = {
     nameservers = [ "1.1.1.1" ];
     defaultGateway = {
-      address = "10.0.20.110";
+      address = "10.0.20.2";
       interface = "ens18";
     };
     interfaces = {
       ens18 = {
         ipv4.addresses = [
         {
-          address = "10.0.20.2";
+          address = "10.0.20.110";
           prefixLength = 24;
         }
         ];
       };
     };
+  };
+
+  networking.firewall = {
+    enable = true;
+    allowedTCPPorts = [ 22 443 3000 22000 61208 61209 ];
+    allowedUDPPorts = [ 22000 21027 61208 ];
+
   };
 
   boot.loader.grub = {
@@ -72,14 +79,5 @@ services.grafana = {
   };
 };
 
-services.nginx.virtualHosts."nixgraph.zum.local" = {
-  addSSL = true;
-  enableACME = true;
-  locations."/grafana/" = {
-      proxyPass = "http://${toString config.services.grafana.settings.server.http_addr}:${toString config.services.grafana.settings.server.http_port}";
-      proxyWebsockets = true;
-      recommendedProxySettings = true;
-  };
-};
   system.stateVersion = systemSettings.systemstate;
 }
