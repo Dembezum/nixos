@@ -23,7 +23,7 @@
     fsType = "vfat";
   };
   fileSystems."/mnt/nas/Homelab" = {
-    device = "192.168.1.4:/mnt/Pool1/Homelab";
+    device = "10.0.20.102:/mnt/Pool1/Homelab";
     fsType = "nfs";
   };
   swapDevices = [ ];

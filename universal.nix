@@ -2,12 +2,14 @@
 
   environment.systemPackages = with pkgs; [
 # Networking tools
+      iperf3
       wget
       dnsutils
       nmap
       socat
       screen
       tcpdump
+      localsend
 # System utilities
       git
       kmon

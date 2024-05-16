@@ -67,14 +67,16 @@
     shell = pkgs.zsh;
   };
 
+  services.lldpd.enable = true;
+
   networking.networkmanager.enable = true;
   networking.hostName = systemSettings.hostname;
 
 # Firewall
   networking.firewall = {
     enable = true;
-    allowedTCPPorts = [ 22 443 8384 22000 61208 61209];
-    allowedUDPPorts = [ 22000 21027 61208 ];
+    allowedTCPPorts = [ 53317 22 443 8384 22000 61208 61209];
+    allowedUDPPorts = [ 22000 53317 21027 61208 ];
 
   };
   system.stateVersion = systemSettings.systemstate;
