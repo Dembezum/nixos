@@ -25,7 +25,6 @@
       eda = "sbash && eza -aD -l --icons";
       eta = "sbash && eza -la --sort=type --icons";
       ls = "eza --icons";
-      ip = "ip -c a";
       cp = "cp -v";
       mv = "mv -iv";
       tt = "tt -showwpm -blockcursor -t 20 -highlight1 -n 25";
