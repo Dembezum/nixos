@@ -121,6 +121,8 @@
       "${XDG_BIN_HOME}"
     ];
   };
+# Set the hostname
+  networking.hostName = systemSettings.hostname;
 
 # Configure the system to use danish locale settings
   time.timeZone = "Europe/Copenhagen";
