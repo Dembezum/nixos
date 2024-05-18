@@ -193,10 +193,10 @@
           "$mainMod, mouse_down, workspace, e+1"
           "$mainMod, mouse_up, workspace, e-1"
 # Resize windos
-          "$mainMod, l, resizeactive, 50 0"
-          "$mainMod, h, resizeactive, -50 0"
-          "$mainMod, k, resizeactive, 0 -50"
-          "$mainMod, j, resizeactive, 0 50"
+#          "$mainMod, l, resizeactive, 50 0"
+#          "$mainMod, h, resizeactive, -50 0"
+#          "$mainMod, k, resizeactive, 0 -50"
+#          "$mainMod, j, resizeactive, 0 50"
 
 # Switch workspaces with mainMod + [0-9]
           "$mainMod, 1, workspace, 1"
@@ -262,6 +262,12 @@ monitor=eDP-1,1920x1080@60,0x0,1
       exec-once = ~/.config/hypr/scripts/wallpaper.sh
       exec-once = swaync &
       exec-once = waybar &
+      binde=,H,resizeactive,-10 0
+
+binde=,L,resizeactive,10 0
+binde=,J,resizeactive,0 -10
+binde=,K,resizeactive,0 10
+
       '';
   };
 }

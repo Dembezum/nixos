@@ -1,4 +1,4 @@
-{ userSettings, pkgs, ... }: {
+{ userSettings, systemSettings, pkgs, ... }: {
 
   environment.systemPackages = with pkgs; [
 # Networking tools
