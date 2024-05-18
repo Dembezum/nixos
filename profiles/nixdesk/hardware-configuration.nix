@@ -22,10 +22,10 @@
   { device = "/dev/disk/by-uuid/DC70-63F7";
     fsType = "vfat";
   };
-  fileSystems."/mnt/nas/Homelab" = {
-    device = "10.0.20.102:/mnt/Pool1/Homelab";
-    fsType = "nfs";
-  };
+#  fileSystems."/mnt/nas/Homelab" = {
+#    device = "10.0.20.102:/mnt/Pool1/Homelab";
+#    fsType = "nfs";
+#  };
   swapDevices = [ ];
 
   networking.useDHCP = lib.mkDefault true;
