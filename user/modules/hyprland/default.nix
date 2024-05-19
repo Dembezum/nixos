@@ -175,7 +175,6 @@
           "$mainMod, Return, swapnext" 
           "$mainMod, Tab, bringactivetotop"
 
-
 # Focus
           "$mainMod, left, movefocus, l"
           "$mainMod, right, movefocus, r"
@@ -183,20 +182,10 @@
           "$mainMod, down, movefocus, d"
           "$mainMod SHIFT, Space, exec, move_window special"
 
-# Move windows
-          "$mainMod SHIFT, H, movewindow, l"
-          "$mainMod SHIFT, L, movewindow, r"
-          "$mainMod SHIFT, K, movewindow, u"
-          "$mainMod SHIFT, J, movewindow, d"
 
 # Scroll through workspaces
           "$mainMod, mouse_down, workspace, e+1"
           "$mainMod, mouse_up, workspace, e-1"
-# Resize windos
-#          "$mainMod, l, resizeactive, 50 0"
-#          "$mainMod, h, resizeactive, -50 0"
-#          "$mainMod, k, resizeactive, 0 -50"
-#          "$mainMod, j, resizeactive, 0 50"
 
 # Switch workspaces with mainMod + [0-9]
           "$mainMod, 1, workspace, 1"
@@ -222,14 +211,6 @@
           "$mainMod SHIFT, 9, movetoworkspace, 9"
           "$mainMod SHIFT, 0, movetoworkspace, 10"
 
-# Audio Keys
-          ",XF86AudioRaiseVolume,exec,pamixer -i 2"
-          ",XF86AudioLowerVolume, exec, pamixer -d 2"
-          ",XF86AudioMute, exec, pamixer -t"
-
-# Brightness 
-          ",XF86MonBrightnessup,exec, brightnessctl set 10+"
-          ",XF86MonBrightnessDown,exec, brightnessctl set 10-"
 # Media keys
           ",XF86AudioPlay, exec, playerctl play-pause"
           ",XF86AudioNext, exec, playerctl next"
@@ -241,6 +222,25 @@
         "$mainMod, mouse:272, movewindow"
           "$mainMod, mouse:273, resizewindow"
           "$mainMod ALT, mouse:272, resizewindow"
+      ];
+      binde = [
+# Resize windows
+        "$mainMod, l, resizeactive, 50 0"
+          "$mainMod, h, resizeactive, -50 0"
+          "$mainMod, k, resizeactive, 0 -50"
+          "$mainMod, j, resizeactive, 0 50"
+# Move windows
+          "$mainMod SHIFT, H, movewindow, l"
+          "$mainMod SHIFT, L, movewindow, r"
+          "$mainMod SHIFT, K, movewindow, u"
+          "$mainMod SHIFT, J, movewindow, d"
+# Audio Keys
+          ",XF86AudioRaiseVolume,exec,pamixer -i 2"
+          ",XF86AudioLowerVolume, exec, pamixer -d 2"
+          ",XF86AudioMute, exec, pamixer -t"
+# Brightness 
+          ",XF86MonBrightnessup,exec, brightnessctl set 10+"
+          ",XF86MonBrightnessDown,exec, brightnessctl set 10-"
       ];
     };
 
@@ -262,11 +262,6 @@ monitor=eDP-1,1920x1080@60,0x0,1
       exec-once = ~/.config/hypr/scripts/wallpaper.sh
       exec-once = swaync &
       exec-once = waybar &
-      binde=,H,resizeactive,-10 0
-
-binde=,L,resizeactive,10 0
-binde=,J,resizeactive,0 -10
-binde=,K,resizeactive,0 10
 
       '';
   };
