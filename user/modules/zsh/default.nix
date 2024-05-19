@@ -69,7 +69,11 @@
       export HISTTIMEFORMAT="%F %T "
       export HISTCONTROL=ignoredups
       setopt appendhistory
+
       bindkey '^R' history-incremental-search-backward
+
+      ztyle ':completion:*' menu no
+
       parse_git_branch() {
         git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
       }
