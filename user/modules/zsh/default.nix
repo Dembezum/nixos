@@ -55,10 +55,21 @@
       sbash = "source ~/.zshrc";
     };
     initExtra = ''
+      HISTFILE=~/.zsh_history
+      HISTSIZE=10000
+      SAVEHIST=$HISTSIZE
+      HISTDUP=erase
+      setopt sharehistory
+      setopt appendhistory
+      setopt hist_ignore_dups   
+      setopt hist_ignore_space
+      setopt hist_save_no_dups
+      setopt hist_find_no_dups
       export TIMEFMT="[Finished in %E]"
       export HISTTIMEFORMAT="%F %T "
       export HISTCONTROL=ignoredups
       setopt appendhistory
+      bindkey '^R' history-incremental-search-backward
       parse_git_branch() {
         git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
       }
