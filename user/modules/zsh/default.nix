@@ -55,6 +55,7 @@
       sbash = "source ~/.zshrc";
     };
     initExtra = ''
+      export TIMEFMT="[Finished in %E]"
       export HISTTIMEFORMAT="%F %T "
       export HISTCONTROL=ignoredups
       setopt appendhistory
