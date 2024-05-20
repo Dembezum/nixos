@@ -72,8 +72,8 @@
 
       autoload -z edit-command-line
       zle -N edit-command-line
-      bindkey "^X^E" edit-command-line
 
+      bindkey "^X^E" edit-command-line
       bindkey '^R' history-incremental-search-backward
 
       ztyle ':completion:*' menu no
@@ -135,16 +135,11 @@
     '' +
     ''
     clear
-    echo -e "\033[1;32m#####################\033[0m"
-    echo -e "\033[1;32m#  NIX Enviornment  #\033[0m"
-    echo -e "\033[1;32m#####################\033[0m"
-    echo ""
     echo -e "\033[1;36mNix:\033[0m $(lsb_release -s -d)"
     echo -e "\033[1;36mLoad Average:\033[0m $(cut -d ' ' -f 1-3 /proc/loadavg)"
     echo -e "\033[1;36mAvailable Memory:\033[0m $(free -h | awk '/Mem/ {print $7}')"
     echo -e "\033[1;36mCPU Usage:\033[0m $(top -bn1 | awk '/%Cpu/ {printf("%.2f%", $2 + $4)}')"
     echo ""
-
     '';
     };
 

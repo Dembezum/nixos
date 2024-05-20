@@ -18,14 +18,14 @@
 # --- SYSTEM CONFIGURATION ---
     systemSettings = {
       system = "x86_64-linux";
-      hostname = "nixtop";
-      profile = "nixtop";
+      hostname = "nixdesk";
+      profile = "nixdesk";
       systemstate = "23.11";
     };
 
 # --- USER CONFIGURATION ---
   userSettings = {
-    username = "nixtop";
+    username = "nixdesk";
     name = "nix";
     editor = "nvim";
     term ="foot";
@@ -90,10 +90,6 @@
             ];
         shellHook = ''
           clear
-          echo -e "\033[1;32m###############################\033[0m"
-          echo -e "\033[1;32m##  Development Enviornment  ##\033[0m"
-          echo -e "\033[1;32m###############################\033[0m"
-          echo ""
           echo -e "\033[1;36m[Nix:\033[0m $(lsb_release -s -d)"
           echo -e "\033[1;36m[Load Average:\033[0m $(cut -d ' ' -f 1-3 /proc/loadavg)"
           echo -e "\033[1;36m[Available Memory:\033[0m $(free -h | awk '/Mem/ {print $7}')"
