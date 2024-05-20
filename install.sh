@@ -30,5 +30,23 @@ fi
 switch_system() {
     log_message "Switching system configuration..."
     sudo nixos-rebuild switch --flake .#system | tee -a "$LOGFILE"
-    chmod 666 "$LOGFILE"  # Set log file permissions to rw-r
+    chmod 666 "$LOGFILE"  # Set log file permissions to rw-rw-rw-
+}
+
+# Function to switch home-manager configuration
+switch_home_manager() {
+    log_message "Switching home-manager configuration..."
+    home-manager switch --flake .#user | tee -a "$LOGFILE"
+    chmod 666 "$LOGFILE"  # Set log file permissions to rw-rw-rw-
+}
+
+# Log the start of the switch process
+log_message "----- START OF SWITCH INITIATED AT $TIMESTAMP -----"
+
+# Execute the functions
+switch_system
+switch_home_manager
+
+# Log the end of the switch process
+log_message "----- END OF SWITCH INITIATED AT $TIMESTAMP -----"
 
