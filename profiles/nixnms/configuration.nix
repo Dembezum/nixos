@@ -10,7 +10,6 @@
   ];
 
   networking = {
-    hostName = "ST-R1-NMS";
     nameservers = [ "1.1.1.1" ];
     defaultGateway = {
       address = "10.0.20.2";
