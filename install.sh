@@ -20,12 +20,16 @@ fi
 # Enable flakes in NixOS configuration
 log_message "Enabling flakes in /etc/nixos/configuration.nix..."
 CONFIG_FILE="/etc/nixos/configuration.nix"
-FLAKE_SETTING="nix.settings.experimental-features = [ \"nix-command\" \"flakes\" ];"
+FLAKE_SETTING="  experimental-features = [ \"nix-command\" \"flakes\" ];"
 
-if ! grep -q 'nix.settings.experimental-features' "$CONFIG_FILE"; then
-    sudo sed -i "/^\( *\)\( *\)$/i\\
-\    $FLAKE_SETTING
+if ! grep -q 'experimental-features' "$CONFIG_FILE"; then
+    if grep -q 'nix = {' "$CONFIG_FILE"; then
+        sudo sed -i "/nix = {/a\\
+$FLAKE_SETTING
 " "$CONFIG_FILE"
+    else
+        sudo bash -c "echo -e '\nnix = {\n$FLAKE_SETTING\n};\n' >> $CONFIG_FILE"
+    fi
 else
     log_message "Flakes are already enabled."
 fi
