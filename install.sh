@@ -18,11 +18,19 @@ if [[ $EUID -eq 0 ]]; then
 fi
 
 # Enable flakes in nixos
-echo "nixos.settings.experimental-features = [ \"nix-command\" \"flakes\"]; >> /etc/nixos/configuration.nix"
+log_message "Enabling flakes in /etc/nixos/configuration.nix..."
+if ! grep -q 'nix.settings.experimental-features' /etc/nixos/configuration.nix; then
+    sudo bash -c 'echo "nix.settings.experimental-features = [ \"nix-command\" \"flakes\" ];" >> /etc/nixos/configuration.nix'
+else
+    log_message "Flakes are already enabled."
+fi
+
+# Apply the changes to NixOS configuration
+log_message "Applying changes to NixOS configuration..."
+sudo nixos-rebuild switch
 
 # Check if home-manager is installed, if not install it
-if ! command -v home-manager &> /dev/null
-then
+if ! command -v home-manager &> /dev/null; then
     log_message "Home Manager is not installed. Installing Home Manager..."
     nix run home-manager/master -- init --switch | tee -a "$LOGFILE"
     chmod 666 "$LOGFILE"  # Set log file permissions to rw-rw-rw-
@@ -43,7 +51,6 @@ switch_home_manager() {
     home-manager switch --flake .#user | tee -a "$LOGFILE"
     chmod 666 "$LOGFILE"  # Set log file permissions to rw-rw-rw-
 }
-
 
 # Log the start of the switch process
 log_message "----- START OF SWITCH INITIATED AT $TIMESTAMP -----"
