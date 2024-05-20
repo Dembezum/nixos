@@ -17,10 +17,15 @@ if [[ $EUID -eq 0 ]]; then
    exit 1
 fi
 
-# Enable flakes in nixos
+# Enable flakes in NixOS configuration
 log_message "Enabling flakes in /etc/nixos/configuration.nix..."
-if ! grep -q 'nix.settings.experimental-features' /etc/nixos/configuration.nix; then
-    sudo bash -c 'echo "nix.settings.experimental-features = [ \"nix-command\" \"flakes\" ];" >> /etc/nixos/configuration.nix'
+CONFIG_FILE="/etc/nixos/configuration.nix"
+FLAKE_SETTING="nix.settings.experimental-features = [ \"nix-command\" \"flakes\" ];"
+
+if ! grep -q 'nix.settings.experimental-features' "$CONFIG_FILE"; then
+    sudo sed -i "/^\( *\)\( *\)$/i\\
+\    $FLAKE_SETTING
+" "$CONFIG_FILE"
 else
     log_message "Flakes are already enabled."
 fi
@@ -61,4 +66,3 @@ switch_home_manager
 
 # Log the end of the switch process
 log_message "----- END OF SWITCH INITIATED AT $TIMESTAMP -----"
-
