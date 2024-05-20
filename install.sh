@@ -22,13 +22,13 @@ log_message "Enabling flakes in /etc/nixos/configuration.nix..."
 CONFIG_FILE="/etc/nixos/configuration.nix"
 FLAKE_SETTING="  experimental-features = [ \"nix-command\" \"flakes\" ];"
 
-if ! grep -q 'experimental-features' "$CONFIG_FILE"; then
-    if grep -q 'nix = {' "$CONFIG_FILE"; then
-        sudo sed -i "/nix = {/a\\
+if ! grep -q 'nix.settings.experimental-features' "$CONFIG_FILE"; then
+    if grep -q 'nix.settings' "$CONFIG_FILE"; then
+        sudo sed -i "/nix.settings/a\\
 $FLAKE_SETTING
 " "$CONFIG_FILE"
     else
-        sudo bash -c "echo -e '\nnix = {\n$FLAKE_SETTING\n};\n' >> $CONFIG_FILE"
+        sudo bash -c "echo -e '\nnix.settings = {\n$FLAKE_SETTING\n};\n' >> $CONFIG_FILE"
     fi
 else
     log_message "Flakes are already enabled."
@@ -51,22 +51,5 @@ fi
 switch_system() {
     log_message "Switching system configuration..."
     sudo nixos-rebuild switch --flake .#system | tee -a "$LOGFILE"
-    chmod 666 "$LOGFILE"  # Set log file permissions to rw-rw-rw-
-}
+    chmod 666 "$LOGFILE"  # Set log file permissions to rw-r
 
-# Function to switch home-manager configuration
-switch_home_manager() {
-    log_message "Switching home-manager configuration..."
-    home-manager switch --flake .#user | tee -a "$LOGFILE"
-    chmod 666 "$LOGFILE"  # Set log file permissions to rw-rw-rw-
-}
-
-# Log the start of the switch process
-log_message "----- START OF SWITCH INITIATED AT $TIMESTAMP -----"
-
-# Execute the functions
-switch_system
-switch_home_manager
-
-# Log the end of the switch process
-log_message "----- END OF SWITCH INITIATED AT $TIMESTAMP -----"
