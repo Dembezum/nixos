@@ -17,6 +17,9 @@ if [[ $EUID -eq 0 ]]; then
    exit 1
 fi
 
+# Enable flakes in nixos
+echo "nixos.settings.experimental-features = [ \"nix-command\" \"flakes\"]; >> /etc/nixos/configuration.nix"
+
 # Check if home-manager is installed, if not install it
 if ! command -v home-manager &> /dev/null
 then
@@ -41,8 +44,6 @@ switch_home_manager() {
     chmod 666 "$LOGFILE"  # Set log file permissions to rw-rw-rw-
 }
 
-# Enable flakes in nixos
-echo "nixos.settings.experimental-features = [ \"nix-command\" \"flakes\"]; >> /etc/nixos/configuration.nix
 
 # Log the start of the switch process
 log_message "----- START OF SWITCH INITIATED AT $TIMESTAMP -----"
