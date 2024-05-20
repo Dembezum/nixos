@@ -70,6 +70,10 @@
       export HISTCONTROL=ignoredups
       setopt appendhistory
 
+      autoload -z edit-command-line
+      zle -N edit-command-line
+      bindkey "^X^E" edit-command-line
+
       bindkey '^R' history-incremental-search-backward
 
       ztyle ':completion:*' menu no
