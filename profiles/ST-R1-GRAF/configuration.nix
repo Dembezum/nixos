@@ -80,5 +80,6 @@ services.grafana = {
   };
 };
 
+  services.qemuGuest.enable = true;
   system.stateVersion = systemSettings.systemstate;
 }

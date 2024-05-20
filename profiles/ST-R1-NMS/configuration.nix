@@ -10,6 +10,7 @@
   ];
 
   networking = {
+    hostname = "ST-R1-NMS";
     nameservers = [ "1.1.1.1" ];
     defaultGateway = {
       address = "10.0.20.2";
@@ -65,5 +66,6 @@
     uid = 1000;
   };
 
+  services.qemuGuest.enable = true;
   system.stateVersion = systemSettings.systemstate;
 }

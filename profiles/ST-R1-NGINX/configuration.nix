@@ -51,6 +51,7 @@
     uid = 1000;
   };
 
+  services.qemuGuest.enable = true;
   system.stateVersion = systemSettings.systemstate;
 }
 
