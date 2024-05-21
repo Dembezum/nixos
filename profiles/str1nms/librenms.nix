@@ -17,4 +17,4 @@
         passwordFile = "/run/secret/librenms-db-password";
       };
   };
-};
+}
