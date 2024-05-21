@@ -12,14 +12,14 @@
   networking = {
     nameservers = [ "1.1.1.1" ];
     defaultGateway = {
-      address = "10.0.20.2";
+      address = "10.0.40.2";
       interface = "ens18";
     };
     interfaces = {
       ens18 = {
         ipv4.addresses = [
         {
-          address = "10.0.20.110";
+          address = "10.0.40.110";
           prefixLength = 24;
         }
         ];
