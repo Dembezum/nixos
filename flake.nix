@@ -18,15 +18,15 @@
 # --- SYSTEM CONFIGURATION ---
     systemSettings = {
       system = "x86_64-linux";
-      hostname = "nixnms";
-      profile = "nixnms";
+      hostname = "nixdesk";
+      profile = "nixdesk";
       systemstate = "23.11";
     };
 
 # --- USER CONFIGURATION ---
   userSettings = {
-    username = "nixnms";
-    name = "nix";
+    username = "nixdesk";
+    name = "nixdesk";
     editor = "nvim";
     term ="foot";
     browser = "firefox";

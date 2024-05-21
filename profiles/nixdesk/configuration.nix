@@ -4,7 +4,8 @@
 {
   imports = [
 # --- SYSTEM CONFIGURATION ---
-    ../../universal.nix
+    ./librenms.nix
+      ../../universal.nix
       ../../system/modules/ssh
       ../../system/modules/X11
       ../../user/modules/steam
@@ -75,7 +76,7 @@
 # Firewall
   networking.firewall = {
     enable = true;
-    allowedTCPPorts = [ 53317 22 443 8384 22000 61208 61209];
+    allowedTCPPorts = [ 3306 53317 22 443 8384 22000 61208 61209];
     allowedUDPPorts = [ 22000 53317 21027 61208 ];
 
   };
