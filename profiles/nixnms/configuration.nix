@@ -2,11 +2,10 @@
 
 {
   imports = [
-      ./librenms.nix
-      ../../universal.nix
-      ../../system/modules/ssh
-      ../../system/modules/glances
-      ./hardware-configuration.nix
+    ../../universal.nix
+    ../../system/modules/ssh
+    ../../system/modules/glances
+    ./hardware-configuration.nix
   ];
 
   networking = {
@@ -18,10 +17,10 @@
     interfaces = {
       ens18 = {
         ipv4.addresses = [
-        {
-          address = "10.0.40.110";
-          prefixLength = 24;
-        }
+          {
+            address = "10.0.40.110";
+            prefixLength = 24;
+          }
         ];
       };
     };
@@ -45,7 +44,7 @@
         set cursorline = true
         set virtualedit = "block"
         endif
-        '';
+      '';
       packages.myVimPackage = with pkgs.vimPlugins; {
         start = [ ctrlp ];
       };
@@ -66,5 +65,16 @@
   };
 
   services.qemuGuest.enable = true;
+
+  services.librenms = {
+    enable = true;
+    dataDir = "/var/lib/librenms";
+    logDir = "/var/log/librenms";
+    hostname = "librenms.zum.local";
+    user = "librenms";
+    group = "librenms";
+  };
+
   system.stateVersion = systemSettings.systemstate;
 }
+
