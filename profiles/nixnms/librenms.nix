@@ -1,7 +1,6 @@
 { config, pkgs, ...}:
 
 {
-
   services.librenms = {
     enable = true;
     dataDir = "/var/lib/librenms";
