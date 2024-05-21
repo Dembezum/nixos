@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./librenms.nix
     ../../universal.nix
     ../../system/modules/ssh
     ../../system/modules/glances
@@ -65,16 +66,6 @@
   };
 
   services.qemuGuest.enable = true;
-
-  services.librenms = {
-    enable = true;
-    dataDir = "/var/lib/librenms";
-    logDir = "/var/log/librenms";
-    hostname = "librenms.zum.local";
-    user = "librenms";
-    group = "librenms";
-  };
-
   system.stateVersion = systemSettings.systemstate;
 }
 
