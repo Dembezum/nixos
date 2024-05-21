@@ -4,7 +4,6 @@
 {
   imports = [
 # --- SYSTEM CONFIGURATION ---
-    ./librenms.nix
       ../../universal.nix
       ../../system/modules/ssh
       ../../system/modules/X11
