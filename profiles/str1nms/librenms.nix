@@ -3,18 +3,24 @@
 {
   services.librenms = {
     enable = true;
-    dataDir = "/var/lib/librenms";
-    logDir = "/var/log/librenms";
-    hostname = "librenms.zum.local";
     user = "librenms";
     group = "librenms";
+    hostname = "librenms.zum.local";
+    dataDir = "/var/lib/librenms";
+    logDir = "/var/log/librenms";
+
     database = {
-        createLocally = true;
-        database = "librenms";
-        host = "localhost";
-        username = "librenms";
-        port = 3306;
-        passwordFile = "/run/secret/librenms-db-password";
-      };
+      createLocally = true;
+      host = "localhost";
+      database = "librenms";
+      username = "librenms";
+      passwordFile = "/run/secret/librenms-db-password";
+    };
+
+    settings = {
+      base_url = "/";
+      top_devices = true;
+      top_ports = false;
+    };
   };
 }
