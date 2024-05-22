@@ -75,7 +75,6 @@
       material-design-icons
   ];
 
-
 # Show chnages in the system configuration
   system.activationScripts.diff = {
     supportsDryActivation = true;

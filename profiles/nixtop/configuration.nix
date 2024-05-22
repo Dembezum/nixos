@@ -64,6 +64,11 @@
     shell = pkgs.zsh;
   };
 
+  services.tftpd = {
+      enable = true;
+      path = "/srv/tftp";
+    };
+
   hardware.opengl = {
     enable = true;
     driSupport = true;
