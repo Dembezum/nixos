@@ -17,6 +17,7 @@
       tree
       which
       glances
+      powertop
       pciutils
       usbutils
       neofetch
