@@ -17,6 +17,7 @@
 
   environment.systemPackages = with pkgs; [ 
     gns3-gui
+    jdk21
   ];
 
 # -- VPN --
