@@ -3,13 +3,12 @@
 {
 # -- IMPORTS --
   imports = [
-    inputs.nixvim.homeManagerModules.nixvim
     ../../user/modules/gtk
       ../../user/modules/zsh
       ../../user/modules/tmux
       ../../user/modules/kitty
 #      ../../user/modules/nixvim
-#      ../../user/modules/neovim
+      ../../user/modules/neovim
       ../../user/modules/shells
       ../../user/modules/hyprland
       ../../user/modules/minecraft
@@ -18,7 +17,7 @@
 
 # -- USER SETTINGS --
   home.username = userSettings.username;
-  home.homeDirectory = "/home/"+userSettings.username;
+  home.homeDirectory = "/home/${userSettings.username}";
   programs.home-manager.enable = true;
 
 # Package configuration
@@ -29,18 +28,9 @@
     };
   };
 
-let
-  neovimconfig = import ../../user/modules/nixvim;
-  nvim = inputs.nixvim.legacyPackages.x86_64-linux.makeNixvimWithModule {
-    inherit pkgs;
-    module = neovimconfig;
-  };
-in 
-{
 # -- DEFAULT PACKAGES --
   home.packages = with pkgs; [
-    nvim
-    drawio
+      drawio
       lazygit
       jq
       sops

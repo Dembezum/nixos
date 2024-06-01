@@ -65,6 +65,8 @@
 # Text manipulation / editing
       vim
       shellcheck
+# Photo stuff
+      feh
 # System recovery and management
       efibootmgr
       efivar

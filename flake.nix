@@ -17,8 +17,12 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, nixvim, ... }@inputs:
-    let 
+  outputs = {
+    self,
+    nixpkgs,
+    home-manager,
+    ... }@inputs:
+    let
 # --- SYSTEM CONFIGURATION ---
     systemSettings = {
       system = "x86_64-linux";
@@ -32,7 +36,7 @@
     username = "nixdesk";
     name = "nixdesk";
     editor = "nvim";
-    term ="foot";
+    term ="xterm-256color";
     browser = "firefox";
     homestate = "23.11";
   };
