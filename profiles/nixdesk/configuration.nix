@@ -68,6 +68,8 @@
     shell = pkgs.zsh;
   };
 
+    systemd.services.NetworkManager-wait-online.enable = false;
+
   services.lldpd.enable = true;
 
   networking.networkmanager.enable = true;
