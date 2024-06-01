@@ -3,10 +3,12 @@
 {
 # -- IMPORTS --
   imports = [
+    inputs.nixvim.homeManagerModules.nixvim
     ../../user/modules/gtk
       ../../user/modules/zsh
       ../../user/modules/tmux
       ../../user/modules/kitty
+      ../../user/modules/nixvim
       ../../user/modules/neovim
       ../../user/modules/shells
       ../../user/modules/hyprland
