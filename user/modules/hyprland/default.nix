@@ -71,17 +71,28 @@
       };
 
 # -- ENV VARIABLES --
-      env = [
-        "XCURSOR_SIZE,24"
+#      env = [
+#        "XCURSOR_SIZE,24"
+#        "WLR_NO_HARDWARE_CURSORS,1"
+## NVIDIA
+#        "XDG_SESSION_DESKTOP,Hyprland"
+#        "XDG_CURRENT_DESKTOP,Hyprland"
+#        "XDG_SESSION_TYPE,wayland"
+#        "LIBVA_DRIVER_NAME,nvidia"
+#      ];
+
+env = [
         "WLR_NO_HARDWARE_CURSORS,1"
-# NVIDIA
-        "XDG_SESSION_DESKTOP,Hyprland"
-        "XDG_CURRENT_DESKTOP,Hyprland"
-        "XDG_SESSION_TYPE,wayland"
-#        "GBM_BACKEND,nvidia-drm"
-#        "__GL_VRR_ALLOWED,1"
-#        "WLR_DRM_NO_ATOMIC,1"
-        "LIBVA_DRIVER_NAME,nvidia"
+        "XCURSOR_SIZE,24"
+        "XDG_CURRENT_DESKTOP, Hyprland"
+        "XDG_SESSION_DESKTOP, Hyprland"
+        "XDG_SESSION_TYPE, wayland"
+        "GDK_BACKEND, wayland,x11"
+        "GBM_BACKEND, nvidia-drm"
+        "__GLX_VENDOR_LIBRARY_NAME, nvidia"
+        "LIBVA_DRIVER_NAME, nvidia"
+        "__GL_VRR_ALLOWED, 0"
+
       ];
 
 # -- MASTER LAYOUT --
