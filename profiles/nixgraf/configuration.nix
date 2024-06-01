@@ -29,22 +29,18 @@
   };
 
   networking = {
-    hostName = "nixgraph";
-    nameservers = [ "1.1.1.1" ];
-    defaultGateway = {
-      address = "10.0.20.2";
-      interface = "ens18";
-    };
+    hostName = systemSettings.hostname;
     interfaces = {
       ens18 = {
-        ipv4.addresses = [
-        {
-          address = "10.0.20.110";
+        useDHCP = false;
+        ipv4.addresses = [ {
+          address = "10.0.40.111";
           prefixLength = 24;
-        }
-        ];
+        } ];
       };
     };
+    defaultGateway = "10.0.40.2";
+    nameservers = [ "1.1.1.1" ];
   };
 
   networking.firewall = {

@@ -28,6 +28,7 @@
     };
   };
 
+
   networking = {
     hostName = "nixgraph";
     nameservers = [ "1.1.1.1" ];

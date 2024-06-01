@@ -30,10 +30,11 @@
 
 # -- DEFAULT PACKAGES --
   home.packages = with pkgs; [
-    lazygit
+    drawio
+      lazygit
       jq
       sops
-    gnome.nautilus
+      gnome.nautilus
   ];
 
 # -- VARIABLES --

@@ -71,6 +71,9 @@
 
 services.fwupd.enable = true;
 
+
+networking.useDHCP = lib.mkDefault true;
+
   hardware.opengl = {
     enable = true;
     driSupport = true;

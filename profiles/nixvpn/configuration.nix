@@ -46,6 +46,22 @@
     uid = 1000;
   };
 
+
+  networking = {
+    hostName = systemSettings.hostname;
+    interfaces = {
+      ens18 = {
+        useDHCP = false;
+        ipv4.addresses = [ {
+          address = "10.0.40.113";
+          prefixLength = 24;
+        } ];
+      };
+    };
+    defaultGateway = "10.0.40.2";
+    nameservers = [ "1.1.1.1" ];
+  };
+
   services.qemuGuest.enable = true;
   system.stateVersion = systemSettings.systemstate;
 }

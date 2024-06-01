@@ -15,22 +15,20 @@
   ];
 
   networking = {
-    nameservers = [ "192.168.1.160" ];
-    defaultGateway = {
-      address = "192.168.1.1";
-      interface = "ens18";
-    };
+    hostName = systemSettings.hostname;
     interfaces = {
       ens18 = {
-        ipv4.addresses = [
-        {
-          address = "192.168.1.3";
+        useDHCP = false;
+        ipv4.addresses = [ {
+          address = "10.0.40.112";
           prefixLength = 24;
-        }
-        ];
+        } ];
       };
     };
+    defaultGateway = "10.0.40.2";
+    nameservers = [ "1.1.1.1" ];
   };
+
 
   boot.loader.grub = {
     enable = true;
