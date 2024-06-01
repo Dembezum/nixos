@@ -36,12 +36,12 @@ hardware.nvidia.forceFullCompositionPipeline = false;
 
 # Load nvidia driver for Xorg and Wayland
 #  services.xserver.videoDrivers = ["nvidia"];
-  hardware.nvidia.modesetting.enable = true;
+  hardware.nvidia.modesetting.enable = false;
   hardware.nvidia.powerManagement.enable = false;
   hardware.nvidia.powerManagement.finegrained = false;
-  hardware.nvidia.open = false;
+  hardware.nvidia.open = true;
   hardware.nvidia.nvidiaSettings = true;
-  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.beta;
+  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
 
 # Special config to load the latest (535 or 550) driver for the support of the 4070 SUPER
 #  hardware.nvidia.package = let 
