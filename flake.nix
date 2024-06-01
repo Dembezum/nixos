@@ -1,4 +1,4 @@
-# Flake.nix
+# flake.nix
 {
   description = "Zums flake";
 
@@ -17,12 +17,12 @@
     };
   };
 
-  outputs = {
-    self,
-    nixpkgs,
-    home-manager,
+  outputs = { 
+    self, 
+    nixpkgs, 
+    home-manager, 
     ... }@inputs:
-    let
+    let 
 # --- SYSTEM CONFIGURATION ---
     systemSettings = {
       system = "x86_64-linux";
@@ -48,7 +48,7 @@
     homeConfigurations = {
       user = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        modules = [ profiles/${systemSettings.profile}/home.nix ];
+        modules = [ ./profiles/${systemSettings.profile}/home.nix ];
         extraSpecialArgs = {
           inherit systemSettings;
           inherit userSettings;
@@ -60,7 +60,9 @@
     nixosConfigurations = {
       system = lib.nixosSystem {
         system = systemSettings.system;
-        modules = [ profiles/${systemSettings.profile}/configuration.nix];
+        modules = [ ./profiles/${systemSettings.profile}/configuration.nix 
+                    home-manager.nixosModules.home-manager 
+        ];
         specialArgs = {
           inherit systemSettings;
           inherit userSettings;
@@ -68,7 +70,6 @@
         };
       };
     };
-
 
 # --- DEVELOPMENT ENVIRONMENTS ---
     devShells.${systemSettings.system}.default =

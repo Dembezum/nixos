@@ -30,6 +30,7 @@
 
 # -- DEFAULT PACKAGES --
   home.packages = with pkgs; [
+    flameshot
       drawio
       lazygit
       jq
