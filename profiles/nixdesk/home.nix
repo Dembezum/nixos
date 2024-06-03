@@ -30,7 +30,6 @@
 
 # -- DEFAULT PACKAGES --
   home.packages = with pkgs; [
-      gotop
       drawio
       lazygit
       jq

@@ -16,6 +16,7 @@
   ];
 
   environment.systemPackages = with pkgs; [ 
+    appimage-run
     gns3-gui
     jdk21
   ];
