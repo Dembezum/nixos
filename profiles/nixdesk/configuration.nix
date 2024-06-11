@@ -83,5 +83,12 @@
     allowedUDPPorts = [ 22000 53317 21027 61208 ];
 
   };
+
+  services.xserver.enable = true;
+  services.xserver.xkb.layout = "dk"; 
+  services.xserver.displayManager.gdm.enable = true;
+  services.desktopManager.plasma6.enable = true;
+  services.xserver.videoDrivers = [ "nvidia" "modesetting" ];
+
   system.stateVersion = systemSettings.systemstate;
 }
