@@ -6,7 +6,6 @@
 # --- SYSTEM CONFIGURATION ---
       ../../universal.nix
       ../../system/modules/ssh
-      ../../system/modules/X11
       ../../user/modules/steam
       ../../user/modules/lutris
       ../../system/modules/nvidia

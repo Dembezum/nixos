@@ -5,7 +5,6 @@
   imports = [
 # --- SYSTEM CONFIGURATION ---
     ../../universal.nix
-      ../../system/modules/X11
       ../../system/modules/ssh
       ../../system/modules/bluetooth
       ./hardware-configuration.nix
