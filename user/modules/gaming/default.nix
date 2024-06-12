@@ -21,6 +21,11 @@
     };
   };
 
+  programs.gamemode = {
+    enable = true;
+    enableRenice = true;
+  };
+
 hardware = {
   opengl.enable = true; 
 };
