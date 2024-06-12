@@ -20,7 +20,6 @@
       ];
     };
   };
-};
 
 hardware = {
   opengl.enable = true; 

@@ -12,7 +12,6 @@
       ../../user/modules/neovim
       ../../user/modules/shells
 #      ../../user/modules/hyprland
-      ../../user/modules/minecraft
       ../../user/modules/desktop
   ];
 

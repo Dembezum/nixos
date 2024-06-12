@@ -7,7 +7,6 @@
     ../../universal.nix
       ../../system/modules/ssh
       ../../user/modules/gaming
-      ../../user/modules/lutris
       ../../system/modules/nvidia
       ../../system/modules/pipewire
       ../../system/modules/virtualization
