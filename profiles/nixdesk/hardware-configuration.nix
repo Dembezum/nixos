@@ -4,8 +4,8 @@
   imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
 
   boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "usb_storage" "usbhid" "sd_mod" ];
-  boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ "kvm-amd"  "nfs"];
+  boot.initrd.kernelModules = [ "nvidia" ];
+  boot.kernelModules = [ "nvidia" "kvm-amd" "nfs"];
   boot.extraModulePackages = [ ];
 
   boot.supportedFilesystems = [ "nfs" "btrfs" "cifs" "f2fs" "jfs" "ntfs" "reiserfs" "vfat" "xfs" ];

@@ -59,42 +59,32 @@
   users.users.${userSettings.username} = {
     isNormalUser = true;
     description = userSettings.name;
-    extraGroups = [ "gamemode" "plugdev" "libvirt" "video" "networkmanager" "wheel" ];
+    extraGroups = [ "plugdev" "libvirt" "video" "networkmanager" "wheel" ];
     uid = 1000;
     shell = pkgs.zsh;
-    programs = {
-      gamescope = {
-        enable = true;
-      };
-      gamemode = {
-        enable = true; 
-        enableRenice = true; 
-        settings = {
-        };
-      };
-    };
   };
 
-    systemd.services.NetworkManager-wait-online.enable = false;
 
-    services.lldpd.enable = true;
+  systemd.services.NetworkManager-wait-online.enable = false;
 
-    networking.networkmanager.enable = true;
-    networking.hostName = systemSettings.hostname;
+  services.lldpd.enable = true;
+
+  networking.networkmanager.enable = true;
+  networking.hostName = systemSettings.hostname;
 
 # Firewall
-    networking.firewall = {
-      enable = true;
-      allowedTCPPorts = [ 3306 53317 22 443 8384 22000 61208 61209];
-      allowedUDPPorts = [ 22000 53317 21027 61208 ];
+  networking.firewall = {
+    enable = true;
+    allowedTCPPorts = [ 3306 53317 22 443 8384 22000 61208 61209];
+    allowedUDPPorts = [ 22000 53317 21027 61208 ];
 
-    };
+  };
 
-    services.xserver.enable = true;
-    services.xserver.xkb.layout = "dk"; 
-    services.xserver.displayManager.gdm.enable = true;
-    services.desktopManager.plasma6.enable = true;
-    services.xserver.videoDrivers = [ "nvidia" "modesetting" ];
+  services.xserver.enable = true;
+  services.xserver.xkb.layout = "dk"; 
+  services.xserver.displayManager.gdm.enable = true;
+  services.desktopManager.plasma6.enable = true;
+  services.xserver.videoDrivers = [ "nvidia" "modesetting" ];
 
-    system.stateVersion = systemSettings.systemstate;
-  }
+  system.stateVersion = systemSettings.systemstate;
+}

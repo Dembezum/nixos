@@ -1,14 +1,15 @@
 { pkgs, config, ... }:
 
 {
+services.xserver.videoDrivers = ["nvidia"];
 hardware.nvidia = {
+  open = false;
+  nvidiaSettings = true;
   modesetting.enable = true;
   powerManagement.enable = false;
   powerManagement.finegrained = false; 
-  open = false;
-  nvidiaSettings = true;
+  forceFullCompositionPipeline = false;
   package = config.boot.kernelPackages.nvidiaPackages.beta;
-  forceFullCompositionPipeline = true;
 };
 
 # Enable OpenGL
