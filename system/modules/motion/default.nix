@@ -1,34 +1,35 @@
-{ config, pkgs, ... }:
-# -- MOTION CONFIGURATION --
-
-let
-motionConfig = ''
- daemon on
- stream_localhost off
- stream_port 8081
- stream_quality 100
- stream_maxrate 30
- stream_localhost off
- stream_auth_method 0
- webcontrol_localhost off
- webcontrol_port 8080
- output_pictures off
-'';
-in
+{ config, pkgs, lib, ... }:
 {
-  environment.etc."motion/motion.conf".text = motionConfig;
+  imports = [
+    ./motion.nix
+  ];
 
-  systemd.services.motion = {
-    description = "Motion - Video Surveillance";
-    after = [ "network.target" ];
-    wantedBy = [ "multi-user.target" ];
-    serviceConfig = {
-      ExecStart = "${pkgs.motion}/bin/motion -c /etc/motion/motion.conf";
-      ExecReload = "${pkgs.systemd}/bin/systemctl reload motion";
-      Restart = "always";
-      User = "root";
-      Group = "root";
+  services.motion = {
+    enable = true;
+    instances = {
+      camera1 = {
+        configText = ''
+# Motion configuration for camera1
+        width 1920
+        height 1080
+        framerate 24
+        videodevice /dev/video0
+        target_dir /var/lib/motion/camera1
+        output_pictures off
+        ffmpeg_output_movies on
+        stream_port 8081
+        stream_localhost off
+        stream_quality 50
+        stream_maxrate 5
+        threshold 1500
+        noise_level 32
+        pre_capture 2
+        post_capture 5
+          '';
+        extraOpts = [ ];
+        limitDays = 14;
+        limitMebibytes = 1024; # 1 GB
+      };
     };
   };
 }
-

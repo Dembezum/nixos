@@ -19,6 +19,7 @@
     appimage-run
     gns3-gui
     jdk21
+    mpv
   ];
 
 # -- HYPRLAND --
@@ -76,7 +77,7 @@
 # Firewall
   networking.firewall = {
     enable = true;
-    allowedTCPPorts = [ 3306 53317 22 443 8384 22000 61208 61209];
+    allowedTCPPorts = [ 8080 8001 3306 53317 22 443 8384 22000 61208 61209];
     allowedUDPPorts = [ 22000 53317 21027 61208 ];
 
   };
