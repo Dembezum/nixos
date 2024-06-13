@@ -10,6 +10,7 @@
       ../../system/modules/nvidia
       ../../system/modules/pipewire
       ../../system/modules/virtualization
+      ../../system/modules/motion
       ./hardware-configuration.nix
   ];
 
