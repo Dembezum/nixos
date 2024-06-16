@@ -1,4 +1,4 @@
-{ config, lib, modulesPath, ... }:
+{ pkgs, config, lib, modulesPath, ... }:
 
 {
   imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
@@ -7,8 +7,8 @@
   boot.initrd.kernelModules = [ "nvidia" ];
   boot.kernelModules = [ "nvidia" "kvm-amd" "nfs"];
   boot.extraModulePackages = [ ];
-
-  boot.supportedFilesystems = [ "nfs" "btrfs" "cifs" "f2fs" "jfs" "ntfs" "reiserfs" "vfat" "xfs" ];
+  boot.supportedFilesystems = [ "nfs" "ntfs" "vfat" "xfs" ];
+  boot.kernelPackages = pkgs.linuxPackages_zen;
 
   fileSystems."/mnt/extra" = {
     device = "/dev/disk/by-uuid/c2b0371a-ffbf-40ea-9a00-316407e76788";
