@@ -8,7 +8,6 @@
      ./waybar.nix
      ./swaync
      ./wlogout
-     ../foot
      ./rofi
   ];
 
@@ -17,7 +16,7 @@
 
 # -- PACKAGES TO INSTALL --
   home.packages = with pkgs; [
-    hyprland
+      hyprland
       pcmanfm
       rofi-wayland
       libnotify
@@ -81,18 +80,17 @@
 #        "LIBVA_DRIVER_NAME,nvidia"
 #      ];
 
-env = [
+      env = [
         "WLR_NO_HARDWARE_CURSORS,1"
-        "XCURSOR_SIZE,24"
-        "XDG_CURRENT_DESKTOP, Hyprland"
-        "XDG_SESSION_DESKTOP, Hyprland"
-        "XDG_SESSION_TYPE, wayland"
-        "GDK_BACKEND, wayland,x11"
-        "GBM_BACKEND, nvidia-drm"
-        "__GLX_VENDOR_LIBRARY_NAME, nvidia"
-        "LIBVA_DRIVER_NAME, nvidia"
-        "__GL_VRR_ALLOWED, 0"
-
+          "XCURSOR_SIZE,24"
+          "XDG_CURRENT_DESKTOP, Hyprland"
+          "XDG_SESSION_DESKTOP, Hyprland"
+          "XDG_SESSION_TYPE, wayland"
+          "GDK_BACKEND, wayland,x11"
+          "GBM_BACKEND, nvidia-drm"
+          "__GLX_VENDOR_LIBRARY_NAME, nvidia"
+          "LIBVA_DRIVER_NAME, nvidia"
+          "__GL_VRR_ALLOWED, 0"
       ];
 
 # -- MASTER LAYOUT --
@@ -146,22 +144,28 @@ env = [
         kb_layout = "dk";
         kb_options = "";
         follow_mouse = 1;
+        mouse_refocus = false;
+        force_no_accel = true;
+#        sensitivity = 0;
+      };
 
 # -- MOUSE --
-        touchpad = {
-          natural_scroll = "no";
-          disable_while_typing = false;
-        };
-        sensitivity = 0;
-        accel_profile = "flat";
-      };
+#        touchpad = {
+#          natural_scroll = "no";
+#          disable_while_typing = false;
+#        };
+#        sensitivity = 0;
+#        accel_profile = "flat";
+#      };
 
 # -- MISC --
       misc = {
         disable_hyprland_logo = true;
         disable_splash_rendering = true;
         force_default_wallpaper = 1;
-        vrr = "on";
+        enable_swallow = true;
+        no_direct_scanout = true;
+#        vrr = "on";
       };
 
 # -- KEYBINDS --
@@ -192,7 +196,6 @@ env = [
           "$mainMod, up, movefocus, u"
           "$mainMod, down, movefocus, d"
           "$mainMod SHIFT, Space, exec, move_window special"
-
 
 # Scroll through workspaces
           "$mainMod, mouse_down, workspace, e+1"
@@ -257,17 +260,17 @@ env = [
 
 # -- MONITOR CONFIGURATION --
     extraConfig = ''
-      monitor=Unknown-3,3440x1440@100,3440x0,1
-      monitor=Unknown-4,1920x1080@60,2360x0,1,transform,3
-monitor=eDP-1,1920x1080@60,0x0,1
+      monitor=Unknown-2,3440x1440@100,3440x0,1
+      monitor=Unknown-3,1920x1080@60,2360x0,1,transform,3
+      #monitor=eDP-1,1920x1080@60,0x0,1
 
 # -- WORKING CONFIG --
-#monitor=DP-3,3440x1440@100,3440x0,1
-#monitor=DP-5,1920x1080@60,2360x0,1,transform,3
-#monitor=eDP-1,1920x1080@60,4240x1440,1
+      #monitor=DP-3,3440x1440@100,3440x0,1
+      #monitor=DP-5,1920x1080@60,2360x0,1,transform,3
+      #monitor=eDP-1,1920x1080@60,4240x1440,1
 
 
-                  bind=SUPER,s,togglesplit
+      bind=SUPER,s,togglesplit
 # Autostart
       exec-once = nm-applet --indicator
       exec-once = ~/.config/hypr/scripts/wallpaper.sh

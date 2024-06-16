@@ -11,7 +11,6 @@
     autosuggestion.enable = true;
     enableCompletion = true;
     syntaxHighlighting.enable = true;
-
     shellAliases = {
       flake = "cd ~/Git/flakes/nixos && el";
       net = "cd ~/Projects/Network/ && el";

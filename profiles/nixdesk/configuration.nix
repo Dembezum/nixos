@@ -15,9 +15,12 @@
 
 # -- PACKAGES -- 
   environment.systemPackages = with pkgs; [ 
+    xdg-desktop-portal
+    xdg-desktop-portal-gtk
+    xdg-desktop-portal-wlr
     appimage-run
-    putty
     gns3-gui
+    putty
     jdk21
     mpv
   ];
@@ -36,13 +39,14 @@
   services.devmon.enable = true;
 
 # -- XDG --
-  xdg.portal = { 
-    enable = true; 
+  xdg.portal = {
+    enable = true;
     extraPortals = [
       pkgs.xdg-desktop-portal-gtk 
         pkgs.xdg-desktop-portal-wlr
     ];
   };
+
   xdg.portal.config = {
     common = {
       default = [
@@ -79,10 +83,11 @@
 
   };
 
-  services.desktopManager.plasma6.enable = true;
+  services.xserver.displayManager.gdm.enable = true;
+#  services.desktopManager.plasma6.enable = true;
+#  services.displayManager.defaultSession = "hyprland";
   services.xserver = {
     enable = true;
-    displayManager.gdm.enable = true;
     xkb.layout = "dk";
   };
 

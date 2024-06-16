@@ -6,7 +6,7 @@ hardware.nvidia = {
   open = false;
   nvidiaSettings = true;
   modesetting.enable = true;
-  powerManagement.enable = true;
+  powerManagement.enable = false;
   powerManagement.finegrained = false; 
   forceFullCompositionPipeline = false;
   package = config.boot.kernelPackages.nvidiaPackages.stable;
@@ -19,11 +19,4 @@ hardware.nvidia = {
     driSupport = true;
     driSupport32Bit = true;
   };
-
-environment.sessionVariables = {
-# Force the use of the EGL Wayland platform
-  "EGL_PLATFORM" = "wayland";
-# Enable the NVIDIA Wayland EGL backend
-  "XDG_SESSION_TYPE" = "wayland";
-};
 }

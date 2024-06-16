@@ -1,11 +1,12 @@
-{pkgs, ...}: {
+{ pkgs, ... }: 
+
+{
   home = {
     packages = with pkgs; [
       dconf
         catppuccin-gtk
-# gnome.dconf-editor
+        gnome.dconf-editor
     ];
-
     pointerCursor = {
       name = "Catppuccin-Mocha-Peach-Cursors";
       package = pkgs.catppuccin-cursors.mochaPeach;
@@ -54,4 +55,4 @@
     enable = true;
     platformTheme.name = "gtk";
   };
-             }
+}

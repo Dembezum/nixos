@@ -16,7 +16,7 @@
       nodePackages_latest.vscode-langservers-extracted 
       nodePackages_latest.vscode-langservers-extracted
       nodePackages_latest.typescript-language-server 
-      nodePackages_latest.bash-language-server
+#      nodePackages_latest.bash-language-server
       nodePackages_latest.dockerfile-language-server-nodejs
       nodePackages_latest.yaml-language-server
     ];
