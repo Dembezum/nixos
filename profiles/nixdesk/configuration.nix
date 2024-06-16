@@ -10,13 +10,13 @@
       ../../system/modules/nvidia
       ../../system/modules/pipewire
       ../../system/modules/virtualization
-      ../../system/modules/motion
       ./hardware-configuration.nix
   ];
 
 # -- PACKAGES -- 
   environment.systemPackages = with pkgs; [ 
     appimage-run
+    putty
     gns3-gui
     jdk21
     mpv
@@ -86,7 +86,7 @@
   services.xserver.xkb.layout = "dk"; 
   services.xserver.displayManager.gdm.enable = true;
   services.desktopManager.plasma6.enable = true;
-  services.xserver.videoDrivers = [ "nvidia" "modesetting" ];
+  services.xserver.videoDrivers = [ "nvidia" ];
 
   system.stateVersion = systemSettings.systemstate;
 }

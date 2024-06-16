@@ -14,13 +14,13 @@
         height 1080
         framerate 24
         videodevice /dev/video0
-        target_dir /var/lib/motion/camera1
+        target_dir /home/nixping/motion/camera1
         output_pictures off
         ffmpeg_output_movies on
         stream_port 8081
         stream_localhost off
-        stream_quality 50
-        stream_maxrate 5
+        stream_quality 100
+        stream_maxrate 10
         threshold 1500
         noise_level 32
         pre_capture 2
@@ -28,7 +28,7 @@
           '';
         extraOpts = [ ];
         limitDays = 14;
-        limitMebibytes = 1024; # 1 GB
+        limitMebibytes = 4096; # 4 GB
       };
     };
   };
