@@ -46,10 +46,6 @@
     };
   };
 
-  hardware = {
-    opengl.enable = true; 
-  };
-
   environment = {
     systemPackages = with pkgs; [
       goverlay
@@ -59,7 +55,6 @@
         wine
         prismlauncher
         vulkan-tools
-
     (lutris.override {
        extraPkgs = pkgs: [
           xorg.libXcursor

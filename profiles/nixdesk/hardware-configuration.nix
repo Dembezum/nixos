@@ -4,14 +4,18 @@
   imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
 
   boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "usb_storage" "usbhid" "sd_mod" ];
-  boot.initrd.kernelModules = [ "nvidia" ];
-  boot.kernelModules = [ "nvidia" "kvm-amd" "nfs"];
+  boot.initrd.kernelModules = [ ];
+  boot.kernelModules = ["kvm-amd" "nfs"];
   boot.extraModulePackages = [ ];
-  boot.supportedFilesystems = [ "nfs" "ntfs" "vfat" "xfs" ];
+  boot.supportedFilesystems = [ "nfs" "ntfs" "vfat" ];
   boot.kernelPackages = pkgs.linuxPackages_zen;
 
   fileSystems."/mnt/extra" = {
     device = "/dev/disk/by-uuid/c2b0371a-ffbf-40ea-9a00-316407e76788";
+    fsType = "ext4";
+  };
+  fileSystems."/mnt/hdd" = {
+    device = "/dev/disk/by-uuid/f8e3ca98-d2be-4429-9953-ab4bd973bda5";
     fsType = "ext4";
   };
   fileSystems."/" =

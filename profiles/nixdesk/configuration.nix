@@ -66,11 +66,8 @@
     shell = pkgs.zsh;
   };
 
-
-  systemd.services.NetworkManager-wait-online.enable = false;
-
+#  systemd.services.NetworkManager-wait-online.enable = false;
   services.lldpd.enable = true;
-
   networking.networkmanager.enable = true;
   networking.hostName = systemSettings.hostname;
 
@@ -82,10 +79,10 @@
 
   };
 
-  services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
   services.xserver = {
     enable = true;
+    displayManager.gdm.enable = true;
     xkb.layout = "dk";
   };
 
