@@ -15,6 +15,7 @@
 
 # -- PACKAGES -- 
   environment.systemPackages = with pkgs; [ 
+    bottles
     xdg-desktop-portal
     xdg-desktop-portal-gtk
     xdg-desktop-portal-wlr
