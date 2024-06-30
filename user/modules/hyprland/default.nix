@@ -81,6 +81,15 @@
 #        "LIBVA_DRIVER_NAME,nvidia"
 #      ];
 
+# -- EXEC ONCE --
+      exec-once = [
+          "exec-once = xsetroot -cursor_name left_ptr &"
+          "exec-once = nm-applet --indicator"
+          "exec-once = ~/.config/hypr/scripts/wallpaper.sh"
+          "exec-once = swaync &"
+          "exec-once = waybar &"
+      ];
+
       env = [
         "WLR_NO_HARDWARE_CURSORS,1"
           "XCURSOR_SIZE,24"
@@ -269,16 +278,7 @@
       #monitor=DP-3,3440x1440@100,3440x0,1
       #monitor=DP-5,1920x1080@60,2360x0,1,transform,3
       #monitor=eDP-1,1920x1080@60,4240x1440,1
-
-
       bind=SUPER,s,togglesplit
-# Autostart
-      exec-once = nm-applet --indicator
-      exec-once = ~/.config/hypr/scripts/wallpaper.sh
-      exec-once = swaync &
-      exec-once = waybar &
-
-
       '';
   };
 }

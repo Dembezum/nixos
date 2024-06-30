@@ -53,7 +53,9 @@
         protonup-qt
         glxinfo
         wine
-        prismlauncher
+        (prismlauncher.override {
+      glfw = pkgs.glfw-wayland-minecraft;
+    })
         vulkan-tools
     (lutris.override {
        extraPkgs = pkgs: [

@@ -7,17 +7,21 @@
         catppuccin-gtk
         gnome.dconf-editor
     ];
-    pointerCursor = {
-      name = "Catppuccin-Mocha-Peach-Cursors";
-      package = pkgs.catppuccin-cursors.mochaPeach;
-      size = 24;
-      gtk.enable = true;
-      x11.enable = true;
-    };
+#    pointerCursor = {
+#      name = "catppuccin-Mocha-Peach-cursors";
+#      package = pkgs.catppuccin-cursors.mochaPeach;
+#      size = 24;
+#      gtk.enable = true;
+#      x11.enable = true;
+#    };
   };
 
   gtk = {
     enable = true;
+    cursorTheme = {
+      package = pkgs.catppuccin-cursors.mochaSapphire;
+      name = "catppuccin-mocha-sapphire-cursors";
+    };
     theme = {
       name = "Catppuccin-Mocha-Standard-Lavender-Dark";
       package = pkgs.catppuccin-gtk.override {

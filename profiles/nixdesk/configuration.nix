@@ -61,6 +61,14 @@
     ];
   };
 
+services.dbus.enable = true;
+
+  services.gnome.gnome-keyring.enable = true;
+  programs.gnupg.agent = {
+    enable = true;
+    enableSSHSupport = true;
+  };
+
   xdg.portal.config = {
     common = {
       default = [
@@ -69,6 +77,20 @@
       "org.freedesktop.impl.portal.Secret" = [
         "gnome-keyring"
       ];
+    };
+  };
+
+  systemd.user.services.polkit-gnome-authentication-agent-1 = {
+    description = "polkit-gnome-authentication-agent-1";
+    wantedBy = [ "graphical-session.target" ];
+    wants = [ "graphical-session.target" ];
+    after = [ "graphical-session.target" ];
+    serviceConfig = {
+      Type = "simple";
+      ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
+      Restart = "on-failure";
+      RestartSec = 1;
+      TimeoutStopSec = 10;
     };
   };
 
@@ -97,9 +119,14 @@
 
   };
 
-  services.xserver.displayManager.gdm.enable = true;
-#  services.desktopManager.plasma6.enable = true;
-#  services.displayManager.defaultSession = "hyprland";
+# -- display manager --
+  services.xserver.displayManager.gdm = {
+      wayland = true;
+      enable = true;
+      banner = "Wassup swagger";
+    };
+
+# -- KEYBOARD --
   services.xserver = {
     enable = true;
     xkb.layout = "dk";
