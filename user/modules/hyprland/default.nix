@@ -16,14 +16,15 @@
 
 # -- PACKAGES TO INSTALL --
   home.packages = with pkgs; [
-      hyprland
-      pcmanfm
-      rofi-wayland
-      libnotify
-      swaynotificationcenter
-      networkmanagerapplet
-      swappy
+    hyprland
       swww
+      swappy
+      pcmanfm
+      libnotify
+      hyprpicker
+      rofi-wayland
+      networkmanagerapplet
+      swaynotificationcenter
 # -- DISPLAY --
       wlsunset
       slurp
@@ -38,7 +39,7 @@
       pamixer
       playerctl
       pavucontrol
-  ];
+      ];
 
 # -- MAKO (Notifications) --
 #  services.mako = {
@@ -163,7 +164,7 @@
         disable_hyprland_logo = true;
         disable_splash_rendering = true;
         force_default_wallpaper = 1;
-        enable_swallow = true;
+        enable_swallow = 1;
         no_direct_scanout = true;
 #        vrr = "on";
       };

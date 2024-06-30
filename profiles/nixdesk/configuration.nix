@@ -15,10 +15,12 @@
 
 # -- PACKAGES -- 
   environment.systemPackages = with pkgs; [ 
+    xwayland
     bottles
     xdg-desktop-portal
     xdg-desktop-portal-gtk
     xdg-desktop-portal-wlr
+    xdg-desktop-portal-hyprland
     appimage-run
     gns3-gui
     putty
@@ -34,6 +36,16 @@
 
   programs.zsh.enable = true;
 
+# -- SESSION VARIABLES --
+  environment.sessionVariables = {
+    NIXOS_OZONE_WL = "1";
+  };
+
+# -- GLOBAL VARIABLES --
+  environment.sessionVariables = {
+    NIX_BUILD_CORES="10";
+  };
+
 # -- File management --
   services.gvfs.enable = true;
   services.udisks2.enable = true;
@@ -45,6 +57,7 @@
     extraPortals = [
       pkgs.xdg-desktop-portal-gtk 
         pkgs.xdg-desktop-portal-wlr
+        pkgs.xdg-desktop-portal-hyprland
     ];
   };
 

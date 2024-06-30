@@ -12,6 +12,10 @@
   boot.initrd.kernelModules = [  ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
+  kernelParams = [
+    "mem_sleep_default=deep"
+    "pcie_aspm.policy=powersupersave"
+  ];
 
   boot.supportedFilesystems =
     [ "btrfs" "cifs" "f2fs" "jfs" "ntfs" "reiserfs" "vfat" "xfs" ];
