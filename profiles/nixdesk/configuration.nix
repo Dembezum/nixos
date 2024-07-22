@@ -16,13 +16,12 @@
 # -- PACKAGES -- 
   environment.systemPackages = with pkgs; [ 
     xwayland
-    bottles
     xdg-desktop-portal
     xdg-desktop-portal-gtk
     xdg-desktop-portal-wlr
     xdg-desktop-portal-hyprland
     appimage-run
-    gns3-gui
+#    gns3-gui
     putty
     jdk21
     mpv
@@ -46,10 +45,26 @@
     NIX_BUILD_CORES="10";
   };
 
-# -- File management --
+# -- SERVICES --
   services.gvfs.enable = true;
   services.udisks2.enable = true;
   services.devmon.enable = true;
+  services.dbus.enable = true;
+  services.gnome.gnome-keyring.enable = true;
+  services.ratbagd.enable = true;
+  services.flatpak = {
+    enable = true;
+    packages = [
+      "com.usebottles.bottles"
+    ];
+    update = {
+      onActivation = true;
+      auto = {
+        enable = true;
+        onCalendar = "daily";
+      };
+    };
+  };
 
 # -- XDG --
   xdg.portal = {
@@ -61,9 +76,7 @@
     ];
   };
 
-services.dbus.enable = true;
 
-  services.gnome.gnome-keyring.enable = true;
   programs.gnupg.agent = {
     enable = true;
     enableSSHSupport = true;

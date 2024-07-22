@@ -47,7 +47,7 @@
       procs
 # Disk management
       gparted
-      gnome.gnome-disk-utility
+      gnome-disk-utility
       nfs-utils
       du-dust
       duf

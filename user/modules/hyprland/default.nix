@@ -82,14 +82,6 @@
 #      ];
 
 # -- EXEC ONCE --
-      exec-once = [
-          "exec-once = xsetroot -cursor_name left_ptr &"
-          "exec-once = nm-applet --indicator"
-          "exec-once = ~/.config/hypr/scripts/wallpaper.sh"
-          "exec-once = swaync &"
-          "exec-once = waybar &"
-      ];
-
       env = [
         "WLR_NO_HARDWARE_CURSORS,1"
           "XCURSOR_SIZE,24"
@@ -104,9 +96,6 @@
       ];
 
 # -- MASTER LAYOUT --
-      master = {
-        new_is_master = false;
-      };
 
 # -- DWINDLE LAYOUT --
       dwindle = {
@@ -279,6 +268,16 @@
       #monitor=DP-5,1920x1080@60,2360x0,1,transform,3
       #monitor=eDP-1,1920x1080@60,4240x1440,1
       bind=SUPER,s,togglesplit
+
+      exec-once = xsetroot -cursor_name left_ptr &
+      exec-once = nm-applet --indicator
+      exec-once = ~/.config/hypr/scripts/wallpaper.sh
+      exec-once = swaync &
+      exec-once = waybar &
+
+#      master = {
+#        new_status=slave
+#      }
       '';
   };
 }

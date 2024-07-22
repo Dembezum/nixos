@@ -5,13 +5,10 @@
     nixpkgs.url = "nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    nix-flatpak.url = "github:gmodena/nix-flatpak";
     nix-colors.url = "github:misterio77/nix-colors";
     nixvim = {
       url = "github:nix-community/nixvim";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    sops-nix = {
-      url = "github:mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -20,6 +17,7 @@
     self, 
     nixpkgs, 
     home-manager, 
+    nix-flatpak,
     ... }@inputs:
     let 
       # --- SYSTEM CONFIGURATION ---
@@ -32,12 +30,15 @@
 
       # --- USER CONFIGURATION ---
       userSettings = {
-        username = "nixdesk";
-        name = "nixdesk";
-        editor = "nvim";
-        term ="xterm-256color";
-        browser = "firefox";
-        homestate = "23.11";
+        username    = "nixdesk";
+        name        = "nixdesk";
+        editor      = "nvim";
+        term        = "xterm-256color";
+        terminal    = "foot";
+        browser     = "firefox";
+        video       = "feh";
+        image       = "mpv";
+        homestate   = "23.11";
       };
 
       pkgs = nixpkgs.legacyPackages.${systemSettings.system};
@@ -59,7 +60,10 @@
       nixosConfigurations = {
         system = lib.nixosSystem {
           system = systemSettings.system;
-          modules = [ ./profiles/${systemSettings.profile}/configuration.nix ];
+          modules = [ 
+            ./profiles/${systemSettings.profile}/configuration.nix
+            nix-flatpak.nixosModules.nix-flatpak
+          ];
           specialArgs = {
             inherit systemSettings;
             inherit userSettings;

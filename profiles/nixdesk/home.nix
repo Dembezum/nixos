@@ -29,19 +29,29 @@
 
 # -- DEFAULT PACKAGES --
   home.packages = with pkgs; [
+    obs-studio
+      headsetcontrol
+      easyeffects
       inkscape
       drawio
       lazygit
       jq
       sops
-      gnome.nautilus
+      darktable
+      rawtherapee
+      imagemagick
+      nautilus
+      ventoy
   ];
 
 # -- VARIABLES --
   home.sessionVariables = {
-    EDITOR = userSettings.editor;
-    TERM = userSettings.term;
-    BROWSER = userSettings.browser;
+    TERM     = userSettings.term;
+    TERMINAL = userSettings.terminal;
+    BROWSER  = userSettings.browser;
+    EDITOR   = userSettings.editor;
+    VIDEO    = userSettings.video;
+    IMAGE    = userSettings.image;
   };
 
 # -- XDG USER CONFIGURATION --

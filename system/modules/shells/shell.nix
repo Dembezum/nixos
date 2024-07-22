@@ -27,7 +27,6 @@ pkgs.mkShell {
     pkgs.zip
     pkgs.bzip2
     pkgs.gzip
-    pkgs.xz
   ];
 
   shellHook = ''

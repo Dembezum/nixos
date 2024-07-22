@@ -3,8 +3,8 @@
 
 {
   users.users.${userSettings.username}.extraGroups = [ "gamemode" ];
-  programs = {
 
+  programs = {
     gamescope = {
       enable = true;
       capSysNice = true;
