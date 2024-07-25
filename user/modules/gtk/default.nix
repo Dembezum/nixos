@@ -5,7 +5,7 @@
     packages = with pkgs; [
       dconf
         catppuccin-gtk
-        dconf-editor
+        gnome.dconf-editor
     ];
 #    pointerCursor = {
 #      name = "catppuccin-Mocha-Peach-cursors";

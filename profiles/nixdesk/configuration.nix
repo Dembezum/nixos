@@ -16,10 +16,9 @@
 # -- PACKAGES -- 
   environment.systemPackages = with pkgs; [ 
     xwayland
-    xdg-desktop-portal
+    #xdg-desktop-portal
     xdg-desktop-portal-gtk
     xdg-desktop-portal-wlr
-    xdg-desktop-portal-hyprland
     appimage-run
 #    gns3-gui
     putty
@@ -51,7 +50,7 @@
   services.devmon.enable = true;
   services.dbus.enable = true;
   services.gnome.gnome-keyring.enable = true;
-  services.ratbagd.enable = true;
+#  services.ratbagd.enable = true;
   services.flatpak = {
     enable = true;
     packages = [
@@ -70,9 +69,9 @@
   xdg.portal = {
     enable = true;
     extraPortals = [
-      pkgs.xdg-desktop-portal-gtk 
-        pkgs.xdg-desktop-portal-wlr
-        pkgs.xdg-desktop-portal-hyprland
+#      pkgs.xdg-desktop-portal-gtk 
+#        pkgs.xdg-desktop-portal-wlr
+#        pkgs.xdg-desktop-portal-hyprland
     ];
   };
 
@@ -93,19 +92,19 @@
     };
   };
 
-  systemd.user.services.polkit-gnome-authentication-agent-1 = {
-    description = "polkit-gnome-authentication-agent-1";
-    wantedBy = [ "graphical-session.target" ];
-    wants = [ "graphical-session.target" ];
-    after = [ "graphical-session.target" ];
-    serviceConfig = {
-      Type = "simple";
-      ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
-      Restart = "on-failure";
-      RestartSec = 1;
-      TimeoutStopSec = 10;
-    };
-  };
+#  systemd.user.services.polkit-gnome-authentication-agent-1 = {
+#    description = "polkit-gnome-authentication-agent-1";
+#    wantedBy = [ "graphical-session.target" ];
+#    wants = [ "graphical-session.target" ];
+#    after = [ "graphical-session.target" ];
+#    serviceConfig = {
+#      Type = "simple";
+#      ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
+#      Restart = "on-failure";
+#      RestartSec = 1;
+#      TimeoutStopSec = 10;
+#    };
+#  };
 
 # Bootloader.
   boot.loader.systemd-boot.enable = true;
