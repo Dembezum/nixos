@@ -5,13 +5,13 @@
   imports = [
     ../../universal.nix
       ./hardware-configuration.nix
-      ../../system/modules/networking
       ../../system/modules/ssh
       ../../system/modules/glances
   ];
 
   environment.systemPackages = [ 
     pkgs.tailscale 
+    pkgs.xen-guest-agent
   ];
 
   programs.neovim = {
@@ -46,7 +46,6 @@
     uid = 1000;
   };
 
-
   networking = {
     hostName = systemSettings.hostname;
     interfaces = {
@@ -58,7 +57,7 @@
         } ];
       };
     };
-    defaultGateway = "10.0.40.2";
+    defaultGateway = "10.0.40.1";
     nameservers = [ "1.1.1.1" ];
   };
 

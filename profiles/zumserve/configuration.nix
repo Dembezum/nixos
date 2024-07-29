@@ -6,7 +6,6 @@
 # --- SYSTEM CONFIGURATION ---
     ../../universal.nix
       ../../system/modules/ssh
-      ../../system/modules/nvidia
       ../../system/modules/virtualization
       ./hardware-configuration.nix
   ];
