@@ -11,7 +11,6 @@
 
   environment.systemPackages = [ 
     pkgs.tailscale 
-    pkgs.xen-guest-agent
   ];
 
   programs.neovim = {
@@ -38,6 +37,8 @@
     enable = true;
     useRoutingFeatures = "server";
   };
+
+  boot.loader.grub.devices = [ "/dev/xvda" ];
 
   users.users.${userSettings.username} = {
     isNormalUser = true;

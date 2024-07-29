@@ -5,8 +5,9 @@
     ../../universal.nix
       ./hardware-configuration.nix
       ../../system/modules/ssh
+      ../../system/modules/motion
       ../../system/modules/glances
-      ./smokeping.nix
+#      ./smokeping.nix
   ];
 
   programs.neovim = {
@@ -41,7 +42,7 @@
         } ];
       };
     };
-    defaultGateway = "10.0.40.2";
+    defaultGateway = "10.0.40.1";
     nameservers = [ "1.1.1.1" ];
   };
 

@@ -24,7 +24,7 @@
   home.stateVersion = userSettings.homestate;
 
 # -- DEFAULT PACKAGES --
-  home.packages = [ ];
+  home.packages = [ pkgs.unifi ];
 
 # -- VARIABLES --
   home.sessionVariables = {
