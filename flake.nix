@@ -23,15 +23,15 @@
       # --- SYSTEM CONFIGURATION ---
       systemSettings = {
         system = "x86_64-linux";
-        hostname = "nixvpn";
-        profile = "nixvpn";
+        hostname = "nixdesk";
+        profile = "nixdesk";
         systemstate = "23.11";
       };
 
       # --- USER CONFIGURATION ---
       userSettings = {
-        username    = "nixvpn";
-        name        = "nixvpn";
+        username    = "nixdesk";
+        name        = "nixdesk";
         editor      = "nvim";
         term        = "xterm-256color";
         terminal    = "foot";

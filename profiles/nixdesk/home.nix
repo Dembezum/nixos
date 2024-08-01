@@ -31,13 +31,13 @@
   home.packages = with pkgs; [
     obs-studio
       headsetcontrol
-      easyeffects
+      #easyeffects
       inkscape
       drawio
       lazygit
       jq
       sops
-      darktable
+      #darktable
       rawtherapee
       imagemagick
       nautilus
