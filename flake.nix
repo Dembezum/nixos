@@ -8,10 +8,12 @@
     nix-flatpak.url = "github:gmodena/nix-flatpak";
     nix-colors.url = "github:misterio77/nix-colors";
     nixvim = {
-      url = "github:nix-community/nixvim";
+      url = "github:nix-community/nixvim/";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
   };
+
 
   outputs = { 
     self, 
@@ -48,7 +50,10 @@
       homeConfigurations = {
         user = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
-          modules = [ ./profiles/${systemSettings.profile}/home.nix ];
+          modules = [
+            ./profiles/${systemSettings.profile}/home.nix
+              inputs.nixvim.homeManagerModules.nixvim
+          ];
           extraSpecialArgs = {
             inherit systemSettings;
             inherit userSettings;

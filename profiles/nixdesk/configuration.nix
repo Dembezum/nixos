@@ -1,4 +1,4 @@
-{ pkgs, systemSettings, userSettings, ... }:
+{ nixvim, pkgs, systemSettings, userSettings, ... }:
 # Nixdesk
 
 {
