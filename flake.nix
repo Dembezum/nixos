@@ -20,6 +20,7 @@
     nixpkgs, 
     home-manager, 
     nix-flatpak,
+nixvim,
     ... }@inputs:
     let 
       # --- SYSTEM CONFIGURATION ---
