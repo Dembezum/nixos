@@ -1,6 +1,0 @@
-{
-  imports = [ 
-  ./plugins.nix
-  ];
-}
-

@@ -12,7 +12,6 @@
 #      ../../user/modules/shells
       ../../user/modules/hyprland
       ../../user/modules/desktop
-      ../../user/modules/nixvim
   ];
 
 # -- USER SETTINGS --
@@ -43,6 +42,7 @@
       imagemagick
       nautilus
       ventoy
+      inputs.nixvim-flake.packages.${system}.default
   ];
 
 # -- VARIABLES --
