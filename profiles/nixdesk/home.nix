@@ -8,10 +8,11 @@
       ../../user/modules/zsh
       ../../user/modules/tmux
       ../../user/modules/kitty
-      ../../user/modules/neovim
+#      ../../user/modules/neovim
 #      ../../user/modules/shells
       ../../user/modules/hyprland
       ../../user/modules/desktop
+      ../../user/modules/nixvim
   ];
 
 # -- USER SETTINGS --
