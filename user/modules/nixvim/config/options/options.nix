@@ -59,17 +59,5 @@ in {
     neorg
     neorg-telescope
   ];
-#  extraConfigLua = builtins.readFile ./config.lua;
 
-  # extraConfigLuaPost =
-  #   # lua
-  #   ''
-  #   '';
-
-  autoCmd = [{
-    event = [ "TermOpen" ];
-    pattern = [ "*" ];
-    command = "startinsert";
-  }];
-  # };
 }
