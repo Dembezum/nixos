@@ -25,6 +25,16 @@
       rofi-wayland
       networkmanagerapplet
       swaynotificationcenter
+# -- WAYBAR --
+      libdbusmenu-gtk3
+      sndio 
+      upower
+      libnl
+      jsoncpp
+      gtkmm3
+      libevdev
+      libappindicator-gtk3
+      gobject-introspection
 # -- DISPLAY --
       wlsunset
       slurp

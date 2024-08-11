@@ -9,6 +9,9 @@
   boot.extraModulePackages = [ ];
   boot.supportedFilesystems = [ "nfs" "ntfs" "vfat" "xfs" ];
   boot.kernelPackages = pkgs.linuxPackages_zen;
+  boot.kernelParams = [ "amd_pstate=guided" ];
+  powerManagement.enable = true;
+  powerManagement.cpuFreqGovernor = "schedutil";
 
   fileSystems."/mnt/hdd" = {
     device = "/dev/disk/by-uuid/f8e3ca98-d2be-4429-9953-ab4bd973bda5";

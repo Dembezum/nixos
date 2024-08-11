@@ -84,7 +84,7 @@
   xdg.portal.config = {
     common = {
       default = [
-        "wlr"
+        "hyprland"
       ];
       "org.freedesktop.impl.portal.Secret" = [
         "gnome-keyring"

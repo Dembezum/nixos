@@ -1,5 +1,6 @@
 {...}:
-# Waybar
+
+# -- WAYBAR --
 
 {
   programs.waybar = {
@@ -155,6 +156,13 @@ color: @green;
 color: @surface0;
   }
 }
+
+@define-color gpu-color @blue;
+
+#custom-gpuinfo {
+  color: @gpu-color; /* This will change the color of both text and icon */
+}
+
 
 #battery.critical:not(.charging) {
   background-color: @red;
@@ -386,7 +394,8 @@ settings = [
 # "modules-left" = ["hyprland/workspaces" "mpris" "custom/r_end"];
   "modules-left" = ["hyprland/workspaces" "cava" "custom/r_end"];
   "modules-center" = ["custom/l_end" "idle_inhibitor" "clock" "custom/r_end"];
-  "modules-right" = ["custom/l_end" "temperature" "cpu" "memory" "keyboard-state" "network" "bluetooth" "pulseaudio" "custom/r_end" "hyprland/language" "custom/r_end" "tray" "battery" "custom/l_end" "custom/power" "custom/padd"];
+  "modules-right" = ["custom/l_end" "cpu" "temperature" "memory" "custom/gpuinfo" "keyboard-state" "network" "bluetooth" "pulseaudio" "custom/r_end" "hyprland/language" "custom/r_end" "tray" "battery" "custom/l_end" "custom/padd"];
+  #"modules-right" = ["custom/l_end" "temperature" "cpu" "memory" "keyboard-state" "network" "bluetooth" "pulseaudio" "custom/r_end" "hyprland/language" "custom/r_end" "tray" "battery" "custom/l_end" "custom/power" "custom/padd"];
 #"modules-right" = ["custom/l_end" "temperature" "cpu" "memory" "keyboard-state" "network" "bluetooth" "pulseaudio" "custom/r_end" "hyprland/language" "custom/r_end" "tray" "battery" "custom/l_end" "custom/power" "custom/r_end" "custom/padd" ];
   "custom/colour-temperature" = {
     "format" = "{} ";
@@ -411,7 +420,7 @@ settings = [
   "custom/gpuinfo" = {
     "exec" = " ~/.config/hypr/scripts/gpuinfo.sh";
     "return-type" = "json";
-    "format" = " {}";
+    "format" = "󰺵 {}";
     "interval" = 5; # once every 5 seconds
       "tooltip" = true;
     "max-length" = 1000;
@@ -446,38 +455,44 @@ settings = [
   };
   "temperature" = {
 # "thermal-zone" = 2;
-    "hwmon-path" = "/sys/class/hwmon/hwmon2/temp1_input";
-    "critical-threshold" = 80;
+    "hwmon-path" = "/sys/class/hwmon/hwmon1/temp3_input";
+    "critical-threshold" = 95;
 # "format-critical" = "{temperatureC}°C {icon}";
     "format" = "{icon} {temperatureC}°C";
-    "format-icons" = ["" "" ""];
-    "interval" = 2;
+    #"format-icons" = ["" "" ""];
+    "format-icons" = [""];
+    "interval" = 4;
   };
   "hyprland/language" = {
     "format" = "{short} {variant}";
     "on-click" = "~/.config/hypr/scripts/keyboardswitch.sh";
   };
+
   "hyprland/workspaces" = {
-    "disable-scroll" = true;
-    "all-outputs" = true;
-    "active-only" = false;
-    "on-click" = "activate";
+    "show-special" = true;
     "persistent-workspaces" = {
-      "HDMI-A-1" = [1 2 3 4 5 6 7 8 9 10];
-      "HDMI-A-2" = [1 2 3 4 5 6 7 8 9 10];
+      "*" = [1 2 3 4 5 6 7 8 9 10];
+    };
+    "format" = "{icon}";
+    "format-icons" = {
+      "active" = "";
+      "empty" = "";
+      "default" = "";
+      "urgent" = "";
+      "special" = "󰠱";
     };
   };
 
   "hyprland/window" = {
-    "format" = "  {}";
+    "icon" = true;
+    "format" = "  {}";
     "separate-outputs" = true;
     "rewrite" = {
-      "harvey@hyprland =(.*)" = "$1 ";
       "(.*) — Mozilla Firefox" = "$1 󰈹";
       "(.*)Mozilla Firefox" = " Firefox 󰈹";
-      "(.*) - Visual Studio Code" = "$1 󰨞";
-      "(.*)Visual Studio Code" = "Code 󰨞";
-      "(.*) — Dolphin" = "$1 󰉋";
+      "(.*) - nvim " = "$1 ";
+      "(.*)Neovim " = "Code ";
+      "(.*) — Files " = "$1 󰉋";
       "(.*)Spotify" = "Spotify 󰓇";
       "(.*)Spotify Premium" = "Spotify 󰓇";
       "(.*)Steam" = "Steam 󰓓";
@@ -526,11 +541,12 @@ settings = [
 
   "memory" = {
     "interval" = 30;
-    "format" = "󰾆 {percentage}%";
-    "format-alt" = "󰾅 {used}GB";
+    "format" = " {percentage}%";
+    "format-alt" = " {used}GB";
     "max-length" = 10;
     "tooltip" = true;
-    "tooltip-format" = " {used =0.1f}GB/{total =0.1f}GB";
+#    "tooltip-format" = " {used =0.1f}GB/{total =0.1f}GB";
+    "tooltip-format" = " {used:.1f}GB/{total:.1f}GB";
   };
 
   "backlight" = {

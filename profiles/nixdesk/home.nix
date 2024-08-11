@@ -31,7 +31,7 @@
   home.packages = with pkgs; [
     obs-studio
       headsetcontrol
-      #easyeffects
+      easyeffects
       inkscape
       drawio
       lazygit
