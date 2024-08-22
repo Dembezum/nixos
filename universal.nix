@@ -14,6 +14,7 @@
     localsend
 
     # -- SYSTEM UTILITIES --
+    lsof
     screen
     tree
     which

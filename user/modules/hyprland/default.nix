@@ -284,6 +284,7 @@
       exec-once = ~/.config/hypr/scripts/wallpaper.sh
       exec-once = swaync &
       exec-once = waybar &
+      exec-once = wl-paste -p --watch wl-copy
 
 #      master = {
 #        new_status=slave

@@ -26,6 +26,8 @@
     mpv
   ];
 
+  security = { rtkit.enable = true; };
+
   programs = {
     # -- HYPRLAND --
     hyprland = {
