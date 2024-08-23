@@ -1,5 +1,5 @@
-{ inputs, config, pkgs, userSettings, systemSettings, ... }:
-# Nixdesk
+{ config, inputs, pkgs, userSettings, systemSettings, ... }:
+# Nixkia 
 {
   # -- IMPORTS --
   imports = [
@@ -8,8 +8,6 @@
     ../../user/modules/zsh
     ../../user/modules/tmux
     ../../user/modules/kitty
-    #      ../../user/modules/neovim
-    #      ../../user/modules/shells
     ../../user/modules/hyprland
     ../../user/modules/desktop
   ];
@@ -18,40 +16,42 @@
   home = {
     username = userSettings.username;
     homeDirectory = "/home/${userSettings.username}";
+
     packages = [
-      pkgs.obs-studio
       pkgs.headsetcontrol
       pkgs.easyeffects
-      pkgs.inkscape
+      #      pkgs.inkscape
       pkgs.drawio
       pkgs.lazygit
       pkgs.jq
-      pkgs.sops
-      #    pkgs.#darktable
       pkgs.rawtherapee
       pkgs.imagemagick
       pkgs.nautilus
       pkgs.ventoy
       inputs.nixvim-flake.packages.${systemSettings.system}.default
     ];
-    sessionVariables = {
-      TERM = userSettings.term;
-      TERMINAL = userSettings.terminal;
-      BROWSER = userSettings.browser;
-      EDITOR = userSettings.editor;
-      VIDEO = userSettings.video;
-      IMAGE = userSettings.image;
-    };
-
   };
+
   programs.home-manager.enable = true;
 
   # Package configuration
   nixpkgs = {
     config = {
       allowUnfree = true;
-      allowUnfreePredicate = (_: true);
+      allowUnfreePredicate = _: true;
     };
+  };
+
+  # -- DEFAULT PACKAGES --
+
+  # -- VARIABLES --
+  home.sessionVariables = {
+    TERM = userSettings.term;
+    TERMINAL = userSettings.terminal;
+    BROWSER = userSettings.browser;
+    EDITOR = userSettings.editor;
+    VIDEO = userSettings.video;
+    IMAGE = userSettings.image;
   };
 
   # -- XDG USER CONFIGURATION --
