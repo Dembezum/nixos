@@ -10,6 +10,7 @@
     ../../user/modules/kitty
     ../../user/modules/hyprland
     ../../user/modules/desktop
+    ../../user/modules/kde
   ];
 
   # -- USER SETTINGS --

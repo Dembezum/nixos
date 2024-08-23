@@ -5,12 +5,12 @@
   imports = [
     # --- SYSTEM CONFIGURATION ---
     ../../universal.nix
-    ../../modules/system/ssh
-    ../../modules/system/nvidia
-    ../../modules/system/pipewire
-    ../../modules/system/virtualization
-    ../../modules/system/ssh
-    ../../modules/user/gaming
+    ../../system/modules/ssh
+    ../../system/modules/nvidia
+    ../../system/modules/pipewire
+    ../../system/modules/virtualization
+    ../../system/modules/ssh
+    ../../user/modules/gaming
     ./hardware-configuration.nix
   ];
 
@@ -68,17 +68,17 @@
         banner = "Wassup swagger";
       };
     };
-    #    flatpak = {
-    #      enable = true;
-    #      packages = [ "com.usebottles.bottles" ];
-    #      update = {
-    #        onActivation = true;
-    #        auto = {
-    #          enable = true;
-    #          onCalendar = "daily";
-    #        };
-    #      };
-    #    };
+    flatpak = {
+      enable = true;
+      packages = [ "com.usebottles.bottles" ];
+      update = {
+        onActivation = true;
+        auto = {
+          enable = true;
+          onCalendar = "daily";
+        };
+      };
+    };
   };
 
   # -- XDG --
