@@ -15,6 +15,7 @@
 
   # -- PACKAGES -- 
   environment.systemPackages = with pkgs; [
+    wine-wayland
     xwayland
     #xdg-desktop-portal
     xdg-desktop-portal-gtk
@@ -113,6 +114,7 @@
   networking = {
     hostName = systemSettings.hostname;
     networkmanager.enable = true;
+    enableIPv6 = false;
   };
 
   # Firewall

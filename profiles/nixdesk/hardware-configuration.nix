@@ -20,7 +20,7 @@
     extraModulePackages = [ ];
     supportedFilesystems = [ "nfs" "ntfs" "vfat" "xfs" ];
     kernelPackages = pkgs.linuxPackages_zen;
-    #    kernelParams = [ "amd_pstate=guided" ];
+    kernelParams = [ "ipv6.disable=1" ];
   };
   #  powerManagement.enable = true;
   #  powerManagement.cpuFreqGovernor = "schedutil";
@@ -45,8 +45,6 @@
       fsType = "ext4";
       options = [ "nofail" ];
     };
-    #"/mnt/nas/Homelab" = {
-    #};
   };
 
   swapDevices = [ ];
