@@ -93,7 +93,7 @@
 
   xdg.portal.config = {
     common = {
-      default = [ "hyprland" ];
+      default = [ "kde" ];
       "org.freedesktop.impl.portal.Secret" = [ "gnome-keyring" ];
     };
   };

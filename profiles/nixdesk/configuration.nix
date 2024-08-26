@@ -17,9 +17,8 @@
   environment.systemPackages = with pkgs; [
     wine-wayland
     xwayland
-    #xdg-desktop-portal
+    xdg-desktop-portal
     xdg-desktop-portal-gtk
-    xdg-desktop-portal-hyprland
     xdg-desktop-portal-wlr
     appimage-run
     putty
@@ -80,16 +79,16 @@
         };
       };
     };
-  desktopManager.plasma6.enable = true;
+    desktopManager.plasma6.enable = true;
   };
 
   # -- XDG --
   xdg.portal = {
     enable = true;
     extraPortals = [
-      #      pkgs.xdg-desktop-portal-gtk 
-      #        pkgs.xdg-desktop-portal-wlr
-      #        pkgs.xdg-desktop-portal-hyprland
+    #        pkgs.xdg-desktop-portal-gtk 
+    #          pkgs.xdg-desktop-portal-wlr
+      #      pkgs.xdg-desktop-portal-hyprland
     ];
   };
 
