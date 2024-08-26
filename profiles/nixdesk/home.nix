@@ -11,6 +11,7 @@
     #      ../../user/modules/neovim
     #      ../../user/modules/shells
     ../../user/modules/hyprland
+    ../../user/modules/kde
     ../../user/modules/desktop
   ];
 

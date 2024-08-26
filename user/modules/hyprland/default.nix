@@ -16,7 +16,10 @@
 
   # -- PACKAGES TO INSTALL --
   home.packages = with pkgs; [
+    winetricks
+    hyprland-protocols
     hyprland
+    sdbus-cpp
     swww
     swappy
     pcmanfm
@@ -41,9 +44,11 @@
     light
     drm_info
     wdisplays
+    wayland-protocols
     wlroots
     wlr-randr
     wl-clipboard
+    clipman
     grimblast
     # -- AUDIO --
     pamixer
@@ -282,6 +287,7 @@
             exec-once = ~/.config/hypr/scripts/wallpaper.sh
             exec-once = swaync &
             exec-once = waybar &
+            exec-once = wl-paste -t text --watch clipman store --no-persist
 
       #      master = {
       #        new_status=slave

@@ -19,12 +19,13 @@
     xwayland
     #xdg-desktop-portal
     xdg-desktop-portal-gtk
+    xdg-desktop-portal-hyprland
     xdg-desktop-portal-wlr
     appimage-run
-    #    gns3-gui
     putty
     jdk21
     mpv
+    #    gns3-gui
   ];
 
   security = { rtkit.enable = true; };
@@ -79,6 +80,7 @@
         };
       };
     };
+  desktopManager.plasma6.enable = true;
   };
 
   # -- XDG --
