@@ -79,6 +79,7 @@
         };
       };
     };
+    desktopManager.plasma6.enable = true;
   };
 
   # -- XDG --
