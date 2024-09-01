@@ -176,7 +176,7 @@
         disable_splash_rendering = true;
         force_default_wallpaper = 1;
         enable_swallow = 1;
-        no_direct_scanout = true;
+        #no_direct_scanout = true;
         #        vrr = "on";
       };
 
