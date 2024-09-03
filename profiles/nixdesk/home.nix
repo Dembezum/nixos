@@ -19,6 +19,7 @@
     username = userSettings.username;
     homeDirectory = "/home/${userSettings.username}";
     packages = [
+      pkgs.cliphist
       pkgs.obs-studio
       pkgs.headsetcontrol
       pkgs.easyeffects
