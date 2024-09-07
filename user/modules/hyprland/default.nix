@@ -69,18 +69,6 @@
     swappy
   ];
 
-  # -- MAKO (Notifications) --
-  #  services.mako = {
-  #    enable = true;
-  #    backgroundColor = "#${config.colorScheme.palette.base00}";
-  #    borderColor = "#${config.colorScheme.palette.base0E}";
-  #    textColor = "#${config.colorScheme.palette.base05}";
-  #    defaultTimeout = 5000;
-  #    borderRadius = 5;
-  #    borderSize = 2;
-  #    layer = "overlay";
-  #  };
-
   # -- HYPRLAND CONFIGURATION --
   wayland.windowManager.hyprland = {
     enable = true;
@@ -116,11 +104,22 @@
         "XDG_CURRENT_DESKTOP, Hyprland"
         "XDG_SESSION_DESKTOP, Hyprland"
         "XDG_SESSION_TYPE, wayland"
-        "GDK_BACKEND, wayland,x11"
         "GBM_BACKEND, nvidia-drm"
         "__GLX_VENDOR_LIBRARY_NAME, nvidia"
         "LIBVA_DRIVER_NAME, nvidia"
         "__GL_VRR_ALLOWED, 0"
+
+        "GDK_BACKEND,wayland,x11,*"
+        "NIXOS_OZONE_WL,1"
+        "MOZ_ENABLE_WAYLAND,1" # disable if You're having issues with firefox
+        "SDL_VIDEODRIVER,wayland"
+        "OZONE_PLATFORM,wayland"
+        "CLUTTER_BACKEND,wayland"
+        "QT_QPA_PLATFORM,wayland;xcb"
+        "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
+        "QT_QPA_PLATFORMTHEME,qt6ct"
+        "QT_AUTO_SCREEN_SCALE_FACTOR,1"
+        "WLR_RENDERER_ALLOW_SOFTWARE,1"
       ];
 
       # -- MASTER LAYOUT --
@@ -191,6 +190,13 @@
         enable_swallow = 1;
         #no_direct_scanout = true;
         #        vrr = "on";
+      };
+
+      render = {
+        explicit_sync = 2; # 0 = off, 1 = on, 2 = auto based on gpu driver.
+        explicit_sync_kms = 2; # 0 = off, 1 = on, 2 = auto based on gpu driver.
+        direct_scanout =
+          true; # Set to true for improved Fullscreen performance.
       };
 
       # -- KEYBINDS --
@@ -302,7 +308,6 @@
                   exec-once = waybar &
       #            exec-once = wl-paste -t text --watch clipman store --no-persist
                   exec-once = wl-paste --type text --watch cliphist store # Stores only text data
-                  exec-once = wl-paste --type image --watch cliphist store # Stores only image data
 
             #      master = {
             #        new_status=slave

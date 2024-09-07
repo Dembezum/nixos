@@ -54,7 +54,7 @@
         glxinfo
         wine
         (prismlauncher.override {
-      glfw = pkgs.glfw-wayland-minecraft;
+        #      glfw = pkgs.glfw-wayland-minecraft;
     })
         vulkan-tools
     (lutris.override {
