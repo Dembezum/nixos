@@ -8,6 +8,7 @@
     ../../system/modules/ssh
     ../../user/modules/gaming
     ../../system/modules/nvidia
+    ../../system/modules/glances
     ../../system/modules/pipewire
     ../../system/modules/virtualization
     ./hardware-configuration.nix
@@ -86,8 +87,8 @@
   xdg.portal = {
     enable = true;
     extraPortals = [
-    #        pkgs.xdg-desktop-portal-gtk 
-    #          pkgs.xdg-desktop-portal-wlr
+      #        pkgs.xdg-desktop-portal-gtk 
+      #          pkgs.xdg-desktop-portal-wlr
       #      pkgs.xdg-desktop-portal-hyprland
     ];
   };
@@ -121,7 +122,7 @@
   # Firewall
   networking.firewall = {
     enable = true;
-    allowedTCPPorts = [ 8080 8001 3306 53317 22 443 8384 22000 61208 61209 ];
+    allowedTCPPorts = [ 8080 8001 3306 53317 22 443 8384 22000 ];
     allowedUDPPorts = [ 22000 53317 21027 61208 ];
 
   };

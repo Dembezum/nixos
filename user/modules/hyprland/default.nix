@@ -16,45 +16,57 @@
 
   # -- PACKAGES TO INSTALL --
   home.packages = with pkgs; [
+    # -- SYSTEM UTILITIES --
     winetricks
-    hyprland-protocols
-    hyprland
-    sdbus-cpp
-    swww
-    swappy
     pcmanfm
     libnotify
-    hyprpicker
-    rofi-wayland
     networkmanagerapplet
+    upower
+    light
+
+    # -- HYPRLAND --
+    hyprland-protocols
+    hyprland
+    hyprpicker
+
+    # -- WAYLAND --
+    rofi-wayland
     swaynotificationcenter
-    # -- WAYBAR --
+    wayland-protocols
+    wlroots
+    wlr-randr
+
+    # -- DISPLAY --
+    wdisplays
+    wlsunset
+    slurp
+    drm_info
+    grimblast
+
+    # -- AUDIO --
+    pamixer
+    playerctl
+    pavucontrol
+
+    # -- DEVELOPMENT LIBRARIES --
+    sdbus-cpp
     libdbusmenu-gtk3
     sndio
-    upower
     libnl
     jsoncpp
     gtkmm3
     libevdev
     libappindicator-gtk3
     gobject-introspection
-    # -- DISPLAY --
-    wlsunset
-    slurp
-    light
-    drm_info
-    wdisplays
-    wayland-protocols
-    wlroots
-    wlr-randr
+
+    # -- CLIPBOARD --
     wl-clipboard
     clipman
     cliphist
-    grimblast
-    # -- AUDIO --
-    pamixer
-    playerctl
-    pavucontrol
+
+    # -- WALLPAPER --
+    swww
+    swappy
   ];
 
   # -- MAKO (Notifications) --
