@@ -1,12 +1,16 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 let
   no-rgb = pkgs.writeScriptBin "no-rgb" ''
     #!/bin/sh
-    NUM_DEVICES=$(${pkgs.openrgb}/bin/openrgb --noautoconnect --list-devices | grep -E '^[0-9]+: ' | wc -l)
+    # Get the device number for the NVIDIA RTX 2080 Super MSI Edition
+    TARGET_DEVICE=$(${pkgs.openrgb}/bin/openrgb --noautoconnect --list-devices | grep -i "nvidia rtx 2080 super" | cut -d':' -f1 | tr -d ' ')
 
-    for i in $(seq 0 $(($NUM_DEVICES - 1))); do
-      ${pkgs.openrgb}/bin/openrgb --noautoconnect --device $i --mode static --color 000000
-    done
+    if [ -n "$TARGET_DEVICE" ]; then
+      # Disable RGB for the specific device
+      ${pkgs.openrgb}/bin/openrgb --noautoconnect --device $TARGET_DEVICE --mode static --color 000000
+    else
+      echo "NVIDIA RTX 2080 Super MSI Edition not found!"
+    fi
   '';
 in {
   config = {
@@ -24,3 +28,4 @@ in {
     };
   };
 }
+

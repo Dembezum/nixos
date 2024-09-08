@@ -9,6 +9,7 @@
     ../../user/modules/gaming
     ../../system/modules/nvidia
     ../../system/modules/glances
+    ../../system/modules/openrgb
     ../../system/modules/pipewire
     ../../system/modules/virtualization
     ./hardware-configuration.nix
