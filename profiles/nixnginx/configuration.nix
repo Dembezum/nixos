@@ -3,9 +3,9 @@
 {
   imports = [
       ../../universal.nix
-      ../../system/modules/ssh
+      ../../modules/system/ssh
       ./hardware-configuration.nix
-      ../../system/modules/glances
+      ../../modules/system/glances
   ];
 
   virtualisation.docker.enable = true;

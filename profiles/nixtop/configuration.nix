@@ -5,12 +5,12 @@
   imports = [
 # --- SYSTEM CONFIGURATION ---
     ../../universal.nix
-      ../../system/modules/ssh
-      ../../system/modules/bluetooth
+      ../../modules/system/ssh
+      ../../modules/system/bluetooth
       ./hardware-configuration.nix
-      ../../system/modules/networking
-      ../../system/modules/pipewire
-      ../../system/modules/virtualization
+      ../../modules/system/networking
+      ../../modules/system/pipewire
+      ../../modules/system/virtualization
   ];
 
   environment.systemPackages = with pkgs; [

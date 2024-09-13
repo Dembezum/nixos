@@ -3,15 +3,15 @@
 {
   # -- IMPORTS --
   imports = [
-    ../../user/modules/gtk
-    ../../user/modules/foot
-    ../../user/modules/zsh
-    ../../user/modules/tmux
-    ../../user/modules/kitty
-    #      ../../user/modules/neovim
-    #      ../../user/modules/shells
-    ../../user/modules/hyprland
-    ../../user/modules/desktop
+    ../../modules/user/gtk
+    ../../modules/user/foot
+    ../../modules/user/zsh
+    ../../modules/user/tmux
+    ../../modules/user/kitty
+    #      ../../modules/user/neovim
+    #      ../../modules/user/shells
+    ../../modules/user/hyprland
+    ../../modules/user/desktop
   ];
 
   # -- USER SETTINGS --

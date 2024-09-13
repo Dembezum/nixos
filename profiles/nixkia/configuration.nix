@@ -5,12 +5,12 @@
   imports = [
     # --- SYSTEM CONFIGURATION ---
     ../../universal.nix
-    ../../system/modules/ssh
-    ../../system/modules/nvidia
-    ../../system/modules/pipewire
-    ../../system/modules/virtualization
-    ../../system/modules/ssh
-    ../../user/modules/gaming
+    ../../modules/system/ssh
+    ../../modules/system/nvidia
+    ../../modules/system/pipewire
+    ../../modules/system/virtualization
+    ../../modules/system/ssh
+    ../../modules/user/gaming
     ./hardware-configuration.nix
   ];
 

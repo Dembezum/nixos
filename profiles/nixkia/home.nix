@@ -3,14 +3,14 @@
 {
   # -- IMPORTS --
   imports = [
-    ../../user/modules/gtk
-    ../../user/modules/foot
-    ../../user/modules/zsh
-    ../../user/modules/tmux
-    ../../user/modules/kitty
-    ../../user/modules/hyprland
-    ../../user/modules/desktop
-    ../../user/modules/kde
+    ../../modules/user/gtk
+    ../../modules/user/foot
+    ../../modules/user/zsh
+    ../../modules/user/tmux
+    ../../modules/user/kitty
+    ../../modules/user/hyprland
+    ../../modules/user/desktop
+    ../../modules/user/kde
   ];
 
   # -- USER SETTINGS --

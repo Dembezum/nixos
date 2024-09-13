@@ -3,9 +3,9 @@
 {
 # -- IMPORTS --
   imports = [
-      ../../user/modules/tmux
-      ../../user/modules/shells
-      ../../user/modules/neovim
+      ../../modules/user/tmux
+      ../../modules/user/shells
+      ../../modules/user/neovim
   ];
 
 # -- USER SETTINGS --

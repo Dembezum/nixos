@@ -3,10 +3,10 @@
 {
 # -- IMPORTS --
   imports = [
-    ../../user/modules/foot
-      ../../user/modules/zsh
-      ../../user/modules/tmux
-      ../../user/modules/neovim
+    ../../modules/user/foot
+      ../../modules/user/zsh
+      ../../modules/user/tmux
+      ../../modules/user/neovim
   ];
 
 # -- USER SETTINGS --

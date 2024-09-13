@@ -10,13 +10,8 @@
     nixvim-flake.url = "github:dembezum/nixvim";
   };
 
-
-  outputs = { 
-    nixpkgs, 
-    home-manager, 
-    nix-flatpak,
-    ... }@inputs:
-    let 
+  outputs = { nixpkgs, home-manager, nix-flatpak, ... }@inputs:
+    let
       # --- SYSTEM CONFIGURATION ---
       systemSettings = {
         system = "x86_64-linux";
@@ -27,19 +22,19 @@
 
       # --- USER CONFIGURATION ---
       userSettings = {
-        username    = "nixdesk";
-        name        = "nixdesk";
-        editor      = "nvim";
-        term        = "xterm-256color";
-        terminal    = "foot";
-        browser     = "firefox";
-        video       = "feh";
-        image       = "mpv";
-        homestate   = "23.11";
+        username = "nixdesk";
+        name = "nixdesk";
+        editor = "nvim";
+        term = "xterm-256color";
+        terminal = "foot";
+        browser = "firefox";
+        video = "feh";
+        image = "mpv";
+        homestate = "23.11";
       };
 
       pkgs = nixpkgs.legacyPackages.${systemSettings.system};
-      lib = nixpkgs.lib;
+      inherit (nixpkgs) lib;
 
     in {
       homeConfigurations = {
@@ -47,7 +42,7 @@
           inherit pkgs;
           modules = [
             ./profiles/${systemSettings.profile}/home.nix
-#              inputs.nixvim.homeManagerModules.nixvim
+            #              inputs.nixvim.homeManagerModules.nixvim
           ];
           extraSpecialArgs = {
             inherit systemSettings;
@@ -59,8 +54,8 @@
 
       nixosConfigurations = {
         system = lib.nixosSystem {
-          system = systemSettings.system;
-          modules = [ 
+          inherit (systemSettings) system hostname;
+          modules = [
             ./profiles/${systemSettings.profile}/configuration.nix
             nix-flatpak.nixosModules.nix-flatpak
           ];
@@ -108,4 +103,3 @@
       };
     };
 }
-

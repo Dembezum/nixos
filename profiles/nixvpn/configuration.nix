@@ -5,8 +5,8 @@
   imports = [
     ../../universal.nix
       ./hardware-configuration.nix
-      ../../system/modules/ssh
-      ../../system/modules/glances
+      ../../modules/system/ssh
+      ../../modules/system/glances
   ];
 
   environment.systemPackages = [ 

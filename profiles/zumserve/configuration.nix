@@ -5,8 +5,8 @@
   imports = [
 # --- SYSTEM CONFIGURATION ---
     ../../universal.nix
-      ../../system/modules/ssh
-      ../../system/modules/virtualization
+      ../../modules/system/ssh
+      ../../modules/system/virtualization
       ./hardware-configuration.nix
   ];
 

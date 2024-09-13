@@ -5,8 +5,8 @@
       ./bind.nix
       ../../universal.nix
       ./hardware-configuration.nix
-      ../../system/modules/glances
-      ../../system/modules/ssh
+      ../../modules/system/glances
+      ../../modules/system/ssh
   ];
 
   environment.systemPackages = [ 

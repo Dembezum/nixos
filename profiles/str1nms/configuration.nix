@@ -4,8 +4,8 @@
   imports = [
     ./librenms.nix
     ../../universal.nix
-    ../../system/modules/ssh
-    ../../system/modules/glances
+    ../../modules/system/ssh
+    ../../modules/system/glances
     ./hardware-configuration.nix
   ];
 

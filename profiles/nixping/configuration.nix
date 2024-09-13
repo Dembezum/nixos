@@ -4,9 +4,9 @@
   imports = [
     ../../universal.nix
       ./hardware-configuration.nix
-      ../../system/modules/ssh
-      ../../system/modules/motion
-      ../../system/modules/glances
+      ../../modules/system/ssh
+      ../../modules/system/motion
+      ../../modules/system/glances
 #      ./smokeping.nix
   ];
 

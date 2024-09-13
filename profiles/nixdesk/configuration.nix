@@ -5,13 +5,13 @@
   imports = [
     # --- SYSTEM CONFIGURATION ---
     ../../universal.nix
-    ../../system/modules/ssh
-    ../../user/modules/gaming
-    ../../system/modules/nvidia
-    ../../system/modules/glances
-    ../../system/modules/openrgb
-    ../../system/modules/pipewire
-    ../../system/modules/virtualization
+    ../../modules/system/ssh
+    ../../modules/user/gaming
+    ../../modules/system/nvidia
+    ../../modules/system/glances
+    ../../modules/system/openrgb
+    ../../modules/system/pipewire
+    ../../modules/system/virtualization
     ./hardware-configuration.nix
   ];
 
