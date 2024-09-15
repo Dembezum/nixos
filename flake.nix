@@ -54,7 +54,7 @@
 
       nixosConfigurations = {
         system = lib.nixosSystem {
-          inherit (systemSettings) system hostname;
+          inherit (systemSettings) system;
           modules = [
             ./profiles/${systemSettings.profile}/configuration.nix
             nix-flatpak.nixosModules.nix-flatpak

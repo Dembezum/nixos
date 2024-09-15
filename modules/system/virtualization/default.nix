@@ -1,7 +1,15 @@
-{ pkgs, ...}:
+{ pkgs, ... }:
 
 {
   virtualisation = {
+    spiceUSBRedirection.enable = true;
+    docker = {
+      enable = true;
+      autoPrune = {
+        enable = true;
+        dates = "weekly";
+      };
+    };
     libvirtd = {
       enable = true;
       qemu = {
@@ -10,16 +18,19 @@
         swtpm.enable = true;
         ovmf = {
           enable = true;
-          packages = [(pkgs.OVMF.override {
-            secureBoot = true;
-            tpmSupport = true;
-          }).fd];
+          packages = [
+            (pkgs.OVMF.override {
+              secureBoot = true;
+              tpmSupport = true;
+            }).fd
+          ];
         };
       };
     };
   };
 
-environment.systemPackages = with pkgs; [
+  environment.systemPackages = with pkgs; [
+    docker-compose
     virt-manager
     virt-viewer
     win-spice

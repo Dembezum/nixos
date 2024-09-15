@@ -108,7 +108,15 @@
   users.users.${userSettings.username} = {
     isNormalUser = true;
     description = userSettings.name;
-    extraGroups = [ "plugdev" "libvirt" "video" "networkmanager" "wheel" ];
+    extraGroups = [
+      "docker"
+      "plugdev"
+      "libvirt"
+      "video"
+      "networkmanager"
+      "wheel"
+
+    ];
     uid = 1000;
     shell = pkgs.zsh;
   };
