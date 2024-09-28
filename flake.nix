@@ -68,38 +68,8 @@
       };
 
       # --- DEVELOPMENT ENVIRONMENTS ---
-      devShells.${systemSettings.system}.default = pkgs.mkShell {
-        nativeBuildInputs = with pkgs; [
-          stdenv
-          cargo
-          neovim
-          binutils
-          clang
-          glibc
-          nodejs
-          pkg-config
-          fontconfig
-          freetype
-          gnumake
-          gcc
-          gd
-          nil
-          ffmpeg
-          python3Packages.pip
-          xorg.libX11
-          xorg.libXft
-          xorg.libXinerama
-        ];
-        shellHook = ''
-          clear
-          echo -e "\033[1;36m[Nix:\033[0m $(lsb_release -s -d)"
-          echo -e "\033[1;36m[Load Average:\033[0m $(cut -d ' ' -f 1-3 /proc/loadavg)"
-          echo -e "\033[1;36m[Available Memory:\033[0m $(free -h | awk '/Mem/ {print $7}')"
-          echo -e "\033[1;36m[CPU Usage:\033[0m $(top -bn1 | awk '/%Cpu/ {printf("%.2f%", $2 + $4)}')"
-          echo ""
-          export X11INC=${pkgs.xorg.libX11.dev}/include
-          export X11LIB=${pkgs.xorg.libX11.out}/lib
-        '';
-      };
+      devShells.${systemSettings.system}.cdev =
+        import ./modules/user/shells/cdev/default.nix { inherit pkgs; };
+
     };
 }
