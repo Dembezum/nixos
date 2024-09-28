@@ -26,6 +26,7 @@
     putty
     jdk21
     mpv
+    piper
     #    gns3-gui
   ];
 
@@ -60,7 +61,7 @@
     dbus.enable = true;
     lldpd.enable = true;
     gnome = { gnome-keyring.enable = true; };
-    #  services.ratbagd.enable = true;
+    ratbagd.enable = true;
     xserver = {
       enable = true;
       xkb.layout = "dk";
