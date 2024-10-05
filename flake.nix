@@ -68,8 +68,23 @@
       };
 
       # --- DEVELOPMENT ENVIRONMENTS ---
-      devShells.${systemSettings.system}.cdev =
-        import ./modules/user/shells/cdev/default.nix { inherit pkgs; };
+
+      devShells = {
+        ${systemSettings.system} = {
+          cdev =
+            import ./modules/user/shells/cdev/default.nix { inherit pkgs; };
+          pydev =
+            import ./modules/user/shells/pydev/default.nix { inherit pkgs; };
+          jsdev =
+            import ./modules/user/shells/jsdev/default.nix { inherit pkgs; };
+          javadev =
+            import ./modules/user/shells/jsdev/default.nix { inherit pkgs; };
+          godev =
+            import ./modules/user/shells/godev/default.nix { inherit pkgs; };
+          zigdev =
+            import ./modules/user/shells/zigdev/default.nix { inherit pkgs; };
+        };
+      };
 
     };
 }

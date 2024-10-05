@@ -17,11 +17,14 @@
 
   # -- PACKAGES -- 
   environment.systemPackages = with pkgs; [
+    # VPN 
+    openfortivpn
+    openssl 
     wine-wayland
     xwayland
     xdg-desktop-portal
-    xdg-desktop-portal-gtk
-    xdg-desktop-portal-wlr
+    #    xdg-desktop-portal-gtk
+    #    xdg-desktop-portal-wlr
     appimage-run
     putty
     jdk21
@@ -90,14 +93,14 @@
     enable = true;
     extraPortals = [
       #        pkgs.xdg-desktop-portal-gtk 
-      #          pkgs.xdg-desktop-portal-wlr
+      pkgs.xdg-desktop-portal-kde
       #      pkgs.xdg-desktop-portal-hyprland
     ];
   };
 
   xdg.portal.config = {
     common = {
-      default = [ "hyprland" ];
+      default = [ "kde" ];
       "org.freedesktop.impl.portal.Secret" = [ "gnome-keyring" ];
     };
   };

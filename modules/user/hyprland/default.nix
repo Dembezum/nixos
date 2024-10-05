@@ -61,6 +61,7 @@
 
     # -- CLIPBOARD --
     wl-clipboard
+    wl-clipboard-x11
     clipman
     cliphist
 
@@ -111,7 +112,7 @@
 
         "GDK_BACKEND,wayland,x11,*"
         "NIXOS_OZONE_WL,1"
-        "MOZ_ENABLE_WAYLAND,1" # disable if You're having issues with firefox
+        "MOZ_ENABLE_WAYLAND,1"
         "SDL_VIDEODRIVER,wayland"
         "OZONE_PLATFORM,wayland"
         "CLUTTER_BACKEND,wayland"
@@ -291,27 +292,26 @@
 
     # -- MONITOR CONFIGURATION --
     extraConfig = ''
-                  monitor=Unknown-2,3440x1440@100,3440x0,1
-                  monitor=Unknown-3,1920x1080@60,1520x0,1
-                  #monitor=eDP-1,1920x1080@60,0x0,1
+            monitor=Unknown-2,3440x1440@100,3440x0,1
+            monitor=Unknown-3,1920x1080@60,1520x0,1
+            #monitor=eDP-1,1920x1080@60,0x0,1
 
-            # -- WORKING CONFIG --
-                  #monitor=DP-3,3440x1440@100,3440x0,1
-                  #monitor=DP-5,1920x1080@60,2360x0,1,transform,3
-                  #monitor=eDP-1,1920x1080@60,4240x1440,1
-                  bind=SUPER,s,togglesplit
+      # -- WORKING CONFIG --
+            #monitor=DP-3,3440x1440@100,3440x0,1
+            #monitor=DP-5,1920x1080@60,2360x0,1,transform,3
+            #monitor=eDP-1,1920x1080@60,4240x1440,1
+            bind=SUPER,s,togglesplit
 
-                  exec-once = xsetroot -cursor_name left_ptr &
-                  exec-once = nm-applet --indicator
-                  exec-once = ~/.config/hypr/scripts/wallpaper.sh
-                  exec-once = swaync &
-                  exec-once = waybar &
-      #            exec-once = wl-paste -t text --watch clipman store --no-persist
-                  exec-once = wl-paste --type text --watch cliphist store # Stores only text data
-
-            #      master = {
-            #        new_status=slave
-            #      }
+            exec-once = xsetroot -cursor_name left_ptr &
+            exec-once = nm-applet --indicator
+            exec-once = ~/.config/hypr/scripts/wallpaper.sh
+            exec-once = swaync &
+            exec-once = waybar &
+            exec-once = wl-paste --type image --watch cliphist store &
+            exec-once = wl-paste --type text --watch cliphist store &
+      #      master = {
+      #        new_status=slave
+      #      }
     '';
   };
 }
