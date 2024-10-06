@@ -11,6 +11,7 @@
     ../../modules/system/glances
     ../../modules/system/openrgb
     ../../modules/system/pipewire
+    #    ../../modules/system/bluetooth
     ../../modules/system/virtualization
     ./hardware-configuration.nix
   ];
@@ -19,7 +20,7 @@
   environment.systemPackages = with pkgs; [
     # VPN 
     openfortivpn
-    openssl 
+    openssl
     wine-wayland
     xwayland
     xdg-desktop-portal

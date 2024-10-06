@@ -20,7 +20,12 @@
     extraModulePackages = [ ];
     supportedFilesystems = [ "nfs" "ntfs" "vfat" "xfs" ];
     kernelPackages = pkgs.linuxPackages_zen;
-    kernelParams = [ "ipv6.disable=1" ];
+    kernelParams = [
+      "nvidia.NVreg_EnableGpuFirmware=0"
+      "ipv6.disable=1"
+      "nvidia.NVreg_PreserveVideoMemoryAllocations=1"
+
+    ];
   };
   #  powerManagement.enable = true;
   #  powerManagement.cpuFreqGovernor = "schedutil";
