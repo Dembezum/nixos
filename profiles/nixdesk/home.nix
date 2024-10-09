@@ -7,7 +7,7 @@
     ../../modules/user/foot
     ../../modules/user/zsh
     ../../modules/user/tmux
-    ../../modules/user/kitty
+    #    ../../modules/user/kitty
     #      ../../modules/user/neovim
     #      ../../modules/user/shells
     ../../modules/user/hyprland

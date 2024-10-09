@@ -15,15 +15,15 @@
       # --- SYSTEM CONFIGURATION ---
       systemSettings = {
         system = "x86_64-linux";
-        hostname = "nixkia";
-        profile = "nixkia";
+        hostname = "nixdesk";
+        profile = "nixdesk";
         systemstate = "23.11";
       };
 
       # --- USER CONFIGURATION ---
       userSettings = {
-        username = "nixkia";
-        name = "nixkia";
+        username = "nixdesk";
+        name = "nixdesk";
         editor = "nvim";
         term = "xterm-256color";
         terminal = "foot";
