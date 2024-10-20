@@ -6,6 +6,7 @@
     # --- SYSTEM CONFIGURATION ---
     ../../universal.nix
     ../../modules/system/ssh
+    ../../modules/system/keyd
     ../../modules/user/gaming
     ../../modules/system/nvidia
     ../../modules/system/glances
