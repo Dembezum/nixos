@@ -10,6 +10,7 @@
     ../../modules/user/gaming
     ../../modules/system/nvidia
     ../../modules/system/glances
+    ../../modules/system/rsyslog
     ../../modules/system/openrgb
     ../../modules/system/pipewire
     #    ../../modules/system/bluetooth
