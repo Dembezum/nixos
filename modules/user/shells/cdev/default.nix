@@ -23,8 +23,8 @@ pkgs.mkShell {
     libtool
     pkg-config
     gdb
-    valgri
-    strac
+    valgrind
+    strace
     ltrace
     ccache
     gdbgui
