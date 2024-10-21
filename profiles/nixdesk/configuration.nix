@@ -95,15 +95,15 @@
   xdg.portal = {
     enable = true;
     extraPortals = [
-      #        pkgs.xdg-desktop-portal-gtk 
-      pkgs.xdg-desktop-portal-kde
-      #      pkgs.xdg-desktop-portal-hyprland
+      pkgs.xdg-desktop-portal-gtk
+      #pkgs.xdg-desktop-portal-kde
+      pkgs.xdg-desktop-portal-hyprland
     ];
   };
 
   xdg.portal.config = {
     common = {
-      default = [ "kde" ];
+      default = [ "hyprland" ];
       "org.freedesktop.impl.portal.Secret" = [ "gnome-keyring" ];
     };
   };
