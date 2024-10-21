@@ -16,7 +16,7 @@
 
   # -- USER SETTINGS --
   home = {
-    username = userSettings.username;
+    inherit (userSettings) username;
     homeDirectory = "/home/${userSettings.username}";
     packages = [
       pkgs.cliphist
@@ -51,7 +51,7 @@
   nixpkgs = {
     config = {
       allowUnfree = true;
-      allowUnfreePredicate = (_: true);
+      allowUnfreePredicate = true;
     };
   };
 
