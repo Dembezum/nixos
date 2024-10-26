@@ -22,7 +22,7 @@
     kernelPackages = pkgs.linuxPackages_zen;
     kernelParams = [
       "ipv6.disable=1"
-
+      "i8042.nopnp=1"
     ];
   };
 
