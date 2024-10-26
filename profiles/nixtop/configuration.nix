@@ -3,55 +3,38 @@
 
 {
   imports = [
-# --- SYSTEM CONFIGURATION ---
+    # --- SYSTEM CONFIGURATION ---
     ../../universal.nix
-      ../../modules/system/ssh
-      ../../modules/system/bluetooth
-      ./hardware-configuration.nix
-      ../../modules/system/networking
-      ../../modules/system/pipewire
-      ../../modules/system/virtualization
+    ../../modules/system/ssh
+    ../../modules/system/bluetooth
+    ../../modules/system/rsyslog
+    ../../modules/system/keyd
+    ./hardware-configuration.nix
+    ../../modules/system/networking
+    ../../modules/system/pipewire
   ];
 
-  environment.systemPackages = with pkgs; [
-    gns3-gui
-      brightnessctl
-  ];
+  environment.systemPackages = with pkgs; [ gns3-gui brightnessctl ];
 
-  xdg.portal = { 
-    enable = true; 
-    extraPortals = [
-      pkgs.xdg-desktop-portal-gtk 
-        pkgs.xdg-desktop-portal-wlr
-    ];
-  };
-
-  services.tailscale = {
+  xdg.portal = {
     enable = true;
+    extraPortals =
+      [ pkgs.xdg-desktop-portal-gtk pkgs.xdg-desktop-portal-hyprland ];
   };
 
   programs.hyprland.enable = true;
 
   xdg.portal.config = {
     common = {
-      default = [
-        "wlr"
-      ];
-      "org.freedesktop.impl.portal.Secret" = [
-        "gnome-keyring"
-      ];
+      default = [ "hyprland" ];
+      "org.freedesktop.impl.portal.Secret" = [ "gnome-keyring" ];
     };
   };
 
-# -- ZSH --
+  # -- ZSH --
   programs.zsh.enable = true;
 
-# -- HANDLE DEVICES --
-  services.gvfs.enable = true;
-  services.udisks2.enable = true;
-  services.devmon.enable = true;
-
-# Bootloader.
+  # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
@@ -62,43 +45,29 @@
     uid = 1000;
     shell = pkgs.zsh;
   };
-  
-  services.xserver.videoDrivers = ["modesetting"];
 
-  services.tftpd = {
-    enable = true;
-    path = "/srv/tftp";
+  hardware.graphics = { enable = true; };
+
+  services = {
+    tailscale.enable = true;
+    gvfs.enable = true;
+    udisks2.enable = true;
+    devmon.enable = true;
+    dbus.enable = true;
+    lldpd.enable = true;
+    gnome = { gnome-keyring.enable = true; };
+    ratbagd.enable = true;
+    xserver = {
+      enable = true;
+      xkb.layout = "dk";
+      displayManager.gdm = {
+        wayland = true;
+        enable = true;
+        banner = "Wassup swagger";
+      };
+    };
+    desktopManager.plasma6.enable = true;
   };
 
-  services.fwupd.enable = true;
-
-  hardware.opengl = {
-    enable = true;
-    driSupport = true;
-    driSupport32Bit = true;
-  };
-
-  services.xserver.enable = true;
-  services.xserver.xkb.layout = "dk"; 
-  services.xserver.displayManager.gdm.enable = true;
-  services.desktopManager.plasma6.enable = true;
-  services.xserver.videoDrivers = [ "modesetting" ];
-
-
-#  services.tlp = {
-#    enable = true;
-#    settings = {
-#      CPU_SCALING_GOVERNOR_ON_AC = "performance";
-#      CPU_SCALING_GOVERNOR_ON_BAT = "schedutil";
-#
-#      CPU_ENERGY_PERF_POLICY_ON_BAT = "power";
-#      CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
-#
-#      CPU_MIN_PERF_ON_AC = 0;
-#      CPU_MAX_PERF_ON_AC = 100;
-#      CPU_MIN_PERF_ON_BAT = 0;
-#      CPU_MAX_PERF_ON_BAT = 80;
-#    };
-#  };
   system.stateVersion = systemSettings.systemstate;
 }

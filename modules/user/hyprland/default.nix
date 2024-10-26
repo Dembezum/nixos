@@ -193,13 +193,6 @@
         #        vrr = "on";
       };
 
-      render = {
-        explicit_sync = 2; # 0 = off, 1 = on, 2 = auto based on gpu driver.
-        explicit_sync_kms = 2; # 0 = off, 1 = on, 2 = auto based on gpu driver.
-        direct_scanout =
-          true; # Set to true for improved Fullscreen performance.
-      };
-
       # -- KEYBINDS --
       bind = [
         ",PRINT, exec, grimblast --freeze copy area"

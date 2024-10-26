@@ -1,25 +1,26 @@
-{ config, pkgs, userSettings, ... }:
+{ inputs, systemSettings, config, pkgs, userSettings, ... }:
 # Nixtop
 {
-# -- IMPORTS --
+  # -- IMPORTS --
   imports = [
     ../../modules/user/gtk
-      ../../modules/user/zsh
-      ../../modules/user/tmux
-      ../../modules/user/kitty
-      ../../modules/user/neovim
-      ../../modules/user/shells
-      ../../modules/user/hyprland
-      ../../modules/user/minecraft
-      ../../modules/user/desktop
+    ../../modules/user/foot
+    ../../modules/user/zsh
+    ../../modules/user/tmux
+    #    ../../modules/user/kitty
+    #      ../../modules/user/neovim
+    #      ../../modules/user/shells
+    ../../modules/user/hyprland
+    ../../modules/user/desktop
+    ../../modules/user/gtk
   ];
 
-# -- USER SETTINGS --
+  # -- USER SETTINGS --
   home.username = userSettings.username;
-  home.homeDirectory = "/home/"+userSettings.username;
+  home.homeDirectory = "/home/" + userSettings.username;
   programs.home-manager.enable = true;
 
-# Package configuration
+  # Package configuration
   nixpkgs = {
     config = {
       allowUnfree = true;
@@ -27,23 +28,24 @@
     };
   };
 
-# -- PACKAGES --
+  # -- PACKAGES --
   home.packages = with pkgs; [
-      lazygit
-      jq
-      screenkey
-      slop
-      gnome.nautilus
+    lazygit
+    jq
+    screenkey
+    slop
+    gnome.nautilus
+    inputs.nixvim-flake.packages.${systemSettings.system}.default
   ];
 
-# -- VARIABLES --
+  # -- VARIABLES --
   home.sessionVariables = {
     EDITOR = userSettings.editor;
     TERM = userSettings.term;
     BROWSER = userSettings.browser;
   };
 
-# -- XDG USER CONFIGURATION --
+  # -- XDG USER CONFIGURATION --
   xdg.enable = true;
   xdg.userDirs = {
     enable = true;
@@ -56,9 +58,7 @@
     documents = "${config.home.homeDirectory}/Documents";
     desktop = null;
     publicShare = null;
-    extraConfig = {
-      XDG_GAME_DIR = "${config.home.homeDirectory}/Games";
-    };
+    extraConfig = { XDG_GAME_DIR = "${config.home.homeDirectory}/Games"; };
   };
   home.stateVersion = userSettings.homestate;
 }
