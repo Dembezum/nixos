@@ -44,6 +44,10 @@
       gpu = "git push -u origin main";
       gca = "git commit -a";
       gcm = "git commit -m";
+      gcom = "git checkout main";
+      gcot = "git checkout testing";
+      gcos = "git checkout staging";
+      gcop = "git checkout production";
       grep = "grep --color=auto";
       netl = "netstat -tulpn | grep LISTEN";
       edmesg = "dmesg -T --level=err,warn,crit,emerg";
