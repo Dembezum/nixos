@@ -1,0 +1,3 @@
+# Ferris Sweep
+SUBSYSTEMS=="usb", ATTRS{idVendor}=="c2ab", ATTRS{idProduct}=="3939", TAG+="uaccess"
+
