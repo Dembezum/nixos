@@ -6,7 +6,8 @@
     # --- SYSTEM CONFIGURATION ---
     ../../universal.nix
     ../../modules/system/ssh
-    ../../modules/system/keyd
+    ../../modules/system/udev
+    #    ../../modules/system/keyd
     ../../modules/user/gaming
     ../../modules/system/nvidia
     ../../modules/system/glances
@@ -17,6 +18,10 @@
     ../../modules/system/virtualization
     ./hardware-configuration.nix
   ];
+
+  hardware.spacenavd.enable = true;
+
+  #  hardware.keyboard.qmk.enable = true;
 
   # -- PACKAGES -- 
   environment.systemPackages = with pkgs; [
@@ -31,12 +36,15 @@
     appimage-run
     putty
     jdk21
+    kicad
     mpv
     piper
+    spacenavd
     #    gns3-gui
   ];
 
   security = { rtkit.enable = true; };
+  security = { sudo.enable = true; };
 
   programs = {
     # -- HYPRLAND --
@@ -116,6 +124,8 @@
     isNormalUser = true;
     description = userSettings.name;
     extraGroups = [
+      "dialout"
+      "input"
       "docker"
       "plugdev"
       "libvirt"

@@ -40,6 +40,7 @@
     spice-protocol
     qemu_kvm
     libvirt
+    distrobox
     #ovmf
   ];
 }

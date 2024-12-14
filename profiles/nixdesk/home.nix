@@ -33,6 +33,9 @@
       pkgs.imagemagick
       pkgs.nautilus
       pkgs.ventoy
+      pkgs.bambu-studio
+      pkgs.prusa-slicer
+      pkgs.freecad-wayland
       inputs.nixvim-flake.packages.${systemSettings.system}.default
     ];
     sessionVariables = {
