@@ -73,6 +73,7 @@
   # -- HYPRLAND CONFIGURATION --
   wayland.windowManager.hyprland = {
     enable = true;
+    xwayland.enable = true;
     settings = with config.colorScheme.palette; {
       "$mainMod" = "SUPER";
 
@@ -110,7 +111,7 @@
         "LIBVA_DRIVER_NAME, nvidia"
         "__GL_VRR_ALLOWED, 0"
 
-        "GDK_BACKEND,wayland,x11,*"
+        #"GDK_BACKEND,wayland,x11,*"
         "NIXOS_OZONE_WL,1"
         "MOZ_ENABLE_WAYLAND,1"
         "SDL_VIDEODRIVER,wayland"
@@ -139,16 +140,17 @@
 
       # -- DECORATION --
       decoration = {
+        shadow = {
+          enabled = true;
+          color = "rgba(${base00}ee)";
+          #offset = 3;
+        };
         rounding = 10;
         blur = {
           size = 3;
           passes = 1;
         };
-        drop_shadow = "yes";
-        shadow_range = 4;
-        shadow_render_power = 3;
         dim_special = 0;
-        "col.shadow" = "rgba(${base00}ee)";
       };
 
       # -- ANIMATIONS --

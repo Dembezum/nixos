@@ -80,8 +80,9 @@
 
   # -- FONTS --
   fonts.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+    #    (nerd-fonts.override { fonts = [ "JetBrainsMono" ]; })
     font-awesome
+    nerd-fonts.jetbrains-mono
     material-design-icons
   ];
 

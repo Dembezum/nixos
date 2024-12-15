@@ -6,7 +6,8 @@
     firefox
     vesktop
     spotify
-    (pkgs.nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
+    nerd-fonts.jetbrains-mono
+    # (pkgs.nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
   ];
   fonts.fontconfig.enable = true;
 }
