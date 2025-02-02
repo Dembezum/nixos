@@ -35,7 +35,7 @@
       pkgs.ventoy
       pkgs.bambu-studio
       pkgs.prusa-slicer
-      pkgs.freecad-wayland
+      pkgs.freecad
       inputs.nixvim-flake.packages.${systemSettings.system}.default
     ];
     sessionVariables = {

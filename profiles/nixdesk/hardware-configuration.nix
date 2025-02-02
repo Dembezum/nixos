@@ -40,16 +40,21 @@
       device = "/dev/disk/by-uuid/DC70-63F7";
       fsType = "vfat";
     };
-    "/mnt/hdd" = {
-      device = "/dev/disk/by-uuid/f8e3ca98-d2be-4429-9953-ab4bd973bda5";
+    "/mnt/sdb" = {
+      device = "/dev/disk/by-uuid/a3c06aa2-6efd-4908-9949-bfcffff29e0";
       fsType = "ext4";
       options = [ "nofail" ];
     };
     "/mnt/nvme0n1" = {
-      device = "/dev/disk/by-uuid/7243029d-09a7-4948-bc26-e4c8196a8673";
+      device = "/dev/disk/by-uuid/8df61ac5-b00d-4f50-89db-4d4c8f79f6f";
       fsType = "ext4";
       options = [ "nofail" ];
     };
+    #    "/mnt/nvme0n1" = {
+    #      device = "/dev/disk/by-uuid/7243029d-09a7-4948-bc26-e4c8196a8673";
+    #      fsType = "ext4";
+    #      options = [ "nofail" ];
+    #    };
   };
 
   swapDevices = [ ];

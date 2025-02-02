@@ -9,7 +9,7 @@
       enable = true;
       capSysNice = true;
       package = pkgs.gamescope;
-    };
+   };
 
     gamemode = {
       enable = true; 
@@ -54,7 +54,7 @@
         glxinfo
         wine
         (prismlauncher.override {
-        #      glfw = pkgs.glfw-wayland-minecraft;
+              glfw = pkgs.glfw-wayland-minecraft;
     })
         vulkan-tools
     (lutris.override {
