@@ -20,6 +20,8 @@
     homeDirectory = "/home/${userSettings.username}";
     packages = [
       pkgs.cliphist
+      pkgs.terraform
+      pkgs.ansible
       pkgs.obs-studio
       pkgs.headsetcontrol
       pkgs.easyeffects
