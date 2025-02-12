@@ -1,6 +1,10 @@
-{ ... }:
-# SSH setup
+{ pkgs, ... }:
+
 {
+  # SSH setup
+  environment.systemPackages = [ pkgs.opensshWithKerberos pkgs.openssh_gssapi ];
+
+
   services.openssh = {
     enable = true;
     settings = {

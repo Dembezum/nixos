@@ -1,9 +1,7 @@
 { pkgs, ... }:
 
 {
-  home.packages = with pkgs; [
-    zoxide
-  ];
+  home.packages = with pkgs; [ zoxide ];
 
   programs.zsh = {
     enable = true;
@@ -58,92 +56,85 @@
       sbash = "source ~/.zshrc";
     };
     initExtra = ''
-      HISTFILE=~/.zsh_history
-      HISTSIZE=10000
-      SAVEHIST=$HISTSIZE
-      HISTDUP=erase
-      setopt sharehistory
-      setopt appendhistory
-      setopt hist_ignore_dups   
-      setopt hist_ignore_space
-      setopt hist_save_no_dups
-      setopt hist_find_no_dups
-      export TIMEFMT="[Finished in %E]"
-      export HISTTIMEFORMAT="%F %T "
-      export HISTCONTROL=ignoredups
-      setopt appendhistory
+      ~/.config/prompt.sh
+            HISTFILE=~/.zsh_history
+            HISTSIZE=10000
+            SAVEHIST=$HISTSIZE
+            HISTDUP=erase
+            setopt sharehistory
+            setopt appendhistory
+            setopt hist_ignore_dups   
+            setopt hist_ignore_space
+            setopt hist_save_no_dups
+            setopt hist_find_no_dups
+            export TIMEFMT="[Finished in %E]"
+            export HISTTIMEFORMAT="%F %T "
+            export HISTCONTROL=ignoredups
+            setopt appendhistory
 
-      autoload -z edit-command-line
-      zle -N edit-command-line
+            autoload -z edit-command-line
+            zle -N edit-command-line
 
-      bindkey "^X^E" edit-command-line
-      bindkey '^R' history-incremental-search-backward
+            bindkey "^X^E" edit-command-line
+            bindkey '^R' history-incremental-search-backward
 
-      ztyle ':completion:*' menu no
+            zstyle ':completion:*' menu no
 
-      parse_git_branch() {
-        git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
-      }
-      setopt PROMPT_SUBST
-      PROMPT='%B%F{cyan}[%f%F{green}%n%f%B%F{cyan}]%f%F{red} /%1~%f%F{blue}$(parse_git_branch)%f%F{183} > '
+            parse_git_branch() {
+              git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+            }
+            setopt PROMPT_SUBST
+            PROMPT='%B%F{cyan}[%f%F{green}%n%f%B%F{cyan}]%f%F{red} /%1~%f%F{blue}$(parse_git_branch)%f%F{183} > '
 
-			if [[ "$TERM" == "dumb" ]]
-			then
-				unsetopt zle
-				unsetopt prompt_cr
-				unsetopt prompt_subst
-				unfunction precmd
-				unfunction preexec
-				PS1='$ '
-			fi
+      			if [[ "$TERM" == "dumb" ]]
+      			then
+      				unsetopt zle
+      				unsetopt prompt_cr
+      				unsetopt prompt_subst
+      				unfunction precmd
+      				unfunction preexec
+      				PS1='$ '
+      			fi
 
-      function cd() {
-          if which eza >/dev/null; then 
-              if [ $# -eq 0 ]; then
-                  builtin cd && eza --group-directories-first
-              else
-                  builtin cd "$@" && eza --group-directories-first
-              fi
-          else
-              if [ $# -eq 0 ]; then
-                builtin cd && ls --group-directories-first
-              else
-                  builtin cd "$@" && ls --group-directories-first
-              fi
-          fi
-      }
-      function f(){
-         builtin cd "$(fd -t d --full-path / . | fzf)" && eza --group-directories-first
-      }
-      function fa(){
-         builtin cd "$(fd -t d --full-path / / | fzf)" && eza --group-directories-first
-      }
-      function fh(){
-         builtin cd "$(fd -t d --full-path / ~ | fzf)" && eza --group-directories-first
-      }
+            function cd() {
+                if which eza >/dev/null; then 
+                    if [ $# -eq 0 ]; then
+                        builtin cd && eza --group-directories-first
+                    else
+                        builtin cd "$@" && eza --group-directories-first
+                    fi
+                else
+                    if [ $# -eq 0 ]; then
+                      builtin cd && ls --group-directories-first
+                    else
+                        builtin cd "$@" && ls --group-directories-first
+                    fi
+                fi
+            }
+            function f(){
+               builtin cd "$(fd -t d --full-path / . | fzf)" && eza --group-directories-first
+            }
+            function fa(){
+               builtin cd "$(fd -t d --full-path / / | fzf)" && eza --group-directories-first
+            }
+            function fh(){
+               builtin cd "$(fd -t d --full-path / ~ | fzf)" && eza --group-directories-first
+            }
     '' +
-    # Nix Specific
-    ''
-      export PATH=$HOME/.nix-profile/bin:$PATH
-      export SSL_CERT_FILE=/etc/ssl/certs/ca-bundle.crt
-      eval "$(zoxide init --cmd z zsh)"
+      # Nix Specific
+      ''
+        export PATH=$HOME/.nix-profile/bin:$PATH
+        export SSL_CERT_FILE=/etc/ssl/certs/ca-bundle.crt
+        eval "$(zoxide init --cmd z zsh)"
 
-      function cd() {
-         if [ $# -eq 0 ]; then
-            z && eza --group-directories-first
-         else
-            z "$@" && eza --group-directories-first
-         fi
-      }
-    '' +
-    ''
-    clear
-    echo -e "\033[1;36mNix:\033[0m $(lsb_release -s -d)"
-    echo -e "\033[1;36mLoad Average:\033[0m $(cut -d ' ' -f 1-3 /proc/loadavg)"
-    echo -e "\033[1;36mAvailable Memory:\033[0m $(free -h | awk '/Mem/ {print $7}')"
-    echo -e "\033[1;36mCPU Usage:\033[0m $(top -bn1 | awk '/%Cpu/ {printf("%.2f%", $2 + $4)}')"
-    echo ""
-    '';
-    };
+        function cd() {
+           if [ $# -eq 0 ]; then
+              z && eza --group-directories-first
+           else
+              z "$@" && eza --group-directories-first
+           fi
+        }
+      '';
+  };
 
-    }
+}

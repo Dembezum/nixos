@@ -40,13 +40,13 @@
       device = "/dev/disk/by-uuid/DC70-63F7";
       fsType = "vfat";
     };
-    "/mnt/sdb" = {
-      device = "/dev/disk/by-uuid/a3c06aa2-6efd-4908-9949-bfcffff29e0";
+    "/mnt/gaming" = {
+      device = "/dev/disk/by-uuid/8df61ac5-b00d-4f50-89db-4d4c8f79f6ff";
       fsType = "ext4";
       options = [ "nofail" ];
     };
-    "/mnt/nvme0n1" = {
-      device = "/dev/disk/by-uuid/8df61ac5-b00d-4f50-89db-4d4c8f79f6f";
+    "/mnt/nvme1n1" = {
+      device = "/dev/disk/by-uuid/ccfc50da-6901-4d05-90e2-b9acde86f802";
       fsType = "ext4";
       options = [ "nofail" ];
     };

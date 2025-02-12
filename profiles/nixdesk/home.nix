@@ -37,6 +37,7 @@
       pkgs.ventoy
       pkgs.bambu-studio
       pkgs.prusa-slicer
+      pkgs.orca-slicer
       pkgs.freecad
       inputs.nixvim-flake.packages.${systemSettings.system}.default
     ];
