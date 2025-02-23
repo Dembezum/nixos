@@ -26,8 +26,9 @@
 
     # -- HYPRLAND --
     hyprland-protocols
-    hyprland
+    #    hyprland
     hyprpicker
+    (config.lib.nixGL.wrap pkgs.hyprland)
 
     # -- WAYLAND --
     rofi-wayland

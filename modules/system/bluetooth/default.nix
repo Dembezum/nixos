@@ -1,12 +1,18 @@
-{
+{ pkgs, ... }: {
   # Bluetooth support
 
   hardware = {
     bluetooth = {
       enable = true;
       powerOnBoot = true;
+      #      package = pkgs.bluez;
       settings = {
-        General = { Experimental = true; };
+        General = {
+          Experimental = true;
+          FastConnectable = true;
+          ConnectionType = "dual";
+
+        };
 
       };
     };

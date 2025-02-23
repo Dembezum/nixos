@@ -14,7 +14,7 @@
     ../../modules/system/rsyslog
     ../../modules/system/openrgb
     ../../modules/system/pipewire
-    #    ../../modules/system/bluetooth
+    ../../modules/system/bluetooth
     ../../modules/system/virtualization
     ./hardware-configuration.nix
   ];
@@ -29,11 +29,14 @@
     openfortivpn
     openssl
     wine-wayland
+    bluez
     xwayland
     xdg-desktop-portal
     #    xdg-desktop-portal-gtk
     #    xdg-desktop-portal-wlr
     appimage-run
+    prusa-slicer
+    orca-slicer
     putty
     jdk21
     kicad

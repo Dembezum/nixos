@@ -24,6 +24,7 @@
       #      pkgs.inkscape
       pkgs.drawio
       pkgs.lazygit
+      pkgs.mono
       pkgs.jq
       pkgs.rawtherapee
       pkgs.imagemagick
