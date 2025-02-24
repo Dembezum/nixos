@@ -27,6 +27,7 @@
   environment.systemPackages = with pkgs; [
     # VPN 
     openfortivpn
+    mono
     openssl
     wine-wayland
     bluez
