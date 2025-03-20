@@ -25,7 +25,7 @@
     light
 
     # -- HYPRLAND --
-    hyprland-protocols
+    # hyprland-protocols
     #    hyprland
     hyprpicker
     (config.lib.nixGL.wrap pkgs.hyprland)

@@ -32,6 +32,7 @@
     wine-wayland
     bluez
     xwayland
+    webkitgtk
     xdg-desktop-portal
     #    xdg-desktop-portal-gtk
     #    xdg-desktop-portal-wlr
@@ -55,6 +56,7 @@
     hyprland = {
       enable = true;
       xwayland.enable = true;
+      withUWSM = true;
     };
     # -- GNUPKG --
     gnupg.agent = {
@@ -67,7 +69,7 @@
 
   # -- SESSION VARIABLES --
   environment.sessionVariables = {
-    NIX_BUILD_CORES = "10";
+    NIX_BUILD_CORES = "20";
     NIXOS_OZONE_WL = "1";
   };
 
@@ -108,14 +110,14 @@
     enable = true;
     extraPortals = [
       pkgs.xdg-desktop-portal-gtk
+      #pkgs.xdg-desktop-portal-hyprland
       #pkgs.xdg-desktop-portal-kde
-      pkgs.xdg-desktop-portal-hyprland
     ];
   };
 
   xdg.portal.config = {
     common = {
-      default = [ "hyprland" ];
+      #default = [ "hyprland" ];
       "org.freedesktop.impl.portal.Secret" = [ "gnome-keyring" ];
     };
   };
