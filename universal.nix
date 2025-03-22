@@ -72,6 +72,8 @@
     efivar
 
     # -- MISCELLANEOUS UTILITIES --
+    age
+    ssh-to-age
     feh
     eva
     nh

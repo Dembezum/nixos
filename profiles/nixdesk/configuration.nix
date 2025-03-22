@@ -1,8 +1,10 @@
-{ pkgs, systemSettings, userSettings, ... }:
+{ config, pkgs, systemSettings, userSettings, inputs, ... }:
 # Nixdesk
 
 {
+
   imports = [
+    inputs.sops-nix.nixosModules.sops
     # --- SYSTEM CONFIGURATION ---
     ../../universal.nix
     ../../modules/system/ssh

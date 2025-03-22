@@ -8,9 +8,13 @@
     nix-flatpak.url = "github:gmodena/nix-flatpak";
     nix-colors.url = "github:misterio77/nix-colors";
     nixvim-flake.url = "github:dembezum/nixvim";
+    sops-nix = {
+      url = "github:mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { nixpkgs, home-manager, nix-flatpak, ... }@inputs:
+  outputs = { nixpkgs, home-manager, nix-flatpak, sops-nix, ... }@inputs:
     let
       # --- SYSTEM CONFIGURATION ---
       systemSettings = {
@@ -58,6 +62,7 @@
           modules = [
             ./profiles/${systemSettings.profile}/configuration.nix
             nix-flatpak.nixosModules.nix-flatpak
+            sops-nix.nixosModules.sops
           ];
           specialArgs = {
             inherit systemSettings;

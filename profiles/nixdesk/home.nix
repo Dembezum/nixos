@@ -30,6 +30,7 @@
       pkgs.lazygit
       pkgs.jq
       pkgs.sops
+      pkgs.age
       #    pkgs.#darktable
       pkgs.rawtherapee
       pkgs.imagemagick
