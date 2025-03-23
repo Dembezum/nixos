@@ -23,8 +23,6 @@
 
   hardware.spacenavd.enable = true;
 
-  #  hardware.keyboard.qmk.enable = true;
-
   # -- PACKAGES -- 
   environment.systemPackages = with pkgs; [
     # VPN 
@@ -82,7 +80,7 @@
     devmon.enable = true;
     dbus.enable = true;
     lldpd.enable = true;
-    gnome = { gnome-keyring.enable = true; };
+    gnomegnome-keyring.enable = true;
     ratbagd.enable = true;
     xserver = {
       enable = true;

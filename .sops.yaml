@@ -1,5 +1,5 @@
 keys:
-  - &nixdesk age1uka040qsp84cq0vfw9usqgahcmn3gaenj9a66a8gw6vg5h928qys6tt7dq 
+  - &nixdesk age1vpwv28l5ga576nj6escnfy0cng7lpz6d8tka9xfzhphxqu7e44yq4mlmek
 creation_rules:
   - path_regex: secrets/[^/]+\.(yaml|json|env|ini)$
     key_groups:
