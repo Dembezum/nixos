@@ -19,13 +19,14 @@
       scrollback-up-page = "Shift+Page_Up";
       scrollback-down-page = "Shift+Page_Down";
     };
-    mouse-bindings = {
-      scrollback-up-mouse = "BTN_WHEEL_BACK";
-      scrollback-down-mouse = "BTN_WHEEL_FORWARD";
-      select-begin = "BTN_LEFT";
-      select-begin-block = "Control+BTN_LEFT";
-      select-extend = "BTN_RIGHT";
-    };
+    /* mouse-bindings = {
+         scrollback-up-mouse = "BTN_WHEEL_BACK";
+         scrollback-down-mouse = "BTN_WHEEL_FORWARD";
+         select-begin = "BTN_LEFT";
+         select-begin-block = "Control+BTN_LEFT";
+         select-extend = "BTN_RIGHT";
+       };
+    */
     colors = {
       # Catppuccin mocha
       alpha = "0.9";
