@@ -32,7 +32,7 @@
     wine-wayland
     bluez
     xwayland
-    webkitgtk
+    #webkitgtk
     xdg-desktop-portal
     #    xdg-desktop-portal-gtk
     #    xdg-desktop-portal-wlr
@@ -73,6 +73,11 @@
     NIXOS_OZONE_WL = "1";
   };
 
+  nix.settings = {
+    cores = 20;
+    #    max-jobs = 20;
+  };
+
   # -- SERVICES --
   services = {
     gvfs.enable = true;
@@ -80,7 +85,7 @@
     devmon.enable = true;
     dbus.enable = true;
     lldpd.enable = true;
-    gnomegnome-keyring.enable = true;
+    gnome.gnome-keyring.enable = true;
     ratbagd.enable = true;
     xserver = {
       enable = true;
