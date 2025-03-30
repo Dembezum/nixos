@@ -26,11 +26,6 @@
       select-begin-block = "Control+BTN_LEFT";
       select-extend = "BTN_RIGHT";
     };
-    cursor = {
-      blink = "yes";
-      blink-rate = "500";
-      color = "inverse background";
-    };
     colors = {
       # Catppuccin mocha
       alpha = "0.9";
