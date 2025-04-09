@@ -10,7 +10,7 @@
             # Fix colors
             #set -g default-terminal "screen-256color"
       #      set -g default-terminal "tmux"
-            #set -as terminal-features ",xterm-256color:RGB"
+            set -as terminal-features ",xterm-256color:RGB"
 
             # Unbind
                   unbind C-v
